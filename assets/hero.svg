@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 440" width="1280" height="440" role="img" aria-label="MeteoLander – Wetteranzeige als Circuit Sculpture (Konzeptillustration)">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1530"/>
+      <stop offset="1" stop-color="#070b16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4a73a" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#d4a73a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a87a1e"/>
+      <stop offset="0.5" stop-color="#e6c25a"/>
+      <stop offset="1" stop-color="#a87a1e"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.05"/>
+    </pattern>
+  </defs>
+
+  <rect width="1280" height="440" rx="18" fill="url(#bg)"/>
+  <rect width="1280" height="440" rx="18" fill="url(#dots)"/>
+
+  <!-- Text -->
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="80" y="118" fill="#d4a73a" font-size="17" font-weight="600" letter-spacing="3">ESP8266 · 1,8″ TFT · OPEN-METEO</text>
+    <text x="76" y="200" fill="#ffffff" font-size="78" font-weight="700" letter-spacing="-1">MeteoLander</text>
+    <text x="80" y="252" fill="#c9d1d9" font-size="28">Eine Wetteranzeige als Circuit Sculpture</text>
+    <text x="80" y="292" fill="#8b949e" font-size="20">Offenes Messinggestell · sichtbare Elektronik · Saarmund / Nuthetal</text>
+    <g transform="translate(80 330)">
+      <rect width="150" height="34" rx="17" fill="none" stroke="#d4a73a" stroke-opacity="0.7"/>
+      <circle cx="20" cy="17" r="5" fill="#d4a73a"/>
+      <text x="34" y="23" fill="#e6c25a" font-size="15" font-weight="600">Konzeptphase</text>
+    </g>
+  </g>
+
+  <!-- Illustration -->
+  <ellipse cx="985" cy="220" rx="230" ry="200" fill="url(#glow)"/>
+
+  <!-- Sockel: Drahtring -->
+  <ellipse cx="985" cy="372" rx="150" ry="20" fill="none" stroke="url(#brass)" stroke-width="3"/>
+
+  <!-- ESP8266-Board hinter dem Display -->
+  <g>
+    <rect x="928" y="262" width="114" height="58" rx="3" fill="#1d4a92"/>
+    <rect x="955" y="274" width="44" height="30" rx="2" fill="#aeb6c2"/>
+    <rect x="1008" y="280" width="20" height="18" rx="1" fill="#1a1a1a"/>
+    <path d="M940 372 L955 320 M1030 372 L1015 320" stroke="#c8743a" stroke-width="2.5" fill="none"/>
+  </g>
+
+  <!-- Standbeine / Rahmendraht -->
+  <path d="M862 372 Q 880 320 893 262 L 893 74 Q 893 58 909 58" fill="none" stroke="url(#brass)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M1108 372 Q 1090 320 1077 262 L 1077 74 Q 1077 58 1061 58" fill="none" stroke="url(#brass)" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Rotes TFT-Modul -->
+  <g>
+    <rect x="903" y="52" width="164" height="214" rx="5" fill="#c0262d"/>
+    <rect x="903" y="52" width="164" height="214" rx="5" fill="none" stroke="#7d1418"/>
+    <circle cx="916" cy="65" r="6" fill="#0b1530" stroke="#e6c25a" stroke-width="2"/>
+    <circle cx="1054" cy="65" r="6" fill="#0b1530" stroke="#e6c25a" stroke-width="2"/>
+    <circle cx="916" cy="253" r="6" fill="#0b1530" stroke="#e6c25a" stroke-width="2"/>
+    <circle cx="1054" cy="253" r="6" fill="#0b1530" stroke="#e6c25a" stroke-width="2"/>
+    <!-- Bildfläche -->
+    <rect x="921" y="78" width="128" height="160" fill="#05070c"/>
+    <circle cx="955" cy="118" r="11" fill="#ffd23f"/>
+    <g stroke="#ffd23f" stroke-width="2.5" stroke-linecap="round">
+      <path d="M955 98v-5M955 143v-5M935 118h-5M980 118h-5M941 104l-3-3M972 135l-3-3M941 132l-3 3M972 101l-3 3"/>
+    </g>
+    <rect x="990" y="104" width="44" height="26" rx="2" fill="#ffffff" fill-opacity="0.9"/>
+    <rect x="933" y="160" width="104" height="2" fill="#2a3340"/>
+    <rect x="933" y="174" width="60" height="6" rx="1" fill="#5ce1ff" fill-opacity="0.75"/>
+    <rect x="933" y="190" width="80" height="6" rx="1" fill="#5ce1ff" fill-opacity="0.5"/>
+    <rect x="933" y="220" width="40" height="4" rx="1" fill="#3a8f5c"/>
+    <!-- Stiftleiste -->
+    <g fill="#e6c25a">
+      <rect x="936" y="245" width="6" height="6"/><rect x="948" y="245" width="6" height="6"/>
+      <rect x="960" y="245" width="6" height="6"/><rect x="972" y="245" width="6" height="6"/>
+      <rect x="984" y="245" width="6" height="6"/><rect x="996" y="245" width="6" height="6"/>
+      <rect x="1008" y="245" width="6" height="6"/><rect x="1020" y="245" width="6" height="6"/>
+    </g>
+  </g>
+
+  <text x="985" y="418" text-anchor="middle" fill="#59636e" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">Konzeptillustration – Maße und Bauform folgen nach dem Ausmessen der Teile</text>
+</svg>

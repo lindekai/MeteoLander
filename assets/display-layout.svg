@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" width="720" height="500" role="img" aria-label="Layoutentwurf der beiden Displayansichten in 128 × 160 Pixel">
+  <!--
+    Maßstab: 1 Displaypixel = 2 SVG-Einheiten.
+    Schriftgrößen entsprechen dem Adafruit-GFX-Standardfont (Zelle 6 × 8 px × Größe):
+    Größe 1 = 6 px breit, Größe 2 = 12 px, Größe 4 = 24 px. textLength erzwingt die echte Breite.
+  -->
+  <defs>
+    <pattern id="px" width="2" height="2" patternUnits="userSpaceOnUse">
+      <rect width="2" height="2" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="0.4"/>
+    </pattern>
+  </defs>
+  <rect width="720" height="500" rx="16" fill="#0b1530"/>
+
+  <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+    <text x="40" y="44" fill="#ffffff" font-size="20" font-weight="700">Displayansichten</text>
+    <text x="40" y="68" fill="#8b949e" font-size="14">Layoutentwurf · 128 × 160 px · Beispielwerte, kein Foto vom Gerät</text>
+  </g>
+
+  <!-- ===== Ansicht 1: Aktuell ===== -->
+  <g transform="translate(70 96)">
+    <rect x="-8" y="-8" width="272" height="336" rx="6" fill="#000000" stroke="#2a3340"/>
+    <g transform="scale(2)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <rect width="128" height="160" fill="#05070c"/>
+      <!-- Kopfzeile -->
+      <text x="4" y="10" fill="#c9d1d9" font-size="10" textLength="48" lengthAdjust="spacingAndGlyphs">Saarmund</text>
+      <text x="94" y="10" fill="#c9d1d9" font-size="10" textLength="30" lengthAdjust="spacingAndGlyphs">14:30</text>
+      <rect x="4" y="14" width="120" height="1" fill="#2a3340"/>
+      <!-- Symbol: Sonne hinter Wolke -->
+      <circle cx="30" cy="36" r="9" fill="#ffd23f"/>
+      <g stroke="#ffd23f" stroke-width="1.6" stroke-linecap="round">
+        <path d="M30 22v-3M16 36h-3M20 26l-2-2M40 26l2-2"/>
+      </g>
+      <path d="M18 54h26a7 7 0 0 0 0-14a9 9 0 0 0-17-2a7 7 0 0 0-9 16z" fill="#dfe6ee"/>
+      <!-- Temperatur Größe 4 -->
+      <text x="62" y="58" fill="#ffffff" font-size="40" font-weight="700" textLength="48" lengthAdjust="spacingAndGlyphs">7°</text>
+      <text x="110" y="34" fill="#8b949e" font-size="10" textLength="6" lengthAdjust="spacingAndGlyphs">C</text>
+      <!-- Zustand -->
+      <text x="22" y="76" fill="#5ce1ff" font-size="10" textLength="84" lengthAdjust="spacingAndGlyphs">Leicht bewölkt</text>
+      <rect x="4" y="84" width="120" height="1" fill="#2a3340"/>
+      <!-- Sekundärwerte -->
+      <text x="4" y="102" fill="#8b949e" font-size="10" textLength="42" lengthAdjust="spacingAndGlyphs">Feuchte</text>
+      <text x="76" y="104" fill="#ffffff" font-size="20" textLength="24" lengthAdjust="spacingAndGlyphs">81</text>
+      <text x="104" y="104" fill="#8b949e" font-size="10" textLength="6" lengthAdjust="spacingAndGlyphs">%</text>
+      <text x="4" y="126" fill="#8b949e" font-size="10" textLength="24" lengthAdjust="spacingAndGlyphs">Wind</text>
+      <text x="76" y="128" fill="#ffffff" font-size="20" textLength="24" lengthAdjust="spacingAndGlyphs">14</text>
+      <text x="100" y="128" fill="#8b949e" font-size="10" textLength="24" lengthAdjust="spacingAndGlyphs">km/h</text>
+      <!-- Statuszeile -->
+      <rect x="4" y="142" width="120" height="1" fill="#2a3340"/>
+      <circle cx="8" cy="152" r="2.5" fill="#3fb950"/>
+      <text x="14" y="155" fill="#6e7681" font-size="10" textLength="66" lengthAdjust="spacingAndGlyphs">Stand 14:15</text>
+      <rect width="128" height="160" fill="url(#px)"/>
+    </g>
+    <text x="128" y="352" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600">Aktuell</text>
+  </g>
+
+  <!-- ===== Ansicht 2: Prognose ===== -->
+  <g transform="translate(394 96)">
+    <rect x="-8" y="-8" width="272" height="336" rx="6" fill="#000000" stroke="#2a3340"/>
+    <g transform="scale(2)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+      <rect width="128" height="160" fill="#05070c"/>
+      <text x="4" y="10" fill="#c9d1d9" font-size="10" textLength="48" lengthAdjust="spacingAndGlyphs">Prognose</text>
+      <text x="94" y="10" fill="#c9d1d9" font-size="10" textLength="30" lengthAdjust="spacingAndGlyphs">14:30</text>
+      <rect x="4" y="14" width="120" height="1" fill="#2a3340"/>
+      <rect x="63.5" y="20" width="1" height="116" fill="#2a3340"/>
+
+      <!-- Heute -->
+      <text x="17" y="30" fill="#8b949e" font-size="10" textLength="30" lengthAdjust="spacingAndGlyphs">Heute</text>
+      <circle cx="26" cy="46" r="6" fill="#ffd23f"/>
+      <path d="M22 60h18a5 5 0 0 0 0-10a6 6 0 0 0-11-1a5 5 0 0 0-7 11z" fill="#dfe6ee"/>
+      <text x="20" y="88" fill="#ffffff" font-size="20" textLength="24" lengthAdjust="spacingAndGlyphs">9°</text>
+      <text x="26" y="102" fill="#5ce1ff" font-size="10" textLength="12" lengthAdjust="spacingAndGlyphs">3°</text>
+      <text x="14" y="122" fill="#8b949e" font-size="10" textLength="36" lengthAdjust="spacingAndGlyphs">Regen </text>
+      <text x="20" y="134" fill="#ffffff" font-size="10" textLength="24" lengthAdjust="spacingAndGlyphs">20 %</text>
+
+      <!-- Morgen -->
+      <text x="78" y="30" fill="#8b949e" font-size="10" textLength="36" lengthAdjust="spacingAndGlyphs">Morgen</text>
+      <path d="M84 58h22a6 6 0 0 0 0-12a8 8 0 0 0-15-2a6 6 0 0 0-7 14z" fill="#aeb6c2"/>
+      <g stroke="#5ce1ff" stroke-width="1.4" stroke-linecap="round">
+        <path d="M89 62l-2 4M96 62l-2 4M103 62l-2 4"/>
+      </g>
+      <text x="84" y="88" fill="#ffffff" font-size="20" textLength="24" lengthAdjust="spacingAndGlyphs">6°</text>
+      <text x="90" y="102" fill="#5ce1ff" font-size="10" textLength="12" lengthAdjust="spacingAndGlyphs">2°</text>
+      <text x="78" y="122" fill="#8b949e" font-size="10" textLength="36" lengthAdjust="spacingAndGlyphs">Regen </text>
+      <text x="84" y="134" fill="#ffffff" font-size="10" textLength="24" lengthAdjust="spacingAndGlyphs">70 %</text>
+
+      <rect x="4" y="142" width="120" height="1" fill="#2a3340"/>
+      <circle cx="8" cy="152" r="2.5" fill="#3fb950"/>
+      <text x="14" y="155" fill="#6e7681" font-size="10" textLength="66" lengthAdjust="spacingAndGlyphs">Stand 14:15</text>
+      <rect width="128" height="160" fill="url(#px)"/>
+    </g>
+    <text x="128" y="352" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600">Prognose</text>
+  </g>
+
+  <text x="360" y="482" text-anchor="middle" fill="#59636e" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">Schriftzellen im Raster des GFX-Standardfonts (6 × 8 px, Größen 1/2/4) – Bewertung erfolgt in M3 am echten Display</text>
+</svg>

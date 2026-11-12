@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Lokale Zugangsdaten – nur config.example.h wird versioniert
+firmware/MeteoLander/config.h
+
+# Build-Ausgaben der Arduino IDE
+build/
+*.bin
+*.elf
