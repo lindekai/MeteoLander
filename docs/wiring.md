@@ -32,7 +32,7 @@ Modul einen Vorwiderstand hat. Die microSD-Anschlüsse bleiben unbeschaltet.
 
 ## Ladeanzeige
 
-Die LEDs des Lademoduls („lädt“ rot, „voll“ grün o. ä.) werden sichtbar ins Gestell gesetzt. Sie zeigen den
+Die LEDs des Lademoduls („lädt“ rot, „voll“ grün o. ä.) sitzen sichtbar an der rechten Seite der Fähre. Sie zeigen den
 Ladezustand auch bei ausgeschaltetem Gerät. Ein Ladesymbol auf dem Display bräuchte einen weiteren freien,
 bootsicheren GPIO; den gibt es in dieser Belegung nicht. Das Display zeigt stattdessen den Akkustand.
 

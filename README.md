@@ -14,7 +14,7 @@
 <p align="center">
   <b>Das Wetter vor der Haustür – als kleines Objekt aus Messing, Kupfer und sichtbarer Elektronik.</b><br>
   Auf Knopfdruck holt ein ESP8266 die Daten von <a href="https://open-meteo.com/">Open-Meteo</a> und zeigt sie auf einem roten 1,8″-TFT,<br>
-  das frei in einem offenen Drahtgestell steht. Akkubetrieben, ohne Gehäuse, ohne App, ohne Webserver.
+  das in einer kleinen Landefähre aus Messingdraht sitzt. Akkubetrieben, ohne Gehäuse, ohne App, ohne Webserver.
 </p>
 
 ---
@@ -46,16 +46,18 @@
 Der Entwurf hält sich an das echte Pixelraster: 128 × 160 Pixel im Hochformat, Schriftzellen des GFX-Standardfonts.
 Die Werte sind Beispiele. Ob das Layout am realen Display gut lesbar ist, wird in Meilenstein M3 mit Fotos geprüft.
 
-## 🪡 Aufbau
+## 🚀 Aufbau: eine Landefähre aus Messing
 
 <p align="center">
-  <img src="assets/sculpture-concept.svg" alt="Konzeptskizze des Messinggestells, Vorder- und Seitenansicht" width="720">
+  <img src="assets/assembly-sketch.svg" alt="Aufbauskizze: Drahtkäfig als Landefähre mit vier Beinen, rotem TFT, ESP8266, Akku, Lademodul, Taster und BME280" width="100%">
 </p>
 
-Das Displaymodul hängt an seinen vier Befestigungsbohrungen in einem Rahmen aus Messingdraht, der zugleich die Standbeine bildet.
-Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen, der Akku isoliert im Sockel, der BME280 auf einem eigenen Arm. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
-100-mm-Kontrollstrecke, auf die die Drähte direkt gelegt und gebogen werden können. Sie entsteht, sobald beide Platinen
-ausgemessen sind (siehe [docs/design.md](docs/design.md)).
+Ein Käfig aus 0,8-mm-Messingdraht trägt vorn das rote Display, dahinter senkrecht den ESP8266 und den Akku.
+Vier Landebeine mit Messingtellern halten die Fähre, der BME280 sitzt oben auf dem Mast. Messing ist GND,
+Signale laufen als sichtbarer Kupferlackdraht. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
+100-mm-Kontrollstrecke, auf die die Drähte gelegt und gebogen werden. Sie entsteht, sobald beide Platinen
+ausgemessen sind (siehe [docs/design.md](docs/design.md)). Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
+([tools/lander_model.py](tools/lander_model.py)), damit sie nach dem Ausmessen mit echten Maßen neu entstehen.
 
 ## 🔌 Schaltplan
 
@@ -64,14 +66,8 @@ ausgemessen sind (siehe [docs/design.md](docs/design.md)).
 </p>
 
 Ein Tastendruck schaltet über einen P-MOSFET ein, der ESP8266 hält sich selbst und trennt sich nach der Anzeigezeit
-wieder vollständig vom Akku. Die Lade-LEDs des Lademoduls sitzen sichtbar im Gestell. Der Plan ist ein **Entwurf**:
+wieder vollständig vom Akku. Die Lade-LEDs des Lademoduls sitzen sichtbar an der Seite der Fähre. Der Plan ist ein **Entwurf**:
 Pinbelegung und Begründung stehen in [docs/wiring.md](docs/wiring.md).
-
-## 🛠️ Aufbauskizze
-
-<p align="center">
-  <img src="assets/assembly-sketch.svg" alt="Aufbauskizze in Dreiviertelansicht mit nummerierten Bauteilen" width="100%">
-</p>
 
 ## 🧰 Hardware
 
@@ -79,7 +75,7 @@ Pinbelegung und Begründung stehen in [docs/wiring.md](docs/wiring.md).
 |---|---|---|
 | Controller | ESP8266-Entwicklungsboard (blau) | Variante noch zu bestimmen |
 | Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735, noch zu prüfen |
-| Gestell | Messing-/Kupferdraht | Stärken und Maße folgen in M4 |
+| Gestell | Käfig und vier Landebeine aus 0,8-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
 | Sensor | BME280 (Temperatur, Feuchte, Luftdruck) | vorhanden, Modul noch zu prüfen |
 | Akku & Laden | Li-Ion/LiPo-Zelle mit Schutz, USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |
 | Einschalten | Taster mit Selbsthalteschaltung (P-MOSFET) | Bauteile noch festzulegen |

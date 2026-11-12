@@ -2,30 +2,37 @@
 
 ## Leitidee
 
-MeteoLander ist ein kleines, freistehendes Objekt: das rote Displaymodul, gehalten von einem offenen Messingrahmen, der
-gleichzeitig die Standbeine bildet. Die Elektronik ist Teil der Form und wird nicht versteckt. Weniger ist mehr – keine
-Zierantennen, keine großen Rahmen, kein Steampunk.
+MeteoLander ist eine kleine Landefähre aus Messingdraht, die auf dem Schreibtisch „gelandet“ ist: ein offener Käfig
+mit dem roten Display vorn, vier gespreizte Landebeine mit runden Tellern und oben ein Mast mit dem Klimasensor.
+Die Elektronik ist Teil der Form und wird nicht versteckt. Der Draht ist zugleich Struktur und Masseleitung.
 
-## Gestell
-
-![Konzeptskizze](../assets/sculpture-concept.svg)
-
-- Das TFT-Modul wird an seinen **vier Befestigungsbohrungen** gehalten. Die Platine wird nicht verändert.
-- Zwei seitliche Drahtbügel führen von den Bohrungen nach unten und laufen als Standbeine aus.
-- Eine hintere Strebe stützt das leicht nach hinten geneigte Display.
-- Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen, gut sichtbar.
-- Der Akku liegt flach und isoliert im Sockelbereich, tief und damit standsicher.
-- Der Taster sitzt gut erreichbar vorn am Sockel.
-- Der BME280 sitzt auf einem eigenen, kurzen Messingarm mit Abstand zu ESP8266 und Regler.
-- Die USB-Ladebuchse ist hinten erreichbar, das Kabel wird zugentlastet.
+## Fähre
 
 ![Aufbauskizze](../assets/assembly-sketch.svg)
 
-Die Aufbauskizze zeigt, wo jedes Bauteil im Gestell sitzt. Verbindungen laufen als sichtbarer Kupferlackdraht.
-Die Platine für Selbsthaltung, LDO und Spannungsteiler ist ein kleines Stück Lochraster hinter dem Display.
-Die WLAN-Antenne des ESP8266 bleibt frei – kein Messing darüber oder davor.
+- **Käfig:** Quader aus 0,8-mm-Messingdraht (12 Kanten), Größe ergibt sich aus Display, ESP8266 und Akku.
+- **Display:** Das TFT-Modul bildet die Vorderseite und ist an seinen **vier Bohrungen** mit dem Käfig verlötet.
+  Die Platine wird nicht verändert.
+- **ESP8266:** senkrecht direkt hinter dem Display. Die WLAN-Antenne bleibt frei – kein Messing darüber oder davor.
+- **Akku:** hinten im Käfig, rundum isoliert und mit Drahtbügeln fixiert; berührt das Messing nirgends blank.
+- **Lademodul:** an der rechten Seite, Lade-LEDs nach außen sichtbar, USB-Buchse nach hinten.
+- **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, LDO und Spannungsteiler.
+- **Taster:** oben vorn auf einer Querstrebe. Gedrückt wird von oben, das belastet die Beine und nichts kippt.
+- **BME280:** auf einem Mast über dem Käfig. Er misst direkt nach dem Einschalten, solange die Elektronik kalt ist.
+- **Landebeine:** je Ecke Oberarm, Knie, Unterschenkel und Strebe; unten ein Messingteller Ø 14 mm.
+  Die Teller werden zuletzt angelötet, sonst wackelt die Fähre.
+- **Verbindungen:** sichtbarer Kupferlackdraht; das Messing führt GND.
 
-Drahtstärken, Neigungswinkel und Gesamthöhe werden in M4 festgelegt. Sicherheitsregeln siehe [wiring.md](wiring.md).
+Die Grafik wird aus `tools/lander_model.py` erzeugt. Alle Maße stehen dort im Abschnitt `MASSE` und sind bis zum
+Ausmessen der Platinen Annahmen. Drahtstärken, Beinwinkel und Gesamthöhe werden in M4 festgelegt.
+Sicherheitsregeln siehe [wiring.md](wiring.md).
+
+## Bautechnik
+
+- Biegen und Löten auf der ausgedruckten 1:1-Zeichnung, Drähte mit Malerkrepp fixieren.
+- Erst Käfig, dann Display und Platinen, dann Beine, zum Schluss die Teller.
+- Flussmittelstift für jede Lötstelle, danach mit feiner Stahlwolle reinigen.
+- Jedes Teilsystem vor dem Einbau auf dem Steckbrett testen.
 
 ## 1:1-Bauzeichnung (geplant für M4)
 

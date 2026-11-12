@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-12 – Bauform Landefähre
+
+- Neue Bauform: Drahtkäfig als Landefähre mit vier Landebeinen und Messingtellern, BME280 auf einem Mast,
+  Taster oben vorn, Lademodul und Lochrasterplatine an der rechten Seite
+- Aufbauskizze und Titelbild werden jetzt aus einem 3D-Modell erzeugt (`tools/lander_model.py`)
+- Alte Konzeptskizze des Gestells entfernt
+
 ## 2026-11-12 – Schaltplan und Aufbauskizze
 
 - Schaltplanentwurf (`assets/schematic.svg`): Lademodul, Akku, Selbsthalteschaltung, LDO, ESP8266, TFT, BME280
