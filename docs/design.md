@@ -6,6 +6,8 @@ MeteoLander ist eine kleine Landefähre aus Messingdraht, die auf dem Schreibtis
 mit dem roten Display vorn, vier gespreizte Landebeine mit runden Tellern und oben ein Mast mit dem Klimasensor.
 Die Elektronik ist Teil der Form und wird nicht versteckt. Der Draht ist zugleich Struktur und Masseleitung.
 
+Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5) von Mohit Bhoite.
+
 ## Fähre
 
 ![Aufbauskizze](../assets/assembly-sketch.svg)

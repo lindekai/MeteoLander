@@ -6,6 +6,7 @@
   Taster oben vorn, Lademodul und Lochrasterplatine an der rechten Seite
 - Aufbauskizze und Titelbild werden jetzt aus einem 3D-Modell erzeugt (`tools/lander_model.py`)
 - Alte Konzeptskizze des Gestells entfernt
+- Hinweis auf die Inspiration: *Boron Lander* von Mohit Bhoite
 
 ## 2026-11-12 – Schaltplan und Aufbauskizze
 

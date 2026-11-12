@@ -53,7 +53,8 @@ Die Werte sind Beispiele. Ob das Layout am realen Display gut lesbar ist, wird i
 </p>
 
 Ein Käfig aus 0,8-mm-Messingdraht trägt vorn das rote Display, dahinter senkrecht den ESP8266 und den Akku.
-Vier Landebeine mit Messingtellern halten die Fähre, der BME280 sitzt oben auf dem Mast. Messing ist GND,
+Vier Landebeine mit Messingtellern halten die Fähre, der BME280 sitzt oben auf dem Mast.
+Die Form ist inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5) von Mohit Bhoite. Messing ist GND,
 Signale laufen als sichtbarer Kupferlackdraht. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
 100-mm-Kontrollstrecke, auf die die Drähte gelegt und gebogen werden. Sie entsteht, sobald beide Platinen
 ausgemessen sind (siehe [docs/design.md](docs/design.md)). Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
@@ -103,6 +104,14 @@ Details und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdraht
 | [docs/software.md](docs/software.md) | Architektur, Datenquellen, Bibliotheken |
 | [docs/test-plan.md](docs/test-plan.md) | Testfälle je Meilenstein |
 | [docs/changelog.md](docs/changelog.md) | Änderungen und Entscheidungen |
+
+## 🙏 Inspiration
+
+Die Bauform von MeteoLander ist inspiriert vom
+**[Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)** von
+[Mohit Bhoite](https://bhoite.com/) – einer wunderschönen Circuit Sculpture in Form einer Landefähre.
+Seine Arbeiten haben gezeigt, wie viel Charakter freie Messingdrahtkonstruktionen und sichtbare Elektronik haben
+können. Danke für die Inspiration!
 
 ## 🌦️ Wetterdaten
 
