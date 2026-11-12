@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500" role="img" aria-label="Konzeptskizze des Messinggestells in Vorder- und Seitenansicht, nicht maßstäblich">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" height="530" role="img" aria-label="Konzeptskizze des Messinggestells in Vorder- und Seitenansicht, nicht maßstäblich">
   <defs>
     <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
       <path d="M20 0H0V20" fill="none" stroke="#5ce1ff" stroke-opacity="0.06"/>
     </pattern>
   </defs>
-  <rect width="900" height="500" rx="16" fill="#0b1530"/>
-  <rect width="900" height="500" rx="16" fill="url(#grid)"/>
+  <rect width="900" height="530" rx="16" fill="#0b1530"/>
+  <rect width="900" height="530" rx="16" fill="url(#grid)"/>
 
   <g font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
     <text x="40" y="44" fill="#ffffff" font-size="20" font-weight="700">Konzeptskizze Gestell</text>
@@ -41,13 +41,20 @@
       <rect x="118" y="194" width="10" height="10" fill="#e6c25a"/>
     </g>
     <!-- ESP8266 dahinter, auf eigenen Drahtstützen -->
-    <rect x="140" y="262" width="76" height="6" fill="#1d4a92"/>
-    <rect x="160" y="255" width="34" height="7" fill="#aeb6c2"/>
+    <rect x="140" y="248" width="76" height="6" fill="#1d4a92"/>
+    <rect x="160" y="241" width="34" height="7" fill="#aeb6c2"/>
+    <!-- Akku im Sockel, isoliert -->
+    <rect x="96" y="284" width="104" height="14" rx="3" fill="#3a4250" stroke="#8b949e" stroke-width="1"/>
+    <!-- Taster vorn -->
+    <rect x="30" y="290" width="14" height="8" fill="#59636e"/><rect x="33" y="285" width="8" height="5" rx="1" fill="#e6c25a"/>
+    <!-- BME280 auf eigenem Arm -->
+    <path d="M250 300 L 290 200" fill="none" stroke="#d4a73a" stroke-width="2.5" stroke-linecap="round"/>
+    <rect x="280" y="186" width="20" height="16" rx="2" fill="#7b3fb5"/>
     <!-- Draht -->
     <g fill="none" stroke="#d4a73a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
       <path d="M60 300 L 104 210 L 128 30"/>
       <path d="M250 300 L 124 40"/>
-      <path d="M146 268 L 146 300 M210 268 L 210 300"/>
+      <path d="M146 254 L 146 282 M210 254 L 210 282"/>
     </g>
     <g fill="#d4a73a"><circle cx="60" cy="300" r="4"/><circle cx="250" cy="300" r="4"/></g>
     <text x="140" y="336" text-anchor="middle" fill="#c9d1d9" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600">Seitenansicht</text>
@@ -58,5 +65,8 @@
     <rect x="0" y="-10" width="14" height="4" fill="#d4a73a"/><text x="22" y="-4">Messingdraht, tragend (Lage auf GND wird in M4 festgelegt)</text>
     <rect x="440" y="-14" width="14" height="10" fill="#c0262d"/><text x="462" y="-4">TFT-Modul</text>
     <rect x="560" y="-14" width="14" height="10" fill="#1d4a92"/><text x="582" y="-4">ESP8266-Board</text>
+    <rect x="0" y="16" width="14" height="10" fill="#3a4250" stroke="#8b949e"/><text x="22" y="25">Akku, isoliert</text>
+    <rect x="140" y="16" width="14" height="10" fill="#e6c25a"/><text x="162" y="25">Taster</text>
+    <rect x="240" y="16" width="14" height="10" fill="#7b3fb5"/><text x="262" y="25">BME280 auf eigenem Arm</text>
   </g>
 </svg>

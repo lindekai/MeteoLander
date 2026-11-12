@@ -14,7 +14,10 @@ Zierantennen, keine großen Rahmen, kein Steampunk.
 - Zwei seitliche Drahtbügel führen von den Bohrungen nach unten und laufen als Standbeine aus.
 - Eine hintere Strebe stützt das leicht nach hinten geneigte Display.
 - Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen, gut sichtbar.
-- Das USB-Kabel wird hinten am Gestell zugentlastet.
+- Der Akku liegt flach und isoliert im Sockelbereich, tief und damit standsicher.
+- Der Taster sitzt gut erreichbar vorn am Sockel.
+- Der BME280 sitzt auf einem eigenen, kurzen Messingarm mit Abstand zu ESP8266 und Regler.
+- Die USB-Ladebuchse ist hinten erreichbar, das Kabel wird zugentlastet.
 
 Drahtstärken, Neigungswinkel und Gesamthöhe werden in M4 festgelegt. Sicherheitsregeln siehe [wiring.md](wiring.md).
 
@@ -40,3 +43,5 @@ auf den Ausdruck gelegt.
   (grün = aktuell, gelb = veraltet, rot = Fehler)
 - Deutsche Beschriftung, metrische Einheiten
 - Offener Punkt: Darstellung von Umlauten im GFX-Standardfont (CP437-Modus) im Smoke-Test prüfen
+- Neu: Innenwerte vom BME280 und Akkustand kommen hinzu. Der Layoutentwurf wird in M3 entsprechend erweitert;
+  Innenwerte erscheinen sofort nach dem Einschalten, die Wetterdaten folgen nach wenigen Sekunden.

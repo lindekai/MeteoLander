@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-11-12 – Akku, Taster und Innenklima
+
+- Entscheidung: Akkubetrieb. Das Gerät ist aus, bis der Taster gedrückt wird; dann misst es, holt das Wetter, zeigt
+  5–10 Minuten an und schaltet sich selbst ab.
+- Entscheidung: **Selbsthalteschaltung** statt Deep Sleep, weil das Entwicklungsboard im Deep Sleep weiter 10–20 mA
+  ziehen kann; ausgeschaltet fließt so praktisch kein Strom.
+- Entscheidung: vorhandener **BME280** für Innentemperatur, -feuchte und Luftdruck, auf eigenem Messingarm mit Abstand
+  zur Elektronik.
+- Regelmäßiger Abruf alle 15 Minuten entfällt; jeder Start holt frische Daten.
+- Offen: Akkutyp, Lademodul und Spannungsregler nach Werkstattbestand.
+
 ## 2026-11-12 – Projektstart
 
 - Repository angelegt: README, Dokumentation, MIT-Lizenz

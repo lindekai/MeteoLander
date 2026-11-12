@@ -13,8 +13,8 @@
 
 <p align="center">
   <b>Das Wetter vor der Haustür – als kleines Objekt aus Messing, Kupfer und sichtbarer Elektronik.</b><br>
-  Ein ESP8266 holt die Daten von <a href="https://open-meteo.com/">Open-Meteo</a> und zeigt sie auf einem roten 1,8″-TFT,<br>
-  das frei in einem offenen Drahtgestell steht. Kein Gehäuse, keine App, kein Webserver.
+  Auf Knopfdruck holt ein ESP8266 die Daten von <a href="https://open-meteo.com/">Open-Meteo</a> und zeigt sie auf einem roten 1,8″-TFT,<br>
+  das frei in einem offenen Drahtgestell steht. Akkubetrieben, ohne Gehäuse, ohne App, ohne Webserver.
 </p>
 
 ---
@@ -32,7 +32,9 @@
 | 📅 **Heute & morgen** | Zweite Ansicht mit Höchst-/Tiefstwerten und Regenwahrscheinlichkeit. |
 | 🕰️ **Richtige Uhrzeit** | NTP mit Zeitzone Europe/Berlin, Sommer- und Winterzeit automatisch. |
 | 🧊 **Ehrliche Anzeige** | Veraltete Werte, fehlendes WLAN oder API-Fehler werden sichtbar markiert – nie erfundene Daten. |
-| 🔁 **Läuft einfach** | Aktualisierung alle 15 Minuten, Wiederverbindung mit festen Zeitlimits, kein Hängenbleiben nach Stromausfall. |
+| 🔘 **Auf Knopfdruck** | Ein Druck auf den Taster: frische Daten, 5–10 Minuten Anzeige, danach schaltet sich das Gerät selbst ab. |
+| 🔋 **Wochen mit einer Ladung** | Akku mit Selbsthalteschaltung statt Deep Sleep – ausgeschaltet fließt praktisch kein Strom. |
+| 🏠 **Drinnen & draußen** | Ein BME280 auf eigenem Messingarm misst Temperatur, Luftfeuchte und Luftdruck im Raum. |
 | 🪡 **Circuit Sculpture** | Offenes, tragendes Messinggestell mit wenigen Standbeinen; das rote Displaymodul bleibt sichtbar. |
 
 ## 📱 Displayansichten
@@ -51,7 +53,7 @@ Die Werte sind Beispiele. Ob das Layout am realen Display gut lesbar ist, wird i
 </p>
 
 Das Displaymodul hängt an seinen vier Befestigungsbohrungen in einem Rahmen aus Messingdraht, der zugleich die Standbeine bildet.
-Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
+Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen, der Akku isoliert im Sockel, der BME280 auf einem eigenen Arm. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
 100-mm-Kontrollstrecke, auf die die Drähte direkt gelegt und gebogen werden können. Sie entsteht, sobald beide Platinen
 ausgemessen sind (siehe [docs/design.md](docs/design.md)).
 
@@ -62,7 +64,9 @@ ausgemessen sind (siehe [docs/design.md](docs/design.md)).
 | Controller | ESP8266-Entwicklungsboard (blau) | Variante noch zu bestimmen |
 | Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735, noch zu prüfen |
 | Gestell | Messing-/Kupferdraht | Stärken und Maße folgen in M4 |
-| Versorgung | USB über das ESP8266-Board | Versorgung des TFT noch zu prüfen |
+| Sensor | BME280 (Temperatur, Feuchte, Luftdruck) | vorhanden, Modul noch zu prüfen |
+| Akku & Laden | Li-Ion/LiPo-Zelle mit Schutz, USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |
+| Einschalten | Taster mit Selbsthalteschaltung (P-MOSFET) | Bauteile noch festzulegen |
 
 Details und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdrahtung: [docs/wiring.md](docs/wiring.md)
 
@@ -72,10 +76,10 @@ Details und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdraht
 |---|---|---|
 | ⏳ | **M0 – Hardware verifizieren** | Boardvariante, Displaycontroller, Pinout, Maße und Befestigungspunkte |
 | ⬜ | **M1 – TFT-Smoke-Test** | Schriftzug, Testmuster und Farben auf dem originalen Display |
-| ⬜ | **M2 – Wetterdaten** | WLAN, Zeitabgleich, Open-Meteo-Abfrage, Fehlerbehandlung |
+| ⬜ | **M2 – Daten & Strom** | WLAN, Zeitabgleich, Open-Meteo, BME280, Selbsthalteschaltung, Akkustand |
 | ⬜ | **M3 – Displaydesign** | Ansichten „Aktuell“ und „Prognose“, beurteilt am echten Display |
 | ⬜ | **M4 – Circuit Sculpture** | 1:1-Bauzeichnung, Materialliste, Prototyp, sichere Verdrahtung |
-| ⬜ | **M5 – Endtest** | Dauerlauf, WLAN- und API-Ausfall, Neustart, Abschlussdoku |
+| ⬜ | **M5 – Endtest** | Einschaltzyklen, Akkulaufzeit, WLAN- und API-Ausfall, Abschlussdoku |
 
 ## 📚 Dokumentation
 
