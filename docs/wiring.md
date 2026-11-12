@@ -1,32 +1,40 @@
 # Verdrahtung
 
 > [!IMPORTANT]
-> Noch **kein** gültiger Anschlussplan. Die Zuordnung zu ESP8266-Pins wird erst festgelegt, wenn Boardvariante,
-> Pinreihenfolge am TFT und Versorgung geprüft sind (Meilenstein M0).
+> **Entwurf, nicht aufgebaut und nicht geprüft.** Die GPIO-Zuordnung ist ein begründeter Vorschlag auf Ebene des
+> ESP8266-Chips. Sie wird erst gültig, wenn Boardvariante, Pinreihenfolge am TFT und Versorgung der Module geprüft
+> sind (Meilenstein M0).
 
-## Anschlüsse des TFT
+![Schaltplan](../assets/schematic.svg)
 
-| TFT-Pin | Funktion | ESP8266-Pin |
-|---|---|---|
-| `VCC` | Versorgung | offen – abhängig vom Regler auf dem Modul |
-| `GND` | Masse | GND |
-| `CS` | Chip Select | offen |
-| `RESET` | Reset | offen |
-| `A0` | Daten/Befehl (DC) | offen |
-| `SDA` | SPI MOSI | voraussichtlich Hardware-SPI MOSI, prüfen |
-| `SCK` | SPI-Takt | voraussichtlich Hardware-SPI SCK, prüfen |
-| `LED` | Hintergrundbeleuchtung | offen – Strombedarf prüfen |
+## Pinbelegung (Vorschlag)
 
-Die microSD-Anschlüsse bleiben unbeschaltet.
+GPIO-Nummern gelten für jede ESP8266-Boardvariante. Die D-Bezeichnungen gelten für NodeMCU-/LoLin-artige Boards
+und werden am vorhandenen Board geprüft.
 
-## BME280
+| ESP8266 | Board | Signal | Ziel | Begründung |
+|---|---|---|---|---|
+| GPIO14 | D5 | SCK | TFT `SCK` | Hardware-SPI |
+| GPIO13 | D7 | MOSI | TFT `SDA` | Hardware-SPI |
+| GPIO15 | D8 | CS | TFT `CS` | Hardware-SPI-CS; Pull-down auf dem Board passt zum Bootpegel LOW |
+| GPIO0 | D3 | DC | TFT `A0` | Ausgang erst nach dem Boot; das TFT zieht den Pin nicht herunter |
+| GPIO4 | D2 | SDA | BME280 `SDA` | Standard-I²C des ESP8266-Cores |
+| GPIO5 | D1 | SCL | BME280 `SCL` | Standard-I²C des ESP8266-Cores |
+| GPIO16 | D0 | HOLD | Q2 über R2 | HIGH beim Booten ist unkritisch |
+| GPIO3 | RX | BTN | Taster über D2 | kein Bootpin; TX bleibt für die Diagnose frei |
+| A0 | A0 | VBAT_SENSE | R4 | einziger Analogeingang |
+| GPIO12 | D6 | – | – | durch die SPI-Bibliothek als MISO belegt |
+| GPIO2 | D4 | – | frei | Bootpin, muss beim Start HIGH sein |
+| GPIO1 | TX | – | seriell | Diagnoseausgabe |
 
-| BME280-Pin | Funktion | ESP8266-Pin |
-|---|---|---|
-| `VIN`/`VCC` | Versorgung | offen – abhängig von der Modulversion |
-| `GND` | Masse | GND |
-| `SDA` | I²C-Daten | offen |
-| `SCL` | I²C-Takt | offen |
+TFT `RESET` liegt über R5 (10 kΩ) an +3V3, der Reset erfolgt per Software. TFT `LED` liegt an +3V3, sofern das
+Modul einen Vorwiderstand hat. Die microSD-Anschlüsse bleiben unbeschaltet.
+
+## Ladeanzeige
+
+Die LEDs des Lademoduls („lädt“ rot, „voll“ grün o. ä.) werden sichtbar ins Gestell gesetzt. Sie zeigen den
+Ladezustand auch bei ausgeschaltetem Gerät. Ein Ladesymbol auf dem Display bräuchte einen weiteren freien,
+bootsicheren GPIO; den gibt es in dieser Belegung nicht. Das Display zeigt stattdessen den Akkustand.
 
 ## Stromversorgung mit Selbsthalteschaltung
 
@@ -45,9 +53,9 @@ USB ──▶ Lademodul ──▶ Akku (mit Schutz)
    Der Taster darf losgelassen werden.
 4. **Ausschalten:** Nach der Anzeigezeit nimmt die Firmware den Halte-GPIO zurück und schaltet sich damit selbst ab.
 
-Offene Punkte: Bauteiltypen, Wahl des Halte-GPIO (muss beim Booten ruhig bleiben), ob der Taster zusätzlich über eine
-Diode an einem GPIO gelesen wird (für einen zweiten Tastendruck im Betrieb) und wie lange der Taster beim Einschalten
-gedrückt werden muss.
+Der Taster wird zusätzlich über D2 an GPIO3 gelesen, damit ein weiterer Tastendruck im Betrieb erkannt wird
+(z. B. zum Umschalten der Ansicht). Offen: endgültige Bauteiltypen nach Werkstattbestand und die Zeit, die der Taster
+beim Einschalten gedrückt bleiben muss.
 
 ## Akkuspannung
 

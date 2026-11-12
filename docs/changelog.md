@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-12 – Schaltplan und Aufbauskizze
+
+- Schaltplanentwurf (`assets/schematic.svg`): Lademodul, Akku, Selbsthalteschaltung, LDO, ESP8266, TFT, BME280
+- Pinbelegung als begründeter Vorschlag auf GPIO-Ebene; Taster an GPIO3 (RX), weil alle Bootpins ausscheiden
+- Entscheidung: Ladeanzeige über die LEDs des Lademoduls, sichtbar im Gestell; Display zeigt den Akkustand
+- Aufbauskizze (`assets/assembly-sketch.svg`) mit nummerierten Bauteilen und Einbauhinweisen
+
 ## 2026-11-12 – Akku, Taster und Innenklima
 
 - Entscheidung: Akkubetrieb. Das Gerät ist aus, bis der Taster gedrückt wird; dann misst es, holt das Wetter, zeigt

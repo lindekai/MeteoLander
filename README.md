@@ -57,6 +57,22 @@ Das ESP8266-Board sitzt dahinter auf eigenen Drahtstützen, der Akku isoliert im
 100-mm-Kontrollstrecke, auf die die Drähte direkt gelegt und gebogen werden können. Sie entsteht, sobald beide Platinen
 ausgemessen sind (siehe [docs/design.md](docs/design.md)).
 
+## 🔌 Schaltplan
+
+<p align="center">
+  <a href="assets/schematic.svg"><img src="assets/schematic.svg" alt="Schaltplanentwurf: Akku, Lademodul, Selbsthalteschaltung, ESP8266, TFT und BME280" width="100%"></a>
+</p>
+
+Ein Tastendruck schaltet über einen P-MOSFET ein, der ESP8266 hält sich selbst und trennt sich nach der Anzeigezeit
+wieder vollständig vom Akku. Die Lade-LEDs des Lademoduls sitzen sichtbar im Gestell. Der Plan ist ein **Entwurf**:
+Pinbelegung und Begründung stehen in [docs/wiring.md](docs/wiring.md).
+
+## 🛠️ Aufbauskizze
+
+<p align="center">
+  <img src="assets/assembly-sketch.svg" alt="Aufbauskizze in Dreiviertelansicht mit nummerierten Bauteilen" width="100%">
+</p>
+
 ## 🧰 Hardware
 
 | Teil | Beschreibung | Status |

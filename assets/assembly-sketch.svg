@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 700" width="1160" height="700" role="img" aria-label="Aufbauskizze MeteoLander in Dreiviertelansicht mit nummerierten Bauteilen, nicht maßstäblich">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0H0V20" fill="none" stroke="#5ce1ff" stroke-opacity="0.05"/>
+    </pattern>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4a73a" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#d4a73a" stop-opacity="0"/>
+    </radialGradient>
+    <g id="num">
+      <circle r="11" fill="#0b1530" stroke="#e6c25a" stroke-width="1.6"/>
+    </g>
+  </defs>
+  <style>
+    .brass { fill: none; stroke: #d4a73a; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+    .brassThin { fill: none; stroke: #d4a73a; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    .copper { fill: none; stroke: #c8743a; stroke-width: 1.4; stroke-linecap: round; }
+    .n { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #e6c25a; text-anchor: middle; }
+    .h { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 700; fill: #ffffff; }
+    .d { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12.5px; fill: #8b949e; }
+  </style>
+
+  <rect width="1160" height="700" rx="16" fill="#0b1530"/>
+  <rect width="1160" height="700" rx="16" fill="url(#grid)"/>
+
+  <text x="40" y="44" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff">Aufbauskizze</text>
+  <text x="40" y="68" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#8b949e">Dreiviertelansicht von vorn rechts · nicht maßstäblich · Maße folgen mit der 1:1-Bauzeichnung</text>
+
+  <ellipse cx="360" cy="400" rx="330" ry="260" fill="url(#glow)"/>
+
+  <!-- ===== Sockelrahmen (hinten zuerst) ===== -->
+  <path d="M150 590 L 480 610 L 600 525 L 270 508 Z" class="brass"/>
+  <path d="M215 597 L 335 516 M 415 605 L 535 520" class="brassThin" stroke-opacity="0.55"/>
+
+  <!-- Hintere Strebe (3), teils hinter dem Display -->
+  <path d="M590 522 L 420 200" class="brass"/>
+
+  <!-- BME280-Arm (9) -->
+  <path d="M600 525 Q 640 470 660 345" class="brass"/>
+  <rect x="646" y="320" width="30" height="24" rx="2" fill="#7b3fb5" stroke="#b28ad9" stroke-width="1"/>
+  <circle cx="661" cy="332" r="3" fill="#d0c4e4"/>
+  <path d="M662 344 Q 600 420 540 470" class="copper" stroke-dasharray="3 3"/>
+
+  <!-- Lademodul (6) mit LEDs, hinten links -->
+  <path d="M285 497 L 352 500 L 352 514 L 285 511 Z" fill="#1d4a92" stroke="#5f86c9" stroke-width="1"/>
+  <rect x="279" y="500" width="10" height="9" fill="#aeb6c2"/>
+  <circle cx="320" cy="503" r="3.2" fill="#ff4d4f"/>
+  <circle cx="332" cy="504" r="3.2" fill="#3fb950"/>
+
+  <!-- USB-Kabel mit Zugentlastung (10) -->
+  <path d="M279 504 C 240 500, 215 486, 190 470 C 170 457, 140 452, 100 455" fill="none" stroke="#59636e" stroke-width="5" stroke-linecap="round"/>
+  <path d="M232 488 l -8 14 M 240 492 l -8 14" class="brassThin"/>
+
+  <!-- ESP8266 (4) hinter dem Display auf Drahtstützen -->
+  <path d="M470 505 L 470 478 M 560 500 L 560 470" class="brassThin"/>
+  <path d="M440 470 L 585 458 L 585 488 L 440 500 Z" fill="#1d4a92" stroke="#5f86c9" stroke-width="1"/>
+  <path d="M492 470 L 530 467 L 530 484 L 492 487 Z" fill="#aeb6c2"/>
+  <path d="M440 470 L 462 468 L 462 498 L 440 500 Z" fill="#0f2f63"/>
+  <path d="M585 458 L 600 456 L 600 486 L 585 488" fill="none" stroke="#5f86c9" stroke-dasharray="2 2"/>
+
+  <!-- Lochrasterplatine (5) -->
+  <path d="M470 528 L 545 532 L 545 548 L 470 544 Z" fill="#1a7f37" stroke="#56d364" stroke-width="1" stroke-opacity="0.6"/>
+  <g fill="#0b1530"><circle cx="485" cy="536" r="1.4"/><circle cx="497" cy="537" r="1.4"/><circle cx="509" cy="538" r="1.4"/><circle cx="521" cy="538" r="1.4"/><circle cx="533" cy="539" r="1.4"/></g>
+  <rect x="496" y="528" width="10" height="6" fill="#1f2937"/>
+
+  <!-- Akku (7), flach im Sockel, isoliert -->
+  <path d="M250 552 L 430 562 L 430 582 L 250 572 Z" fill="#3a4250" stroke="#8b949e" stroke-width="1.2"/>
+  <path d="M250 552 L 262 545 L 442 555 L 430 562" fill="#4b5563" stroke="#8b949e" stroke-width="1.2"/>
+  <path d="M442 555 L 442 575 L 430 582" fill="#2d333b" stroke="#8b949e" stroke-width="1.2"/>
+  <text x="340" y="572" text-anchor="middle" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="11" fill="#c9d1d9">Li-Ion</text>
+  <path d="M300 552 L 300 576 M 390 557 L 390 581" class="brassThin" stroke-opacity="0.8"/>
+
+  <!-- Verbindungen als sichtbarer Kupferlackdraht -->
+  <path d="M470 492 C 430 470, 380 450, 352 426" class="copper"/>
+  <path d="M478 491 C 440 470, 392 452, 362 427" class="copper"/>
+  <path d="M486 490 C 450 470, 404 454, 372 428" class="copper"/>
+  <path d="M352 507 C 400 520, 440 528, 470 534" class="copper"/>
+  <path d="M430 570 C 450 560, 460 548, 472 542" class="copper"/>
+
+  <!-- Vordere Beine + Rahmendraht (2) -->
+  <path d="M150 590 L 228 426 L 228 172 Q 228 160 241 161" class="brass"/>
+  <path d="M480 610 L 432 446 L 432 192 Q 432 180 401 180" class="brass"/>
+
+  <!-- ===== TFT-Modul (1), hochkant ===== -->
+  <path d="M406 168 L 420 162 L 420 426 L 406 432 Z" fill="#7d1418"/>
+  <path d="M236 150 L 406 168 L 406 432 L 236 414 Z" fill="#c0262d" stroke="#7d1418" stroke-width="1.2"/>
+  <path d="M252 180 L 390 195 L 390 385 L 252 370 Z" fill="#05070c"/>
+  <!-- Bildinhalt angedeutet -->
+  <circle cx="286" cy="222" r="12" fill="#ffd23f"/>
+  <path d="M318 214 L 372 220 L 372 248 L 318 242 Z" fill="#ffffff" fill-opacity="0.85"/>
+  <path d="M266 290 L 378 302" stroke="#2a3340" stroke-width="2"/>
+  <path d="M266 314 L 336 321" stroke="#5ce1ff" stroke-opacity="0.7" stroke-width="5"/>
+  <path d="M266 334 L 356 343" stroke="#5ce1ff" stroke-opacity="0.45" stroke-width="5"/>
+  <!-- Bohrungen mit Drahtösen -->
+  <g fill="#0b1530" stroke="#e6c25a" stroke-width="2">
+    <circle cx="246" cy="162" r="5"/><circle cx="396" cy="180" r="5"/>
+    <circle cx="246" cy="402" r="5"/><circle cx="396" cy="420" r="5"/>
+  </g>
+  <path d="M228 402 L 241 402 M 432 420 L 401 420" class="brassThin"/>
+  <!-- Stiftleiste unten -->
+  <g fill="#e6c25a">
+    <rect x="290" y="409" width="5" height="5"/><rect x="301" y="410" width="5" height="5"/><rect x="312" y="411" width="5" height="5"/>
+    <rect x="323" y="412" width="5" height="5"/><rect x="334" y="414" width="5" height="5"/><rect x="345" y="415" width="5" height="5"/>
+    <rect x="356" y="416" width="5" height="5"/><rect x="367" y="417" width="5" height="5"/>
+  </g>
+
+  <!-- Taster (8) vorn am Sockel -->
+  <path d="M300 596 L 330 598 L 330 610 L 300 608 Z" fill="#59636e"/>
+  <ellipse cx="315" cy="597" rx="8" ry="3.5" fill="#e6c25a"/>
+
+  <!-- ===== Nummern ===== -->
+  <g>
+    <use href="#num" x="208" y="138"/><text x="208" y="142" class="n">1</text>
+    <use href="#num" x="128" y="520"/><text x="128" y="524" class="n">2</text>
+    <use href="#num" x="518" y="330"/><text x="518" y="334" class="n">3</text>
+    <use href="#num" x="612" y="440"/><text x="612" y="444" class="n">4</text>
+    <use href="#num" x="566" y="560"/><text x="566" y="564" class="n">5</text>
+    <use href="#num" x="318" y="482"/><text x="318" y="486" class="n">6</text>
+    <use href="#num" x="226" y="560"/><text x="226" y="564" class="n">7</text>
+    <use href="#num" x="315" y="632"/><text x="315" y="636" class="n">8</text>
+    <use href="#num" x="700" y="320"/><text x="700" y="324" class="n">9</text>
+    <use href="#num" x="96" y="430"/><text x="96" y="434" class="n">10</text>
+  </g>
+
+  <!-- ===== Legende ===== -->
+  <g transform="translate(760 108)">
+    <use href="#num" x="0" y="-4"/><text x="0" y="0" class="n">1</text>
+    <text x="22" y="0" class="h">TFT-Modul 1,8″</text>
+    <text x="22" y="17" class="d">An den vier Bohrungen am Drahtrahmen gehalten.</text>
+
+    <use href="#num" x="0" y="44"/><text x="0" y="48" class="n">2</text>
+    <text x="22" y="48" class="h">Rahmen und Standbeine</text>
+    <text x="22" y="65" class="d">Messingdraht, tragend, liegt auf GND.</text>
+
+    <use href="#num" x="0" y="92"/><text x="0" y="96" class="n">3</text>
+    <text x="22" y="96" class="h">Hintere Strebe</text>
+    <text x="22" y="113" class="d">Stützt das leicht nach hinten geneigte Display.</text>
+
+    <use href="#num" x="0" y="140"/><text x="0" y="144" class="n">4</text>
+    <text x="22" y="144" class="h">ESP8266-Board</text>
+    <text x="22" y="161" class="d">Hinter dem Display auf Drahtstützen. WLAN-Antenne</text>
+    <text x="22" y="177" class="d">frei lassen, kein Messing darüber oder davor.</text>
+
+    <use href="#num" x="0" y="204"/><text x="0" y="208" class="n">5</text>
+    <text x="22" y="208" class="h">Lochrasterplatine</text>
+    <text x="22" y="225" class="d">Selbsthaltung (Q1, Q2, R1–R3, D1, D2), LDO, Teiler R4.</text>
+
+    <use href="#num" x="0" y="252"/><text x="0" y="256" class="n">6</text>
+    <text x="22" y="256" class="h">Lademodul</text>
+    <text x="22" y="273" class="d">Lade-LEDs nach außen sichtbar, USB-Buchse hinten.</text>
+
+    <use href="#num" x="0" y="300"/><text x="0" y="304" class="n">7</text>
+    <text x="22" y="304" class="h">Akku</text>
+    <text x="22" y="321" class="d">Flach und tief im Sockel, rundum isoliert, mit</text>
+    <text x="22" y="337" class="d">Drahtbügeln fixiert – berührt das Messing nirgends blank.</text>
+
+    <use href="#num" x="0" y="364"/><text x="0" y="368" class="n">8</text>
+    <text x="22" y="368" class="h">Taster</text>
+    <text x="22" y="385" class="d">Vorn am Sockel, gut mit einem Finger erreichbar.</text>
+
+    <use href="#num" x="0" y="412"/><text x="0" y="416" class="n">9</text>
+    <text x="22" y="416" class="h">BME280 auf eigenem Arm</text>
+    <text x="22" y="433" class="d">Möglichst weit weg von ESP8266 und LDO, offen zur Luft.</text>
+
+    <use href="#num" x="0" y="460"/><text x="0" y="464" class="n">10</text>
+    <text x="22" y="464" class="h">USB-Kabel</text>
+    <text x="22" y="481" class="d">Am Sockel zugentlastet, nur zum Laden.</text>
+
+    <path d="M0 512 h 18" stroke="#c8743a" stroke-width="2"/>
+    <text x="22" y="516" class="d">Verbindungen als sichtbarer Kupferlackdraht</text>
+    <path d="M0 536 h 18" stroke="#c8743a" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="22" y="540" class="d">I²C-Leitung zum BME280 entlang des Arms</text>
+  </g>
+</svg>

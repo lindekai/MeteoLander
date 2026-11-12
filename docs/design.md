@@ -19,6 +19,12 @@ Zierantennen, keine großen Rahmen, kein Steampunk.
 - Der BME280 sitzt auf einem eigenen, kurzen Messingarm mit Abstand zu ESP8266 und Regler.
 - Die USB-Ladebuchse ist hinten erreichbar, das Kabel wird zugentlastet.
 
+![Aufbauskizze](../assets/assembly-sketch.svg)
+
+Die Aufbauskizze zeigt, wo jedes Bauteil im Gestell sitzt. Verbindungen laufen als sichtbarer Kupferlackdraht.
+Die Platine für Selbsthaltung, LDO und Spannungsteiler ist ein kleines Stück Lochraster hinter dem Display.
+Die WLAN-Antenne des ESP8266 bleibt frei – kein Messing darüber oder davor.
+
 Drahtstärken, Neigungswinkel und Gesamthöhe werden in M4 festgelegt. Sicherheitsregeln siehe [wiring.md](wiring.md).
 
 ## 1:1-Bauzeichnung (geplant für M4)

@@ -1,0 +1,285 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1010" width="1400" height="1010" role="img" aria-label="Schaltplanentwurf MeteoLander: Akku, Lademodul, Selbsthalteschaltung, ESP8266, TFT und BME280">
+  <defs>
+    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M10 0H0V10" fill="none" stroke="#1b3a5c" stroke-opacity="0.07"/>
+    </pattern>
+    <g id="gnd">
+      <path d="M0 0v8M-9 8h18M-6 12h12M-3 16h6" stroke="#1f2937" stroke-width="1.6" fill="none"/>
+    </g>
+  </defs>
+
+  <style>
+    .w { stroke: #1f2937; stroke-width: 1.6; fill: none; }
+    .part { fill: #ffffff; stroke: #1f2937; stroke-width: 1.6; }
+    .t { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; fill: #1f2937; }
+    .ref { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 700; fill: #1f2937; }
+    .sub { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; fill: #57606a; }
+    .pin { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; fill: #1f2937; }
+    .net { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; font-weight: 700; fill: #0b5cad; }
+    .sig { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; fill: #9a6700; }
+    .dot { fill: #1f2937; }
+  </style>
+
+  <rect width="1400" height="1010" fill="#fbfaf6"/>
+  <rect width="1400" height="1010" fill="url(#grid)"/>
+
+  <!-- Kopf -->
+  <rect x="0" y="0" width="1400" height="64" fill="#0b1530"/>
+  <text x="30" y="40" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">MeteoLander – Schaltplan</text>
+  <text x="1370" y="30" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13" fill="#e6c25a" font-weight="600">ENTWURF · NICHT AUFGEBAUT · NICHT GEPRÜFT</text>
+  <text x="1370" y="48" text-anchor="end" font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12" fill="#8b949e">Rev. 0.1 · 2026-11-12 · Kai Linde</text>
+
+  <!-- ================= Bereich A: Stromversorgung ================= -->
+  <rect x="20" y="84" width="770" height="540" rx="8" fill="none" stroke="#8b949e" stroke-dasharray="6 4"/>
+  <text x="36" y="106" class="ref" fill="#57606a">A · Stromversorgung, Laden und Selbsthalteschaltung</text>
+
+  <!-- J1 USB -->
+  <rect x="50" y="150" width="100" height="70" class="part"/>
+  <text x="100" y="140" text-anchor="middle" class="ref">J1</text>
+  <text x="100" y="180" text-anchor="middle" class="t">USB-Buchse</text>
+  <text x="100" y="196" text-anchor="middle" class="sub">nur Laden</text>
+  <text x="146" y="167" text-anchor="end" class="pin">5V</text>
+  <text x="146" y="208" text-anchor="end" class="pin">GND</text>
+  <path d="M150 170H230M150 205H230" class="w"/>
+
+  <!-- U1 Lademodul -->
+  <rect x="230" y="140" width="170" height="135" class="part"/>
+  <text x="315" y="130" text-anchor="middle" class="ref">U1 Lademodul</text>
+  <text x="236" y="174" class="pin">IN+</text>
+  <text x="236" y="209" class="pin">IN−</text>
+  <text x="394" y="164" text-anchor="end" class="pin">BAT+</text>
+  <text x="394" y="194" text-anchor="end" class="pin">BAT−</text>
+  <text x="394" y="234" text-anchor="end" class="pin">OUT+</text>
+  <text x="394" y="264" text-anchor="end" class="pin">OUT−</text>
+  <text x="270" y="232" class="sub">z. B. TP4056</text>
+  <text x="270" y="245" class="sub">+ Schutz, Load-Sharing</text>
+  <circle cx="276" cy="259" r="4.5" fill="#d1242f"/>
+  <circle cx="292" cy="259" r="4.5" fill="#1a7f37"/>
+  <text x="302" y="263" class="sub">Ladeanzeige</text>
+
+  <!-- BT1 Akku -->
+  <path d="M400 160H446M456 160H500V190H400" class="w"/>
+  <path d="M446 146V174" stroke="#1f2937" stroke-width="2"/>
+  <path d="M456 152V168" stroke="#1f2937" stroke-width="4"/>
+  <text x="441" y="146" text-anchor="end" class="sub">+</text>
+  <text x="420" y="118" class="ref">BT1</text>
+  <text x="450" y="118" class="sub">Li-Ion/LiPo 1S · 3,0–4,2 V · geschützt</text>
+
+  <!-- OUT− nach GND -->
+  <path d="M400 260H420V275" class="w"/>
+  <use href="#gnd" x="420" y="275"/>
+
+  <!-- VBAT zu Q1 -->
+  <path d="M400 230H545" class="w"/>
+  <text x="440" y="224" class="net">VBAT</text>
+  <circle cx="510" cy="230" r="3" class="dot"/>
+
+  <!-- R1 Gate-Pull-up -->
+  <path d="M510 230V250M510 282V300H560" class="w"/>
+  <rect x="503" y="250" width="14" height="32" class="part"/>
+  <text x="497" y="264" text-anchor="end" class="ref">R1</text>
+  <text x="497" y="278" text-anchor="end" class="sub">100 kΩ</text>
+
+  <!-- Q1 P-MOSFET -->
+  <path d="M545 230V242M575 242V230M545 242H575" stroke="#1f2937" stroke-width="2.4" fill="none"/>
+  <path d="M545 250H575" stroke="#1f2937" stroke-width="2.4"/>
+  <path d="M560 250V300" class="w"/>
+  <path d="M556 236l4 -6 4 6z" fill="#1f2937"/>
+  <text x="545" y="223" class="sub">S</text>
+  <text x="569" y="223" class="sub">D</text>
+  <text x="590" y="264" class="ref">Q1</text>
+  <text x="612" y="264" class="sub">P-MOSFET</text>
+  <text x="590" y="278" class="sub">z. B. AO3401</text>
+
+  <!-- VSW → U2 LDO -->
+  <path d="M575 230H640" class="w"/>
+  <circle cx="610" cy="230" r="3" class="dot"/>
+  <text x="614" y="224" class="net">VSW</text>
+  <rect x="640" y="205" width="90" height="50" class="part"/>
+  <text x="685" y="198" text-anchor="middle" class="ref">U2 LDO 3,3 V</text>
+  <text x="685" y="221" text-anchor="middle" class="sub">≥ 500 mA</text>
+  <text x="685" y="248" text-anchor="middle" class="sub">AP2112K-3.3</text>
+  <text x="644" y="236" class="pin">IN</text>
+  <text x="726" y="236" text-anchor="end" class="pin">OUT</text>
+  <path d="M730 230H745" class="w"/>
+  <text x="748" y="234" class="net">+3V3</text>
+    <path d="M700 255V262" class="w"/>
+  <use href="#gnd" x="700" y="262"/>
+
+  <!-- R4 Akkuspannung -->
+  <path d="M610 230V200M610 168V150H620" class="w"/>
+  <rect x="603" y="168" width="14" height="32" class="part"/>
+  <text x="597" y="182" text-anchor="end" class="ref">R4</text>
+  <text x="597" y="196" text-anchor="end" class="sub">100 kΩ ¹</text>
+  <text x="624" y="154" class="net">VBAT_SENSE → A0</text>
+
+  <!-- Gate-Knoten G -->
+  <circle cx="560" cy="300" r="3" class="dot"/>
+  <text x="548" y="316" text-anchor="end" class="net">G</text>
+
+  <!-- Q2 NPN -->
+  <path d="M560 300H580V356" class="w"/>
+  <circle cx="574" cy="380" r="24" fill="#ffffff" stroke="#1f2937" stroke-width="1.4"/>
+  <path d="M562 366V394" stroke="#1f2937" stroke-width="2.4"/>
+  <path d="M562 373L580 360V356M562 387L580 400V440" class="w"/>
+  <path d="M572 397l8 3 -4 -7z" fill="#1f2937"/>
+  <use href="#gnd" x="580" y="440"/>
+  <text x="596" y="462" class="ref">Q2</text>
+  <text x="596" y="476" class="sub">NPN, z. B. BC547</text>
+
+  <!-- Basis: R2 von HOLD, R3 nach GND -->
+  <path d="M562 380H520M484 380H440" class="w"/>
+  <rect x="484" y="373" width="36" height="14" class="part"/>
+  <text x="502" y="366" text-anchor="middle" class="ref">R2</text>
+  <text x="502" y="402" text-anchor="middle" class="sub">10 kΩ</text>
+  <circle cx="535" cy="380" r="3" class="dot"/>
+  <path d="M535 380V410M535 442V455" class="w"/>
+  <rect x="528" y="410" width="14" height="32" class="part"/>
+  <text x="522" y="424" text-anchor="end" class="ref">R3</text>
+  <text x="522" y="438" text-anchor="end" class="sub">100 kΩ</text>
+  <use href="#gnd" x="535" y="455"/>
+  <path d="M440 380H410" class="w"/>
+  <text x="405" y="384" text-anchor="end" class="net">HOLD → GPIO16</text>
+
+  <!-- D1 G → Tasterknoten -->
+  <path d="M580 300H640M664 300H700" class="w"/>
+  <path d="M640 290V310L662 300Z" fill="#1f2937"/>
+  <path d="M664 289V311" stroke="#1f2937" stroke-width="2.4"/>
+  <text x="652" y="328" text-anchor="middle" class="ref">D1</text>
+  <text x="652" y="341" text-anchor="middle" class="sub">BAT85</text>
+
+  <!-- Tasterknoten BTN, S1 nach GND -->
+  <circle cx="700" cy="300" r="3" class="dot"/>
+  <path d="M700 300V350M700 386V410" class="w"/>
+  <circle cx="700" cy="350" r="3" fill="#ffffff" stroke="#1f2937" stroke-width="1.6"/>
+  <circle cx="700" cy="386" r="3" fill="#ffffff" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M708 346L716 390M716 368H726" class="w"/>
+  <use href="#gnd" x="700" y="410"/>
+  <text x="732" y="364" class="ref">S1</text>
+  <text x="732" y="378" class="sub">Taster</text>
+
+  <!-- D2 Rückmeldung an GPIO3 -->
+  <path d="M700 300H712M734 300H750" class="w"/>
+  <path d="M734 290V310L712 300Z" fill="#1f2937"/>
+  <path d="M712 289V311" stroke="#1f2937" stroke-width="2.4"/>
+  <text x="712" y="284" class="ref">D2</text>
+  <text x="734" y="284" class="sub">BAT85</text>
+  <text x="754" y="304" class="net">BTN</text>
+  <text x="712" y="328" class="sub">→ GPIO3</text>
+
+  <!-- Erklärung Selbsthaltung -->
+  <g transform="translate(40 470)">
+    <text class="ref" y="0">Selbsthaltung</text>
+    <text class="sub" y="18">1  Aus: R1 hält G auf VBAT, Q1 sperrt – kein Ruhestrom.</text>
+    <text class="sub" y="34">2  S1 gedrückt: D1 zieht G nach GND, Q1 leitet, ESP startet.</text>
+    <text class="sub" y="50">3  Firmware setzt HOLD = HIGH, Q2 hält G unten.</text>
+    <text class="sub" y="66">4  Nach der Anzeigezeit HOLD = LOW: alles aus.</text>
+    <text class="sub" y="88">Im Betrieb meldet D2 jeden weiteren Tastendruck an GPIO3.</text>
+    <text class="sub" y="104">D2 verhindert, dass der Taster den ESP ohne Versorgung speist.</text>
+  </g>
+
+  <!-- ================= Bereich B: Logik ================= -->
+  <rect x="800" y="84" width="580" height="540" rx="8" fill="none" stroke="#8b949e" stroke-dasharray="6 4"/>
+  <text x="816" y="106" class="ref" fill="#57606a">B · Controller, Display, Sensor</text>
+
+  <!-- U3 ESP8266 -->
+  <rect x="920" y="120" width="180" height="420" class="part"/>
+  <text x="1010" y="140" text-anchor="middle" class="ref">U3 ESP8266-Board</text>
+  <text x="1010" y="530" text-anchor="middle" class="sub">Variante offen (M0)</text>
+  <!-- linke Pins -->
+  <g>
+    <path d="M880 165H920M880 190H920M880 235H920M880 265H920M880 295H920" class="w"/>
+    <text x="875" y="169" text-anchor="end" class="net">+3V3</text>
+    <text x="875" y="194" text-anchor="end" class="net">GND</text>
+    <text x="875" y="239" text-anchor="end" class="net">HOLD</text>
+    <text x="875" y="269" text-anchor="end" class="net">BTN</text>
+    <text x="875" y="299" text-anchor="end" class="net">VBAT_SENSE</text>
+    <text x="926" y="169" class="pin">3V3</text>
+    <text x="926" y="194" class="pin">GND</text>
+    <text x="926" y="239" class="pin">GPIO16 (D0)</text>
+    <text x="926" y="269" class="pin">GPIO3 (RX)</text>
+    <text x="926" y="299" class="pin">A0</text>
+    <text x="926" y="339" class="pin">GPIO1 (TX)</text>
+    <text x="926" y="352" class="sub">serielle Diagnose</text>
+    <text x="926" y="379" class="pin">GPIO12 (D6)</text>
+    <text x="926" y="392" class="sub">durch SPI belegt</text>
+    <text x="926" y="419" class="pin">GPIO2 (D4)</text>
+    <text x="926" y="432" class="sub">frei, Bootpin</text>
+    <text x="926" y="469" class="sub">Board-USB nur</text>
+    <text x="926" y="482" class="sub">zum Flashen ²</text>
+  </g>
+  <!-- rechte Pins -->
+  <text x="1094" y="214" text-anchor="end" class="pin">GPIO15 (D8)</text>
+  <text x="1094" y="264" text-anchor="end" class="pin">GPIO0 (D3)</text>
+  <text x="1094" y="289" text-anchor="end" class="pin">GPIO13 (D7)</text>
+  <text x="1094" y="314" text-anchor="end" class="pin">GPIO14 (D5)</text>
+  <text x="1094" y="429" text-anchor="end" class="pin">GPIO4 (D2)</text>
+  <text x="1094" y="454" text-anchor="end" class="pin">GPIO5 (D1)</text>
+
+  <!-- Verbindungen ESP → TFT -->
+  <path d="M1100 210H1210M1100 260H1210M1100 285H1210M1100 310H1210" class="w"/>
+  <text x="1155" y="205" text-anchor="middle" class="sig">CS</text>
+  <text x="1155" y="255" text-anchor="middle" class="sig">DC</text>
+  <text x="1155" y="280" text-anchor="middle" class="sig">MOSI</text>
+  <text x="1155" y="305" text-anchor="middle" class="sig">SCK</text>
+
+  <!-- U4 TFT -->
+  <rect x="1210" y="140" width="150" height="215" class="part" fill="#fff5f5"/>
+  <rect x="1210" y="140" width="150" height="215" fill="none" stroke="#c0262d" stroke-width="2"/>
+  <text x="1285" y="132" text-anchor="middle" class="ref">U4 TFT 1,8″ (rot)</text>
+  <text x="1216" y="164" class="pin">VCC</text>
+  <text x="1216" y="189" class="pin">GND</text>
+  <text x="1216" y="214" class="pin">CS</text>
+  <text x="1216" y="239" class="pin">RESET</text>
+  <text x="1216" y="264" class="pin">A0</text>
+  <text x="1216" y="289" class="pin">SDA</text>
+  <text x="1216" y="314" class="pin">SCK</text>
+  <text x="1216" y="339" class="pin">LED</text>
+  <text x="1354" y="214" text-anchor="end" class="sub">ST7735?</text>
+  <text x="1354" y="228" text-anchor="end" class="sub">128 × 160</text>
+  <text x="1354" y="339" text-anchor="end" class="sub">SD-Pads frei</text>
+  <path d="M1180 160H1210M1180 185H1210M1180 335H1210" class="w"/>
+  <text x="1176" y="164" text-anchor="end" class="net">+3V3 ³</text>
+  <text x="1176" y="189" text-anchor="end" class="net">GND</text>
+  <text x="1176" y="339" text-anchor="end" class="net">+3V3 ⁴</text>
+  <!-- R5 RESET Pull-up -->
+  <path d="M1200 235H1210M1166 235H1150" class="w"/>
+  <rect x="1166" y="228" width="34" height="14" class="part"/>
+  <text x="1176" y="224" text-anchor="middle" class="ref" font-size="11">R5 10 kΩ</text>
+  <text x="1146" y="239" text-anchor="end" class="net">+3V3</text>
+
+  <!-- Verbindungen ESP → BME280 -->
+  <path d="M1100 425H1210M1100 450H1210" class="w"/>
+  <text x="1155" y="420" text-anchor="middle" class="sig">SDA</text>
+  <text x="1155" y="445" text-anchor="middle" class="sig">SCL</text>
+
+  <!-- U5 BME280 -->
+  <rect x="1210" y="400" width="150" height="115" class="part"/>
+  <text x="1285" y="392" text-anchor="middle" class="ref">U5 BME280</text>
+  <text x="1216" y="429" class="pin">SDA</text>
+  <text x="1216" y="454" class="pin">SCL</text>
+  <text x="1216" y="479" class="pin">VCC</text>
+  <text x="1216" y="504" class="pin">GND</text>
+  <text x="1354" y="429" text-anchor="end" class="sub">I²C 0x76/0x77</text>
+  <text x="1354" y="443" text-anchor="end" class="sub">eigener Arm</text>
+  <path d="M1180 475H1210M1180 500H1210" class="w"/>
+  <text x="1176" y="479" text-anchor="end" class="net">+3V3 ³</text>
+  <text x="1176" y="504" text-anchor="end" class="net">GND</text>
+
+  <!-- ================= Hinweise ================= -->
+  <rect x="20" y="644" width="1360" height="346" rx="8" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="40" y="674" class="ref">Hinweise</text>
+  <g class="t">
+    <text x="40" y="702">• <tspan font-weight="700">Entwurf.</tspan> Nichts davon ist aufgebaut oder gemessen. Gleichnamige Netzlabels (blau) sind miteinander verbunden.</text>
+    <text x="40" y="726">• GPIO-Nummern gelten für den ESP8266-Chip und damit für jede Boardvariante. Die D-Bezeichnungen in Klammern gelten für NodeMCU-/LoLin-artige Boards und werden in M0 geprüft.</text>
+    <text x="40" y="750">• Bootpins: GPIO0 und GPIO2 müssen beim Start HIGH, GPIO15 LOW sein. Der Taster wird deshalb an GPIO3 (RX) gelesen, nicht an einem Bootpin; GPIO1 (TX) bleibt für die serielle Diagnose frei.</text>
+    <text x="40" y="774">• SPI: Hardware-SPI (GPIO14 SCK, GPIO13 MOSI); GPIO12 ist als MISO durch die SPI-Bibliothek belegt, obwohl das TFT nichts zurücksendet. TFT-Reset über R5 und Software-Reset.</text>
+    <text x="40" y="798">• HOLD an GPIO16: Ein HIGH-Pegel beim Booten ist unkritisch. Der Taster muss gedrückt bleiben, bis die Firmware HOLD gesetzt hat (Bruchteil einer Sekunde).</text>
+    <text x="40" y="822">• Ladeanzeige: Die LEDs des Lademoduls werden sichtbar im Gestell montiert und zeigen den Ladezustand auch bei ausgeschaltetem Gerät. Auf dem Display erscheint der Akkustand.</text>
+    <text x="40" y="852">¹ R4 gilt für Boards mit eigenem Teiler 220 kΩ / 100 kΩ an A0: 4,2 V ergeben dann etwa 3,2 V am Pin. Ohne Board-Teiler (Messbereich 0–1 V) wird der Teiler neu berechnet.</text>
+    <text x="40" y="876">² U2 speist 3,3 V direkt in den 3V3-Pin des Boards. Beim Flashen über die USB-Buchse des Boards Rückspeisung in U2 und Board-Regler prüfen; ggf. Schottky-Diode oder Steckbrücke vorsehen.</text>
+    <text x="40" y="900">³ Versorgung von TFT und BME280: Je nach Modul 3,3 V direkt oder 5 V mit eigenem Regler – wird in M0 an den vorhandenen Modulen geprüft.</text>
+    <text x="40" y="924">⁴ LED-Pin: Vorwiderstand oder Transistor auf dem TFT-Modul prüfen, Strom messen. Ein eigener Schalter ist nicht nötig, weil die Selbsthaltung alles abschaltet.</text>
+    <text x="40" y="954">Sicherheit: Messinggestell nur auf GND oder isoliert, Akku rundum isoliert und fest gehalten, keine unterschiedlichen Potenziale unisoliert nebeneinander, USB-Kabel zugentlastet.</text>
+  </g>
+</svg>
