@@ -12,7 +12,7 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
 
 ![Aufbauskizze](../assets/assembly-sketch.svg)
 
-- **Käfig:** Quader aus 0,8-mm-Messingdraht (12 Kanten), Größe ergibt sich aus Display, ESP8266 und Akku.
+- **Käfig:** Quader aus 1-mm-Messingdraht (12 Kanten), Größe ergibt sich aus Display, ESP8266 und Akku.
 - **Display:** Das TFT-Modul bildet die Vorderseite und ist an seinen **vier Bohrungen** mit dem Käfig verlötet.
   Die Platine wird nicht verändert.
 - **ESP8266:** senkrecht direkt hinter dem Display. Die WLAN-Antenne bleibt frei – kein Messing darüber oder davor.
@@ -46,7 +46,7 @@ Sicherheitsregeln siehe [wiring.md](wiring.md).
 ## 1:1-Bauzeichnung
 
 [build-drawing.pdf](../assets/build-drawing.pdf) – zwei A4-Blätter, zugleich Biegeschablone: Die Drähte sind in
-echter Stärke (0,8 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
+echter Stärke (1 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
 
 | Blatt | Inhalt |
 |---|---|

@@ -52,7 +52,7 @@ Die Werte sind Beispiele. Ob das Layout am realen Display gut lesbar ist, wird i
   <img src="assets/assembly-sketch.svg" alt="Aufbauskizze: Drahtkäfig als Landefähre mit vier Beinen, rotem TFT, ESP8266, Akku, Lademodul, Taster und BME280" width="100%">
 </p>
 
-Ein Käfig aus 0,8-mm-Messingdraht trägt vorn das rote Display, dahinter senkrecht den ESP8266 und den Akku.
+Ein Käfig aus 1-mm-Messingdraht trägt vorn das rote Display, dahinter senkrecht den ESP8266 und den Akku.
 Vier Landebeine mit Messingtellern halten die Fähre, der BME280 sitzt oben auf dem Mast.
 Die Form ist inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5) von Mohit Bhoite. Messing ist GND,
 Signale laufen als sichtbarer Kupferlackdraht. Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
@@ -108,7 +108,7 @@ Die Selbsthalteschaltung links kommt in M2 dazu. Erzeugt wird die Zeichnung von 
 |---|---|---|
 | Controller | AZ-Delivery D1 mini mit ESP-12F | ✅ bestimmt |
 | Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735S, Test in M1 |
-| Gestell | Käfig und vier Landebeine aus 0,8-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
+| Gestell | Käfig und vier Landebeine aus 1-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
 | Sensor | GYBMEP-Modul mit BME280 (Temperatur, Feuchte, Luftdruck) | Chip-ID noch prüfen (BME- oder BMP280) |
 | Akku | EEMB LP103454, LiPo 3,7 V, 2000 mAh, mit Schutzplatine | ✅ bestimmt |
 | Laden & Regler | USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |

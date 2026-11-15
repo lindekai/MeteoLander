@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 – Drahtstärke 1 mm
+
+- Messingdraht Ø 1,0 mm statt 0,8 mm: 3D-Modell, Ansichten, Bauzeichnung (Drähte in echter Stärke), Teileliste,
+  Design-Doku und README angepasst. Die Längen bleiben gleich.
+
 ## 2026-11-15 – Akkuhalterung
 
 - Der Akku hing im Modell frei im Käfig. Er steht jetzt in einer Akkuwanne aus Lochraster (36 × 14 mm) auf einem

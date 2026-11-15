@@ -20,10 +20,10 @@ Breadboard;;1 Satz;Steckbrücken, starr;;;offen;kurze Verbindungen auf dem Brett
 Breadboard;;ca. 12;Dupont-Kabel, Buchse-Stecker;;;offen;TFT und BME280 neben dem Brett
 Breadboard;;2;Adapterplatine;SOT-23 bzw. SOT-23-5 auf 2,54 mm;;offen;für Q1 und U2
 Breadboard;;1;Stiftleisten;2,54 mm;;offen;für D1 mini, BME280 und Adapter
-Mechanik;;ca. 2,1 m;Messingdraht;Ø 0,8 mm;;offen;Käfig, Beine, Mast, Akku-Band, führt GND
+Mechanik;;ca. 2,1 m;Messingdraht;Ø 1,0 mm;;offen;Käfig, Beine, Mast, Akku-Band, führt GND
 Mechanik;;4;Landeteller;Messing, Ø 14 mm;;offen;Füße der Landebeine
 Mechanik;;;Kupferlackdraht;ca. Ø 0,3 mm;;offen;sichtbare Signalleitungen
 Mechanik;;1;Lochraster für die Akkuwanne;36 x 14 mm;;offen;trägt den Akku, über Kupferpads an Querdraht und Rahmen gelötet
-Mechanik;;2;Schrumpfschlauch;für 0,8-mm-Draht, ca. 36 mm;;offen;Akku-Band vorn und hinten
+Mechanik;;2;Schrumpfschlauch;für 1-mm-Draht, ca. 36 mm;;offen;Akku-Band vorn und hinten
 Mechanik;;;Kapton-Band;;;offen;Wannenoberseite und Akku zusätzlich isolieren
 Mechanik;;1;Lochrasterplatine;klein;;offen;Selbsthaltung, Regler, Spannungsteiler

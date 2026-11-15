@@ -6,7 +6,7 @@ Erzeugt aus den Maßen in tools/lander_model.py eine Bauzeichnung auf A4:
   - assets/build-drawing-1.svg     Blatt 1: Käfig, Zuschnittliste
   - assets/build-drawing-2.svg     Blatt 2: Landebeine, Aufstellplan
 
-Die Drähte sind in ihrer echten Stärke (0,8 mm) gezeichnet; man legt sie direkt auf den
+Die Drähte sind in ihrer echten Stärke (1 mm) gezeichnet; man legt sie direkt auf den
 Ausdruck. Ohne externe Bibliotheken: PDF und SVG entstehen aus denselben Zeichenbefehlen.
 
 Aufruf:  python3 tools/build_drawing.py

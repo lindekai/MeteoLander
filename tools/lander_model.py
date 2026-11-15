@@ -29,7 +29,7 @@ ESP_W, ESP_H = 25.6, 34.2            # AZ-Delivery D1 mini
 BAT_W, BAT_T, BAT_H = 34.0, 10.0, 57.0  # LiPo LP103454 inkl. Schutzplatine
 LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
-ROD = 0.8                            # Messingdraht 0,8 mm
+ROD = 1.0                            # Messingdraht 1,0 mm
 BTN_BAR_Y = 6.0                      # Querstab für den Taster, Abstand zur Vorderkante
 MAST_H = 26.0                        # Mast über dem Deckrahmen
 TRAY_W, TRAY_D, TRAY_T = 36.0, 14.0, 1.6  # Akkuwanne aus Lochraster
@@ -507,7 +507,7 @@ def assembly():
 <rect width="{W}" height="{H}" rx="18" fill="#0b1530"/>
 <ellipse cx="400" cy="470" rx="380" ry="360" fill="url(#glow)"/>
 <text x="44" y="56" font-family="{SANS}" font-size="24" font-weight="700" fill="#ffffff">Aufbauskizze</text>
-<text x="44" y="82" font-family="{SANS}" font-size="14" fill="#8b949e">Landefähre aus 0,8-mm-Messingdraht · Maße sind Annahmen, bis die Platinen ausgemessen sind</text>
+<text x="44" y="82" font-family="{SANS}" font-size="14" fill="#8b949e">Landefähre aus 1-mm-Messingdraht · Maße sind Annahmen, bis die Platinen ausgemessen sind</text>
 {floor_shadow(cam)}
 {body}
 {"".join(calls)}
