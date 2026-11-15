@@ -1,9 +1,9 @@
 # Verdrahtung
 
 > [!IMPORTANT]
-> **Entwurf, nicht aufgebaut und nicht geprüft.** Board (AZ-Delivery D1 mini) und Pinreihenfolge am TFT sind
-> anhand von Fotos bestimmt. Gültig wird die Belegung erst nach dem Smoke-Test (M1) und dem Aufbau auf dem
-> Breadboard.
+> **Entwurf, nicht aufgebaut und nicht geprüft.** Alle Teile sind bestimmt (M0), Board und Pinreihenfolge am TFT
+> anhand von Fotos. Gültig wird die Belegung erst nach dem Smoke-Test (M1, Sketch in
+> [firmware/SmokeTest](../firmware/SmokeTest/SmokeTest.ino)) und dem Aufbau auf dem Breadboard.
 
 ![Schaltplan](../assets/schematic.svg)
 
@@ -35,15 +35,17 @@ Board: AZ-Delivery D1 mini. Seine D-Bezeichnungen folgen dem NodeMCU-Schema, die
 | GPIO2 | D4 | – | frei | Bootpin, muss beim Start HIGH sein |
 | GPIO1 | TX | – | seriell | Diagnoseausgabe |
 
-TFT `RESET` liegt über R5 (10 kΩ) an +3V3, der Reset erfolgt per Software. TFT `LED` liegt an +3V3; das Modul hat
-dafür einen eigenen Vorwiderstand (R4 auf dem Modul). Die microSD-Anschlüsse bleiben unbeschaltet.
+TFT `RESET` liegt über R5 (10 kΩ) an +3V3, der Reset erfolgt per Software. TFT `LED` liegt an +3V3; der
+Vorwiderstand auf dem Modul (R4) hat nur 3,3 Ω. Der Strom wird im Smoke-Test gemessen; ist er hoch, kommt ein
+zusätzlicher Widerstand von 10–22 Ω in die `LED`-Leitung. Die microSD-Anschlüsse bleiben unbeschaltet.
+`VCC` des TFT liegt an 3,3 V, die Lötbrücke J1 auf dem Modul bleibt offen (siehe [hardware.md](hardware.md)).
 
 Stiftleiste am TFT (Pin 1 = eckiges Lötauge): `VCC GND CS RESET A0 SDA SCK LED`.
 Anschlüsse am BME280-Modul: `VIN GND SCL SDA`; das Modul hat eigenen Regler, Pegelwandler und Pull-ups.
 
 ## Ladeanzeige
 
-Die LEDs des Lademoduls („lädt“ rot, „voll“ grün o. ä.) sitzen sichtbar an der rechten Seite der Fähre. Sie zeigen den
+Die beiden LEDs des Lademoduls (Farben beim ersten Laden prüfen) sitzen sichtbar an der rechten Seite der Fähre. Sie zeigen den
 Ladezustand auch bei ausgeschaltetem Gerät. Ein Ladesymbol auf dem Display bräuchte einen weiteren freien,
 bootsicheren GPIO; den gibt es in dieser Belegung nicht. Das Display zeigt stattdessen den Akkustand.
 
@@ -56,7 +58,7 @@ Geladen wird bei ausgeschaltetem Gerät (siehe [hardware.md](hardware.md)).
 USB ──▶ Lademodul HW-168 ──▶ Akku (mit Schutz)
                          │
                          ▼
-                    P-MOSFET (Schalter) ──▶ 3,3-V-Regler ──▶ ESP8266, TFT, BME280
+                    P-MOSFET (Schalter) ──▶ TPS62827 3,3 V ──▶ ESP8266, TFT, BME280
                          ▲      ▲
        Taster nach GND ──┘      └── Transistor ◀── GPIO „Halten“ des ESP8266
 ```
@@ -68,14 +70,15 @@ USB ──▶ Lademodul HW-168 ──▶ Akku (mit Schutz)
 4. **Ausschalten:** Nach der Anzeigezeit nimmt die Firmware den Halte-GPIO zurück und schaltet sich damit selbst ab.
 
 Der Taster wird zusätzlich über D2 an GPIO3 gelesen, damit ein weiterer Tastendruck im Betrieb erkannt wird
-(z. B. zum Umschalten der Ansicht). Offen: endgültige Bauteiltypen nach Werkstattbestand und die Zeit, die der Taster
-beim Einschalten gedrückt bleiben muss.
+(z. B. zum Umschalten der Ansicht). Bauteile: Q1 AO3401, Q2 BC547, Regler U2 Adafruit TPS62827, dessen `EN` vorerst
+fest an `IN` liegt. Offen: die Zeit, die der Taster beim Einschalten gedrückt bleiben muss, und ob `EN` des
+TPS62827 später Q1 ersetzen kann.
 
 ## Akkuspannung
 
 Über R4 (100 kΩ) an `A0`. Der D1 mini hat an `A0` bereits einen Teiler (220 kΩ / 100 kΩ, Messbereich 0–3,2 V);
-mit R4 davor ergeben 4,2 V am Akku etwa 1,0 V am ADC des Chips. Die Widerstände auf dem Board werden noch
-nachgemessen. R4 sitzt hinter dem MOSFET und verbraucht im ausgeschalteten Zustand nichts.
+mit R4 davor ergeben 4,2 V am Akku etwa 1,0 V am ADC des Chips. Die Widerstände auf dem Board sind abgelesen
+(`224`, `104`). R4 sitzt hinter dem MOSFET und verbraucht im ausgeschalteten Zustand nichts.
 
 ## Regeln für die Pinwahl
 

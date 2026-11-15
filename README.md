@@ -20,9 +20,10 @@
 ---
 
 > [!NOTE]
-> **Konzeptphase.** Dieses Repository enthält bisher Planung, Gestaltung und Dokumentation. Die Teile sind anhand von
-> Fotos bestimmt, aber noch nicht mit dem Messschieber ausgemessen; es gibt noch keine Firmware. Alle Bilder sind Entwürfe und werden durch Fotos und Screenshots des echten
-> Geräts ersetzt, sobald es sie gibt.
+> **Konzeptphase.** Dieses Repository enthält Planung, Gestaltung, Dokumentation und einen ersten Testsketch.
+> Die vorhandenen Teile sind bestimmt und ausgemessen (M0); Regler und Transistoren für die Selbsthaltung werden noch
+> beschafft. Die eigentliche Firmware gibt es noch nicht. Alle Bilder sind Entwürfe und werden durch Fotos und
+> Screenshots des echten Geräts ersetzt, sobald es sie gibt.
 
 ## ✨ Idee
 
@@ -62,8 +63,8 @@ Signale laufen als sichtbarer Kupferlackdraht. Die Grafiken werden aus einem kle
   <a href="assets/views.svg"><img src="assets/views.svg" alt="Ansichten der Landefähre von vorn, rechts, hinten, links und oben" width="100%"></a>
 </p>
 
-Dieselbe Fähre von allen Seiten: Von hinten sieht man den Akku an der Rückwand, von rechts Lademodul und
-Lochrasterplatine, von links den D1 mini mit freier Antenne.
+Dieselbe Fähre von allen Seiten: Von hinten sieht man den Akku in seiner Wanne mit dem Drahtband, von rechts
+Lademodul und Lochrasterplatine, von links den D1 mini mit freier Antenne.
 
 ## 📐 Bauzeichnung 1:1 zum Ausdrucken
 
@@ -77,8 +78,8 @@ echten Stärke gezeichnet: ausdrucken, Draht auflegen, mit Malerkrepp fixieren, 
 
 > [!IMPORTANT]
 > Im Druckdialog **„Tatsächliche Größe“ bzw. 100 %** wählen, nicht „An Seite anpassen“. Danach die Kontrollstrecken
-> (100 mm waagerecht, 50 mm senkrecht) nachmessen. TFT, D1 mini und Akku sind nach Fotos bemaßt; Käfig- und Beinmaße
-> sind Entwurf.
+> (100 mm waagerecht, 50 mm senkrecht) nachmessen. Die Platinenmaße sind mit dem Messschieber gemessen, der Akku ist
+> nach Typangabe bemaßt; Käfig- und Beinmaße sind Entwurf und werden nach einem Probeaufbau festgelegt.
 
 Erzeugt mit [tools/build_drawing.py](tools/build_drawing.py) aus denselben Maßen wie das 3D-Modell.
 
@@ -107,12 +108,12 @@ Die Selbsthalteschaltung links kommt in M2 dazu. Erzeugt wird die Zeichnung von 
 | Teil | Beschreibung | Status |
 |---|---|---|
 | Controller | AZ-Delivery D1 mini mit ESP-12F | ✅ bestimmt |
-| Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735S, Test in M1 |
-| Gestell | Käfig und vier Landebeine aus 1-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
+| Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, 34 × 58 mm, mit microSD-Slot | Controller vermutlich ST7735S, Test in M1 |
+| Gestell | Käfig und vier Landebeine aus 1-mm-Messingdraht, Landeteller Ø 14 mm | Bauzeichnung 1:1, Probeaufbau in M4 |
 | Sensor | GYBMEP-Modul mit BME280 (Temperatur, Feuchte, Luftdruck) | Chip-ID noch prüfen (BME- oder BMP280) |
 | Akku | EEMB LP103454, LiPo 3,7 V, 2000 mAh, mit Schutzplatine | ✅ bestimmt |
 | Laden & Regler | Lademodul HW-168 (TP4056, Mini-USB), Schaltregler Adafruit TPS62827 (3,3 V, 2 A) | Lademodul vorhanden, Regler zu beschaffen |
-| Einschalten | Taster mit Selbsthalteschaltung (P-MOSFET) | Bauteile noch festzulegen |
+| Einschalten | Taster 6 × 6 mm mit Selbsthalteschaltung (P-MOSFET AO3401, NPN BC547) | Taster vorhanden, Transistoren zu beschaffen |
 
 Details, Fotos und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdrahtung: [docs/wiring.md](docs/wiring.md) ·
 vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CSV](docs/parts-list.csv))
@@ -121,8 +122,8 @@ vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CS
 
 | | Meilenstein | Inhalt |
 |---|---|---|
-| ⏳ | **M0 – Hardware verifizieren** | Boardvariante, Displaycontroller, Pinout, Maße und Befestigungspunkte |
-| ⬜ | **M1 – TFT-Smoke-Test** | Schriftzug, Testmuster und Farben auf dem originalen Display |
+| ✅ | **M0 – Hardware verifizieren** | Boardvariante, Pinout, Maße und Befestigungspunkte – Restpunkte brauchen den Probelauf |
+| ⏳ | **M1 – Smoke-Test** | Testmuster, Farben und Umlaute auf dem Display, Chip-ID des BME280, WLAN – Sketch liegt bereit |
 | ⬜ | **M2 – Daten & Strom** | WLAN, Zeitabgleich, Open-Meteo, BME280, Selbsthalteschaltung, Akkustand |
 | ⬜ | **M3 – Displaydesign** | Ansichten „Aktuell“ und „Prognose“, beurteilt am echten Display |
 | ⬜ | **M4 – Circuit Sculpture** | 1:1-Bauzeichnung mit gemessenen Maßen, Prototyp, sichere Verdrahtung |
@@ -138,6 +139,7 @@ vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CS
 | [docs/design.md](docs/design.md) | Gestaltung von Gestell und Display, 1:1-Bauzeichnung |
 | [docs/software.md](docs/software.md) | Architektur, Datenquellen, Bibliotheken |
 | [docs/test-plan.md](docs/test-plan.md) | Testfälle je Meilenstein |
+| [firmware/SmokeTest](firmware/SmokeTest/SmokeTest.ino) | Testsketch für den ersten Probelauf (M1) |
 | [docs/changelog.md](docs/changelog.md) | Änderungen und Entscheidungen |
 
 ## 🙏 Inspiration

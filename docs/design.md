@@ -34,7 +34,7 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
 ![Ansichten von allen Seiten](../assets/views.svg)
 
 Die Grafiken werden aus `tools/lander_model.py` erzeugt. Alle Maße stehen dort im Abschnitt `MASSE`; die Platinenmaße
-sind mit dem Messschieber bestätigt. Drahtstärken, Beinwinkel und Gesamthöhe werden in M4 festgelegt.
+sind mit dem Messschieber bestätigt. Beinwinkel und Gesamthöhe werden in M4 festgelegt; der Draht ist 1 mm stark.
 Sicherheitsregeln siehe [wiring.md](wiring.md).
 
 ## Bautechnik
@@ -61,12 +61,12 @@ echter Stärke (1 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
 - **Drucken:** „Tatsächliche Größe“ bzw. 100 % wählen, nicht „An Seite anpassen“. Die Kontrollstrecken
   (100 mm waagerecht, 50 mm senkrecht) nachmessen. Das PDF verlangt zusätzlich, dass der Viewer nicht skaliert.
 - **Quelle:** `tools/build_drawing.py` liest alle Maße aus `tools/lander_model.py` (Abschnitt `MASSE`, Beingeometrie in
-  `leg_points`). Nach dem Ausmessen dort korrigieren und beide Skripte neu laufen lassen – Modell, Ansichten und
+  `leg_points`). Änderungen nur dort eintragen und beide Skripte neu laufen lassen – Modell, Ansichten und
   Bauzeichnung bleiben so gleich.
 - **Holme:** Jedes Bein besteht aus zwei Holmen, die oben an der Käfigkante und unten am Fußpunkt zusammenlaufen.
   Weil der Knick nach außen zeigt, ist jeder Holm für sich eben – deshalb gibt es eine Biegeschablone in wahrer Größe.
-- **Stand:** TFT, D1 mini und Akku nach Fotos bemaßt; Käfig, Beine und Mast sind Entwurf und werden in M4 nach einem
-  Probeaufbau festgelegt.
+- **Stand:** TFT (34 × 58 mm, Bohrungen 28 × 52 mm), D1 mini und BME280 mit dem Messschieber gemessen, Akku nach
+  Typangabe; Käfig, Beine und Mast sind Entwurf und werden in M4 nach einem Probeaufbau festgelegt.
 
 ## Display
 
@@ -78,6 +78,6 @@ echter Stärke (1 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
 - Kopfzeile mit Ort bzw. Ansicht und Uhrzeit; Fußzeile mit Datenstand und Statuspunkt
   (grün = aktuell, gelb = veraltet, rot = Fehler)
 - Deutsche Beschriftung, metrische Einheiten
-- Offener Punkt: Darstellung von Umlauten im GFX-Standardfont (CP437-Modus) im Smoke-Test prüfen
+- Offener Punkt: Darstellung von Umlauten im GFX-Standardfont (CP437-Modus) – prüft der Smoke-Test-Sketch
 - Neu: Innenwerte vom BME280 und Akkustand kommen hinzu. Der Layoutentwurf wird in M3 entsprechend erweitert;
   Innenwerte erscheinen sofort nach dem Einschalten, die Wetterdaten folgen nach wenigen Sekunden.

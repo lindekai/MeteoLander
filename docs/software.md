@@ -1,6 +1,31 @@
 # Software
 
-Stand: Planung. Es gibt noch keine Firmware.
+Stand: Planung. Es gibt einen Smoke-Test-Sketch für den ersten Probelauf (M1); die eigentliche Firmware folgt.
+
+## Smoke-Test (M1)
+
+[`firmware/SmokeTest/SmokeTest.ino`](../firmware/SmokeTest/SmokeTest.ino) prüft die Hardware auf dem Steckbrett,
+bevor die Selbsthaltung gesteckt ist. Der D1 mini hängt dafür nur an seiner USB-Buchse.
+
+| Schritt | Prüft | Ergebnis notieren in |
+|---|---|---|
+| Rahmen | Initialisierung, Hochformat, Randversatz der Tab-Variante | T1.2 |
+| Farbbalken | Rot, Grün, Blau, Weiß in der richtigen Reihenfolge | T1.3 |
+| Schrift | Größen 1/2/4, Umlaute und Gradzeichen im CP437-Modus | T1.4 |
+| I²C | Adresse und Chip-ID des Sensors (0x60 = BME280, 0x58 = BMP280), ohne Sensorbibliothek | T1.5 |
+| WLAN | Netzwerksuche ohne Zugangsdaten, stärkstes Signal | T1.6 |
+
+Zum Schluss stehen die Ergebnisse auf dem Display, ausführlich im seriellen Monitor (115200 Baud).
+
+- **Vorbereitung:** In der Arduino IDE den ESP8266-Core installieren (Boardverwalter: „esp8266 by ESP8266
+  Community“), Board „LOLIN(WEMOS) D1 R2 & mini“ wählen. Bibliotheken: Adafruit GFX Library, Adafruit ST7735 and
+  ST7789 Library.
+- **Tab-Variante:** voreingestellt `INITR_GREENTAB`. Fehlt der weiße Rand an einer Seite oder sind Farben
+  vertauscht, `TFT_TAB` auf `INITR_BLACKTAB` oder `INITR_REDTAB` ändern.
+- **Ausrichtung:** Steht „OBEN“ unten, `setRotation(2)` statt `0`.
+- **Nebenbei messen:** Strom der Hintergrundbeleuchtung (Multimeter in der `LED`-Leitung) für T1.7.
+- Der Sketch ist noch nicht kompiliert; Versionen von Core und Bibliotheken werden beim ersten Lauf in T1.1
+  festgehalten.
 
 ## Rahmen
 

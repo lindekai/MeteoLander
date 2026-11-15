@@ -91,7 +91,7 @@
   <text x="612" y="264" class="sub">P-MOSFET</text>
   <text x="590" y="278" class="sub">z. B. AO3401</text>
 
-  <!-- VSW → U2 LDO -->
+  <!-- VSW → U2 Schaltregler -->
   <path d="M575 230H640" class="w"/>
   <circle cx="610" cy="230" r="3" class="dot"/>
   <text x="614" y="224" class="net">VSW</text>

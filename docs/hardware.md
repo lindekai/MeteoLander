@@ -1,8 +1,9 @@
 # Hardware
 
-Stand: M0 läuft. Die Angaben stammen aus Fotos der vorhandenen Teile mit Lineal (`assets/photos/`).
-Maße mit „ca.“ sind am Foto abgelesen und werden noch mit dem Messschieber bestätigt. Es wird nur die bereits
-vorhandene Hardware verwendet; nichts wird ersetzt oder umgebaut.
+Stand: M0 abgeschlossen. Die Angaben stammen aus Fotos der vorhandenen Teile mit Lineal (`assets/photos/`), die
+Platinenmaße aus Messungen mit dem Messschieber. Maße mit „ca.“ sind am Foto abgelesen. Die vorhandenen Teile werden
+nicht umgebaut; ergänzt werden nur Schaltregler und Transistoren. Offene Punkte brauchen ein Messgerät oder den
+Probelauf (siehe unten).
 
 ## Bauteile
 
@@ -142,14 +143,14 @@ zum Querstab bleiben gut 2 mm Luft.
 | Step-down-Modul LM2596 (HW-411), ca. 43 × 21 mm | braucht 1,5–2 V mehr am Eingang, als es abgibt; aus dem LiPo (3,0–4,2 V) kommen keine stabilen 3,3 V. Außerdem zu groß für den Käfig und hoher Eigenverbrauch |
 | zweites Lademodul TP4056 mit Schutz (`OUT+ B+ B− OUT−`) | Reserve; das kleinere HW-168 genügt, weil der Akku eine eigene Schutzplatine hat |
 
-### Noch nicht gesichtet
+### Zu beschaffen
 
 | Teil | Anforderung | Status |
 |---|---|---|
 | Spannungsregler | Adafruit TPS62827 Breakout: Schaltregler 3,3 V, 2 A, regelt ab 3,4 V und reicht darunter die Akkuspannung durch; Abschaltpin `EN`. Besser als ein LDO, weil er bei vollem Akku kaum Wärme erzeugt. LDOs mit 200–250 mA (HT7333, MCP1700, XC6206) reichen für die WLAN-Spitzen nicht | **beschaffen** |
 | Selbsthalteschaltung | P-MOSFET AO3401 und NPN BC547 fehlen; Dioden, Widerstände und Kondensatoren sind im Bestand | Transistoren **beschaffen** |
 
-**Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
+**Regler des D1 mini:** Statt eines eigenen Reglers könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
 WLAN-Spitzen auch mit fast leerem Akku noch 3,3 V hält. Der Typ von U3 lässt sich am Aufdruck `MK8H` nicht bestimmen. Deshalb bekommt die Fähre ihren eigenen Regler U2; Leistung
 und Spannungsabfall sind dann bekannt. Wer U2 sparen möchte, kann U3 im Aufbau testen: Akku über die Selbsthaltung an
@@ -158,7 +159,7 @@ und Spannungsabfall sind dann bekannt. Wer U2 sparen möchte, kann U3 im Aufbau 
 Warum Selbsthalteschaltung statt Deep Sleep: Ein Entwicklungsboard zieht auch im Deep Sleep über USB-Seriell-Chip,
 Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; im Ruhezustand fließt praktisch kein Strom.
 
-## Offene Prüfungen (M0)
+## Prüfungen (M0)
 
 - [x] Platinen und Akku mit Lineal fotografieren und in `assets/photos/` ablegen
 - [x] ESP8266-Variante bestimmen: AZ-Delivery D1 mini mit ESP-12F
@@ -172,8 +173,8 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] A0-Teiler auf dem D1 mini: 220 kΩ / 100 kΩ
 - [x] TFT: U1 = XC6206 (`662K`), J1 offen und bleibt offen, R4 = 3,3 Ω
 - [ ] TFT: Strom der Hintergrundbeleuchtung an 3,3 V messen
-- [ ] BME280: I²C-Adresse und Chip-ID per Sketch auslesen (BME280 oder BMP280?)
-- [ ] Displaycontroller und Tab-Variante im Smoke-Test bestimmen (M1)
+- [ ] BME280: I²C-Adresse und Chip-ID auslesen – Smoke-Test-Sketch
+- [ ] Displaycontroller und Tab-Variante bestimmen – Smoke-Test-Sketch (M1)
 - [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang
 - [x] Lademodul: Ladestrom 1 A (PROG-Widerstand 1,2 kΩ)
 - [ ] Lademodul: LED-Farben beim Laden prüfen

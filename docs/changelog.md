@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-11-15 – Gesamtprüfung, Smoke-Test-Sketch
+
+- Smoke-Test-Sketch `firmware/SmokeTest/SmokeTest.ino`: Display (Rahmen, Farben, Schrift, Umlaute), I²C-Scan mit
+  Chip-ID des BME280, WLAN-Netzwerksuche ohne Zugangsdaten; noch nicht kompiliert
+- Alle Dokumente auf den Stand nach M0 gebracht: README (Hinweis, Hardware, Fahrplan), Verdrahtung (TFT-Beleuchtung,
+  J1, Regler, Bauteile der Selbsthaltung, A0-Teiler), Hardware (Stand, „Zu beschaffen“), Gestaltung (gemessene Maße),
+  Software (Smoke-Test) und Testplan (T0.1 bestanden, neue Tests T1.5–T1.7 und T2.10; T5.3 an das Lademodul ohne
+  Lastausgang angepasst)
+
 ## 2026-11-15 – Außenmaße gemessen
 
 - Messschieber: TFT 34 × 58 mm, D1 mini 34 × 26 mm, BME280 11 × 14 mm; 3D-Modell, Ansichten und Bauzeichnung

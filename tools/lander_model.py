@@ -602,7 +602,7 @@ def views():
         ("Antenne", "Die WLAN-Antenne des D1 mini zeigt nach oben; kein Messing direkt davor oder darüber."),
         ("Akku", "Die Pouchzelle steht in einer Lochraster-Wanne; das Band hält sie mit Schrumpfschlauch, ohne zu klemmen."),
         ("Masse", "Das Messinggestell ist GND. Signale laufen als sichtbarer Kupferlackdraht."),
-        ("Maße", "TFT, D1 mini und Akku nach Fotos mit Lineal; Käfig und Beine bleiben bis M4 Annahmen."),
+        ("Maße", "Platinen mit dem Messschieber gemessen, Akku nach Typ; Käfig und Beine bleiben bis M4 Entwurf."),
     ]
     nt = [f'<text x="{pw * 2 + 32}" y="674" font-family="{SANS}" font-size="18" font-weight="700" fill="#ffffff">Worauf es beim Aufbau ankommt</text>']
     for j, (k, v) in enumerate(notes):
