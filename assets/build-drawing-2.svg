@@ -169,7 +169,7 @@
 <path d="M196.000 232.000 L193.400 232.000" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="195.000" y="230.000" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">50 mm</text>
 <circle cx="16.200" cy="33.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="16.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">6</text>
+<text x="16.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">7</text>
 <text x="20.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Aufstellplan</text>
 <text x="20.200" y="38.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Draufsicht · Ausdruck unter die Fähre legen</text>
 <path d="M84.000 117.577 L126.000 117.577 L126.000 69.577 L84.000 69.577 Z" fill="none" stroke="#737a85" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.2 0.8"/>
@@ -234,7 +234,7 @@
 <text x="154.755" y="143.655" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="start" fill="#7a5c1a">Teller Ø 14 –</text>
 <text x="154.755" y="146.655" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="start" fill="#7a5c1a">Kreise als Schneidvorlage</text>
 <circle cx="16.200" cy="161.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="16.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">7</text>
+<text x="16.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">8</text>
 <text x="20.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Bein von der Seite</text>
 <text x="20.200" y="166.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">in Beinrichtung, Käfig links</text>
 <path d="M26.000 234.000 L74.000 234.000" fill="none" stroke="#737a85" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -280,7 +280,7 @@
 <text x="55.100" y="193.500" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#737a85">Knie</text>
 <text x="59.600" y="213.300" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#737a85">Strebe</text>
 <circle cx="82.200" cy="161.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="82.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">8</text>
+<text x="82.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">9</text>
 <text x="86.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Holm – Biegeschablone</text>
 <text x="86.200" y="166.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">wahre Größe · 8 Stück, je Bein 2</text>
 <path d="M102.000 186.000 L132.000 230.000" fill="none" stroke="#bfc4cc" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 0.8"/>
@@ -305,7 +305,7 @@
 <text x="100.500" y="184.500" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="end" fill="#737a85">oben (Käfig)</text>
 <text x="134.000" y="231.000" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="start" fill="#737a85">Fuß</text>
 <circle cx="148.200" cy="161.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="148.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">9</text>
+<text x="148.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">10</text>
 <text x="152.200" y="162.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Bein von außen</text>
 <text x="152.200" y="166.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Blick auf die Käfigecke</text>
 <path d="M158.000 234.000 L182.000 234.000" fill="none" stroke="#737a85" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -332,7 +332,7 @@
 <text x="178.000" y="213.300" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="start" fill="#737a85">Querstab Mitte 2,6</text>
 <text x="178.000" y="216.200" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="start" fill="#737a85">Strebe endet hier mittig</text>
 <circle cx="16.200" cy="245.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="16.200" y="246.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">10</text>
+<text x="16.200" y="246.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">11</text>
 <text x="20.200" y="246.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Längenlehren Bein</text>
 <path d="M16.000 252.000 L43.164 252.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16.000 252.000 L43.164 252.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
@@ -355,11 +355,11 @@
 <path d="M19.500 267.800 L19.500 272.200" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="22.500" y="270.900" font-family="Helvetica, Arial, sans-serif" font-size="2.6" font-weight="400" text-anchor="start" fill="#1f2938">Stummel · 4 × 3,5 mm</text>
 <text x="100.000" y="244.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="700" text-anchor="start" fill="#1f2938">Ablauf je Bein:</text>
-<text x="100.000" y="247.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1  Zwei Holme nach 8 biegen, auf 7 legen.</text>
+<text x="100.000" y="247.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1  Zwei Holme nach 9 biegen, auf 8 legen.</text>
 <text x="100.000" y="251.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">2  Holme oben und unten verlöten,</text>
-<text x="100.000" y="255.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">    Querstäbe Knie und Mitte einsetzen (9).</text>
+<text x="100.000" y="255.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">    Querstäbe Knie und Mitte einsetzen (10).</text>
 <text x="100.000" y="258.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3  Bein an der Käfigkante anlöten,</text>
 <text x="100.000" y="262.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">    Strebe von der unteren Ecke ergänzen.</text>
-<text x="100.000" y="266.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4  Alle vier Beine, dann Fähre auf 6 stellen</text>
+<text x="100.000" y="266.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4  Alle vier Beine, dann Fähre auf 7 stellen</text>
 <text x="100.000" y="269.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">    und erst zuletzt Stummel und Teller löten.</text>
 </svg>

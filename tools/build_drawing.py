@@ -252,18 +252,22 @@ BAR_M = math.dist(LEG["m1"], LEG["m2"])
 FOOT_DX = 2 * LEG["foot"][0]                      # Abstand der Fußpunkte quer
 FOOT_DY = M.leg_points(CW / 2, CD)["foot"][1] - LEG["foot"][1]
 
+BAND_D = CD - M.TRAY_ROD_Y                         # Tiefe der Band-Schlaufe
+BAND_LEN = 2 * (CW + BAND_D)
+
 CUT_LIST = [
     ("1", "Bodenrahmen", 1, 2 * (CW + CD), "ein Stück, 3 × 90° gebogen, Stoß an einer Ecke"),
     ("2", "Deckrahmen", 1, 2 * (CW + CD), "wie Bodenrahmen"),
-    ("2, 4", "Querstäbe Deckrahmen", 2, CW, "Taster vorn, Mast in der Mitte"),
+    ("1, 2, 4", "Querstäbe", 3, CW, "Deckrahmen: Taster, Mast · Bodenrahmen: Akkuwanne"),
+    ("5", "Akku-Band", 1, BAND_LEN, f"Schlaufe {fmt(CW)} × {fmt(BAND_D)}, Schrumpfschlauch vorn und hinten"),
     ("3, 4", "Senkrechte", 4, CH, ""),
-    ("3, 4", "Display-Halter", 4, HOLDER, "vom TFT-Loch zur Senkrechten"),
+    ("3, 4", "Display-Halter", 4, HOLDER, "vom TFT-Loch zur Senkrechten, Öse am Ende"),
     ("4", "Mast", 1, M.MAST_H, "BME280 oben"),
-    ("8", "Holme", 8, HOLM_A + HOLM_B, f"am Knie um {fmt(180 - KNEE_INNER)}° gebogen"),
-    ("7, 10", "Streben", 4, STRUT, "untere Käfigecke bis Mittel-Querstab"),
-    ("9, 10", "Querstab Knie", 4, BAR_K, ""),
-    ("9, 10", "Querstab Mitte", 4, BAR_M, ""),
-    ("7, 10", "Stummel zum Teller", 4, STUB, ""),
+    ("9", "Holme", 8, HOLM_A + HOLM_B, f"am Knie um {fmt(180 - KNEE_INNER)}° gebogen"),
+    ("8, 11", "Streben", 4, STRUT, "untere Käfigecke bis Mittel-Querstab"),
+    ("10, 11", "Querstab Knie", 4, BAR_K, ""),
+    ("10, 11", "Querstab Mitte", 4, BAR_M, ""),
+    ("8, 11", "Stummel zum Teller", 4, STUB, ""),
 ]
 
 
@@ -309,17 +313,26 @@ def sheet1():
     frame(pg, 1, "Käfig")
 
     # ① Bodenrahmen, Draufsicht (vorn unten)
-    ox, oy = 16, 42
+    ox, oy = 21, 42
     pg.heading(ox - 2, 34, 1, "Bodenrahmen", "Draufsicht, vorn ist unten")
     pts = [(ox, oy), (ox + CW, oy), (ox + CW, oy + CD), (ox, oy + CD)]
     pg.rod(pts, closed=True)
     for x, y in pts:
         pg.joint(x, y)
+    yt = oy + CD - M.TRAY_ROD_Y
+    pg.rect(ox + CW / 2 - M.TRAY_W / 2, oy, M.TRAY_W, M.TRAY_D, w=0.25, color=(0.25, 0.56, 0.31), dash=(1, 0.7))
+    pg.rod([(ox, yt), (ox + CW, yt)])
+    pg.joint(ox, yt)
+    pg.joint(ox + CW, yt)
+    pg.text(ox + CW / 2, oy + M.TRAY_D / 2 + 0.2, "Akkuwanne", 2.3, True, "middle", (0.25, 0.56, 0.31))
+    pg.text(ox + CW / 2, oy + M.TRAY_D / 2 + 3.2, f"Lochraster {fmt(M.TRAY_W)} × {fmt(M.TRAY_D)}", 2.1, False, "middle",
+            (0.25, 0.56, 0.31))
     pg.text(ox + CW / 2, oy + CD + 4, "vorn", 2.4, anchor="middle", color=GREY)
-    pg.text(ox + CW / 2, oy + CD / 2 - 1, "an jeder Ecke:", 2.2, anchor="middle", color=GREY)
-    pg.text(ox + CW / 2, oy + CD / 2 + 2.2, "Senkrechte + Strebe", 2.2, anchor="middle", color=GREY)
+    pg.text(ox + CW / 2, oy + CD / 2 + 6, "an jeder Ecke:", 2.2, anchor="middle", color=GREY)
+    pg.text(ox + CW / 2, oy + CD / 2 + 9.2, "Senkrechte + Strebe", 2.2, anchor="middle", color=GREY)
     pg.dim((ox, oy + CD), (ox + CW, oy + CD), -9)
     pg.dim((ox + CW, oy + CD), (ox + CW, oy), -6)
+    pg.dim((ox, oy + CD), (ox, yt), 4)
 
     # ② Deckrahmen mit Querstäben
     ox = 78
@@ -364,19 +377,35 @@ def sheet1():
     pg.dim((hl, bot - HOLE_Z[1]), (hl + M.TFT_HOLE_DX, bot - HOLE_Z[1]), 4)
     pg.dim((ox, bot), (ox, bot - HOLE_Z[0]), 4)
     pg.dim((ox, bot - HOLE_Z[0]), (ox, bot - HOLE_Z[1]), 4)
-    pg.text(ox + CW / 2, bot + 13.5, "Bohrungsabstand am TFT vor dem Bau messen", 2.1, anchor="middle", color=RED)
+    pg.text(ox + CW / 2, bot + 13.5, "Bohrungen gemessen: Ø 3 mm, Mitte zu Mitte 28 × 52", 2.1, anchor="middle", color=RED)
+    pg.text(ox + CW / 2, bot + 16.6, "Löcher Ø 3 mm: Halter mit Öse oder auf den Ring löten,", 2.1, anchor="middle", color=GREY)
+    pg.text(ox + CW / 2, bot + 19.4, "Ring vorher auf Verbindung zu GND prüfen", 2.1, anchor="middle", color=GREY)
 
-    # ④–⑤ Längenlehren
+    # ⑤ Akku-Band, Draufsicht
+    bx, by = 140, 150
+    pg.heading(134, 138, 5, "Akku-Band", f"Draufsicht · {fmt(M.BAND_DZ)} mm über dem Bodenrahmen")
+    pg.rod([(bx, by), (bx + CW, by), (bx + CW, by + BAND_D), (bx, by + BAND_D)], closed=True)
+    pg.rect(bx + CW / 2 - M.BAT_W / 2, by + (BAND_D - M.BAT_T) / 2, M.BAT_W, M.BAT_T, w=0.2, color=GREY, dash=(1, 0.7))
+    pg.text(bx + CW / 2, by + BAND_D / 2 + 0.9, "Akku", 2.3, anchor="middle", color=GREY)
+    for yy in (by, by + BAND_D):
+        pg.line(bx + CW / 2 - M.BAT_W / 2 - 1, yy, bx + CW / 2 + M.BAT_W / 2 + 1, yy, w=1.5, color=(0.19, 0.21, 0.24))
+    pg.joint(bx, by)
+    pg.joint(bx + CW, by)
+    pg.text(bx + CW / 2, by - 1.6, "hinten · an den hinteren Senkrechten löten", 2.1, anchor="middle", color=GREY)
+    pg.text(bx + CW / 2, by + BAND_D + 3.4, "vorn · schwarz = Schrumpfschlauch", 2.1, anchor="middle", color=GREY)
+    pg.dim((bx + CW, by + BAND_D), (bx + CW, by), -6)
+
+    # ④ Längenlehren
     y = 138
     pg.heading(14, y, 4, "Längenlehren", "Draht auf die Linie legen, an den Strichen abkneifen")
     gauge(pg, 16, y + 11, CH, "Senkrechte", 4)
-    gauge(pg, 16, y + 19, CW, "Querstab Deckrahmen", 2)
+    gauge(pg, 16, y + 19, CW, "Querstäbe", 3)
     gauge(pg, 16, y + 27, M.MAST_H, "Mast", 1)
     gauge(pg, 16, y + 35, HOLDER, "Display-Halter", 4)
 
     # Zuschnittliste
     y = 190
-    pg.heading(14, y, 5, "Zuschnittliste", "Nettolängen ohne Zugabe; je Lötstelle 1–2 mm zugeben")
+    pg.heading(14, y, 6, "Zuschnittliste", "Nettolängen ohne Zugabe; je Lötstelle 1–2 mm zugeben")
     cols = (16, 26, 74, 88, 108)
     yy = y + 10
     for x, h in zip(cols, ("Abb.", "Teil", "Anz.", "je mm", "Bemerkung")):
@@ -392,7 +421,8 @@ def sheet1():
     pg.line(14, yy, 186, yy, w=0.2)
     pg.text(26, yy + 4, f"Summe Messingdraht Ø {fmt(M.ROD)} mm: ca. {fmt(total / 10)} cm netto – mit Zugabe "
                         f"und Verschnitt etwa {fmt(math.ceil(total * 1.3 / 100) / 10)} m bereitlegen", 2.4, True)
-    pg.text(26, yy + 8.4, "Dazu: 4 Landeteller Ø 14 mm aus Messingblech (Vorlage auf Blatt 2)", 2.4)
+    pg.text(26, yy + 8.4, f"Dazu: Lochraster {fmt(M.TRAY_W)} × {fmt(M.TRAY_D)} mm als Akkuwanne, Schrumpfschlauch, "
+                          "4 Landeteller Ø 14 mm (Vorlage auf Blatt 2)", 2.4)
     return pg
 
 
@@ -407,7 +437,7 @@ def sheet2():
     ymax = max(L["foot"][1] for L in legs) + M.PAD_R
     cx0, oy = 105, 40
     P = lambda p: (cx0 + p[0], oy + (ymax - p[1]))
-    pg.heading(14, 34, 6, "Aufstellplan", "Draufsicht · Ausdruck unter die Fähre legen")
+    pg.heading(14, 34, 7, "Aufstellplan", "Draufsicht · Ausdruck unter die Fähre legen")
     pg.poly([P((x, y, 0)) for x, y in corners], w=0.25, color=GREY, dash=(1.2, 0.8), closed=True)
     pg.text(*P((0, CD / 2, 0)), "Käfig", 2.6, anchor="middle", color=GREY)
     for L in legs:
@@ -432,7 +462,7 @@ def sheet2():
     # ⑦ Seitenansicht eines Beins
     ox = 32
     R = lambda p: (ox + radial(p)[0], base - radial(p)[1])
-    pg.heading(14, 162, 7, "Bein von der Seite", "in Beinrichtung, Käfig links")
+    pg.heading(14, 162, 8, "Bein von der Seite", "in Beinrichtung, Käfig links")
     pg.line(ox - 6, base, ox + 42, base, w=0.25, color=GREY)
     pg.line(ox, base - M.CAGE_Z0, ox, base - M.CAGE_Z0 - 26, w=M.ROD, color=LIGHT)
     pg.line(ox, base - M.CAGE_Z0, ox - 5, base - M.CAGE_Z0, w=M.ROD, color=LIGHT)
@@ -462,7 +492,7 @@ def sheet2():
     hi = (hx, hy)
     knee = (hx + u[0] * xa + n[0] * ha, hy + u[1] * xa + n[1] * ha)
     foot = (hx + u[0] * HOLM_C, hy + u[1] * HOLM_C)
-    pg.heading(80, 162, 8, "Holm – Biegeschablone", "wahre Größe · 8 Stück, je Bein 2")
+    pg.heading(80, 162, 9, "Holm – Biegeschablone", "wahre Größe · 8 Stück, je Bein 2")
     pg.line(hi[0], hi[1], foot[0], foot[1], w=0.15, color=LIGHT, dash=(1, 0.8))
     pg.rod([hi, knee, foot])
     pg.joint(*hi)
@@ -477,7 +507,7 @@ def sheet2():
     # ⑨ Bein von außen
     ox = 170
     S = lambda p: (ox + lateral(p)[0] * 1.0, base - lateral(p)[1])
-    pg.heading(146, 162, 9, "Bein von außen", "Blick auf die Käfigecke")
+    pg.heading(146, 162, 10, "Bein von außen", "Blick auf die Käfigecke")
     pg.line(ox - 12, base, ox + 12, base, w=0.25, color=GREY)
     for k in ("k1", "k2"):
         pg.rod([S(LEG["hi"]), S(LEG[k]), S(LEG["foot"])])
@@ -497,22 +527,21 @@ def sheet2():
 
     # ⑩ Längenlehren und Ablauf
     y = 246
-    pg.heading(14, y, 10, "Längenlehren Bein", None)
+    pg.heading(14, y, 11, "Längenlehren Bein", None)
     gauge(pg, 16, y + 6, STRUT, "Strebe", 4)
     gauge(pg, 16, y + 12, BAR_K, "Querstab Knie", 4)
     gauge(pg, 16, y + 18, BAR_M, "Querstab Mitte", 4)
     gauge(pg, 16, y + 24, STUB, "Stummel", 4)
     steps = ["Ablauf je Bein:",
-             "1  Zwei Holme nach ⑧ biegen, auf ⑦ legen.",
+             "1  Zwei Holme nach 9 biegen, auf 8 legen.",
              "2  Holme oben und unten verlöten,",
-             "    Querstäbe Knie und Mitte einsetzen (⑨).",
+             "    Querstäbe Knie und Mitte einsetzen (10).",
              "3  Bein an der Käfigkante anlöten,",
              "    Strebe von der unteren Ecke ergänzen.",
-             "4  Alle vier Beine, dann Fähre auf ⑥ stellen",
+             "4  Alle vier Beine, dann Fähre auf 7 stellen",
              "    und erst zuletzt Stummel und Teller löten."]
     for i, s in enumerate(steps):
-        pg.text(100, y - 2 + i * 3.7, s.replace("⑥", "6").replace("⑦", "7").replace("⑧", "8").replace("⑨", "9"),
-                2.4, i == 0)
+        pg.text(100, y - 2 + i * 3.7, s, 2.4, i == 0)
     return pg
 
 

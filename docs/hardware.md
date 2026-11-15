@@ -38,7 +38,7 @@ D4 = GPIO2, D5 = GPIO14, D6 = GPIO12, D7 = GPIO13, D8 = GPIO15). Damit gilt die 
 |---|---|---|
 | Platine | rot, Aufdruck `1.8 TFT SPI 128*160 V1.2` | Foto |
 | Abmessungen | ca. 35 × 58 mm | Messschieber **offen** |
-| Befestigung | vier Bohrungen in den Ecken, Abstand ca. 28 × 51 mm | Messschieber **offen** |
+| Befestigung | vier Bohrungen Ø 3 mm in den Ecken, Mittenabstand 28 × 52 mm | gemessen |
 | Auflösung | 128 × 160 Pixel, Betrieb im Hochformat | Aufdruck |
 | Controller | vermutlich ST7735S; die grüne Lasche der Schutzfolie deutet auf die Variante `INITR_GREENTAB` hin | Smoke-Test (M1) |
 | Displayanschlüsse | 8-polige Stiftleiste, Reihenfolge `VCC GND CS RESET A0 SDA SCK LED` | Foto |
@@ -85,8 +85,9 @@ An 3,3 V bleibt hinter dem Modulregler etwas weniger als 3,3 V übrig. Das reich
 | Anschluss | rote/schwarze Litze | Stecker **offen** |
 | Zulassung | UL1642 (Zelle) | Aufdruck |
 
-Die Zelle ist flach und weich. Sie wird im Käfig auf einem isolierenden Träger gehalten und nirgends durch Draht
-geklemmt, damit kein Messing auf die Pouchfolie drückt.
+Die Zelle ist flach und weich. Sie steht im Käfig in einer Akkuwanne aus Lochraster und wird oben von einem
+Drahtband mit Schrumpfschlauch gehalten, nirgends geklemmt, damit kein Messing auf die Pouchfolie drückt
+(siehe [design.md](design.md)).
 
 ### Noch nicht gesichtet
 
@@ -111,7 +112,8 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] Pinreihenfolge am TFT ablesen
 - [x] BME280-Modul: Versorgung 3,3–5 V (Regler und Pegelwandler auf dem Modul)
 - [x] Akku bestimmen: LP103454, 2000 mAh, mit Schutzplatine
-- [ ] Maße und Bohrungsabstände mit dem Messschieber bestätigen (TFT, D1 mini, BME280)
+- [x] Bohrungen am TFT messen: Ø 3 mm, Mittenabstand 28 × 52 mm
+- [ ] Außenmaße mit dem Messschieber bestätigen (TFT, D1 mini, BME280)
 - [ ] Aufdruck des USB-Seriell-Chips und Typ des Reglers U3 (`MK8H`) auf dem D1 mini bestimmen
 - [ ] Widerstände des A0-Teilers auf dem D1 mini ablesen oder messen
 - [ ] TFT: Funktion von J1 und U1 durchmessen, Wert von R4 ablesen

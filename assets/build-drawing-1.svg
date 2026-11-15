@@ -168,31 +168,44 @@
 <path d="M196.000 233.000 L195.000 233.000" fill="none" stroke="#1f2938" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M196.000 232.000 L193.400 232.000" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="195.000" y="230.000" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">50 mm</text>
-<circle cx="16.200" cy="33.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="16.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">1</text>
-<text x="20.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Bodenrahmen</text>
-<text x="20.200" y="38.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Draufsicht, vorn ist unten</text>
-<path d="M16.000 42.000 L58.000 42.000 L58.000 90.000 L16.000 90.000 Z" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.000 42.000 L58.000 42.000 L58.000 90.000 L16.000 90.000 Z" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="16.000" cy="42.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<circle cx="58.000" cy="42.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<circle cx="58.000" cy="90.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<circle cx="16.000" cy="90.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<text x="37.000" y="94.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="middle" fill="#737a85">vorn</text>
-<text x="37.000" y="65.000" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">an jeder Ecke:</text>
-<text x="37.000" y="68.200" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">Senkrechte + Strebe</text>
-<path d="M16.000 90.600 L16.000 100.200" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M58.000 90.600 L58.000 100.200" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.000 99.000 L58.000 99.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M16.000 99.000 L17.300 98.571 L17.300 99.429 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M58.000 99.000 L56.700 99.429 L56.700 98.571 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="37.000" y="98.100" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#1f2938">42</text>
-<path d="M58.600 90.000 L65.200 90.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M58.600 42.000 L65.200 42.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M64.000 90.000 L64.000 42.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M64.000 90.000 L63.571 88.700 L64.429 88.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M64.000 42.000 L64.429 43.300 L63.571 43.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="62.800" y="66.805" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">48</text>
+<circle cx="21.200" cy="33.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
+<text x="21.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">1</text>
+<text x="25.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Bodenrahmen</text>
+<text x="25.200" y="38.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Draufsicht, vorn ist unten</text>
+<path d="M21.000 42.000 L63.000 42.000 L63.000 90.000 L21.000 90.000 Z" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.000 42.000 L63.000 42.000 L63.000 90.000 L21.000 90.000 Z" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="21.000" cy="42.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<circle cx="63.000" cy="42.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<circle cx="63.000" cy="90.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<circle cx="21.000" cy="90.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<path d="M24.000 42.000 L60.000 42.000 L60.000 56.000 L24.000 56.000 Z" fill="none" stroke="#408f4f" stroke-width="0.25" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 0.7"/>
+<path d="M21.000 55.000 L63.000 55.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.000 55.000 L63.000 55.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="21.000" cy="55.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<circle cx="63.000" cy="55.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<text x="42.000" y="49.200" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="700" text-anchor="middle" fill="#408f4f">Akkuwanne</text>
+<text x="42.000" y="52.200" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#408f4f">Lochraster 36 × 14</text>
+<text x="42.000" y="94.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="middle" fill="#737a85">vorn</text>
+<text x="42.000" y="72.000" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">an jeder Ecke:</text>
+<text x="42.000" y="75.200" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">Senkrechte + Strebe</text>
+<path d="M21.000 90.600 L21.000 100.200" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.000 90.600 L63.000 100.200" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.000 99.000 L63.000 99.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M21.000 99.000 L22.300 98.571 L22.300 99.429 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.000 99.000 L61.700 99.429 L61.700 98.571 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42.000" y="98.100" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#1f2938">42</text>
+<path d="M63.600 90.000 L70.200 90.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.600 42.000 L70.200 42.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69.000 90.000 L69.000 42.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69.000 90.000 L68.571 88.700 L69.429 88.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M69.000 42.000 L69.429 43.300 L68.571 43.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="67.800" y="66.805" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">48</text>
+<path d="M20.400 90.000 L15.800 90.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.400 55.000 L15.800 55.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.000 90.000 L17.000 55.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.000 90.000 L16.571 88.700 L17.429 88.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M17.000 55.000 L17.429 56.300 L16.571 56.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="15.800" y="73.305" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">35</text>
 <circle cx="78.200" cy="33.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
 <text x="78.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">2</text>
 <text x="82.200" y="34.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Deckrahmen</text>
@@ -243,22 +256,22 @@
 <path d="M149.500 48.000 L184.500 48.000 L184.500 106.000 L149.500 106.000 Z" fill="none" stroke="#bf262e" stroke-width="0.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.2 0.8"/>
 <text x="167.000" y="76.000" font-family="Helvetica, Arial, sans-serif" font-size="3" font-weight="700" text-anchor="middle" fill="#bf262e">TFT</text>
 <text x="167.000" y="79.600" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#bf262e">Umriss</text>
-<path d="M153.000 102.500 L146.000 102.500" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M153.000 102.500 L146.000 102.500" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="153.000" cy="102.500" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
-<circle cx="146.000" cy="102.500" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<path d="M153.000 51.500 L146.000 51.500" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M153.000 51.500 L146.000 51.500" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="153.000" cy="51.500" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
-<circle cx="146.000" cy="51.500" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<path d="M181.000 102.500 L188.000 102.500" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M181.000 102.500 L188.000 102.500" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="181.000" cy="102.500" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
-<circle cx="188.000" cy="102.500" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
-<path d="M181.000 51.500 L188.000 51.500" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M181.000 51.500 L188.000 51.500" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="181.000" cy="51.500" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
-<circle cx="188.000" cy="51.500" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<path d="M153.000 103.000 L146.000 103.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M153.000 103.000 L146.000 103.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="153.000" cy="103.000" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
+<circle cx="146.000" cy="103.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<path d="M153.000 51.000 L146.000 51.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M153.000 51.000 L146.000 51.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="153.000" cy="51.000" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
+<circle cx="146.000" cy="51.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<path d="M181.000 103.000 L188.000 103.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M181.000 103.000 L188.000 103.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="181.000" cy="103.000" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
+<circle cx="188.000" cy="103.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<path d="M181.000 51.000 L188.000 51.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M181.000 51.000 L188.000 51.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="181.000" cy="51.000" r="1.500" fill="none" stroke="#bf262e" stroke-width="0.2"/>
+<circle cx="188.000" cy="51.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
 <circle cx="146.000" cy="112.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
 <circle cx="188.000" cy="112.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
 <circle cx="146.000" cy="42.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
@@ -275,25 +288,47 @@
 <path d="M194.000 112.000 L193.571 110.700 L194.429 110.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M194.000 42.000 L194.429 43.300 L193.571 43.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="192.800" y="77.805" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">70</text>
-<path d="M153.000 50.900 L153.000 46.300" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M181.000 50.900 L181.000 46.300" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M153.000 47.500 L181.000 47.500" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M153.000 47.500 L154.300 47.071 L154.300 47.929 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M181.000 47.500 L179.700 47.929 L179.700 47.071 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="167.000" y="46.600" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#1f2938">28</text>
+<path d="M153.000 50.400 L153.000 45.800" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M181.000 50.400 L181.000 45.800" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M153.000 47.000 L181.000 47.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M153.000 47.000 L154.300 46.571 L154.300 47.429 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M181.000 47.000 L179.700 47.429 L179.700 46.571 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="167.000" y="46.100" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#1f2938">28</text>
 <path d="M145.400 112.000 L140.800 112.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M145.400 102.500 L140.800 102.500" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M142.000 112.000 L142.000 102.500" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145.400 103.000 L140.800 103.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142.000 112.000 L142.000 103.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M142.000 112.000 L141.571 110.700 L142.429 110.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M142.000 102.500 L142.429 103.800 L141.571 103.800 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="140.800" y="108.055" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">9,5</text>
-<path d="M145.400 102.500 L140.800 102.500" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M145.400 51.500 L140.800 51.500" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M142.000 102.500 L142.000 51.500" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M142.000 102.500 L141.571 101.200 L142.429 101.200 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M142.000 51.500 L142.429 52.800 L141.571 52.800 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="140.800" y="77.805" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">51</text>
-<text x="167.000" y="125.500" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#bf262e">Bohrungsabstand am TFT vor dem Bau messen</text>
+<path d="M142.000 103.000 L142.429 104.300 L141.571 104.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="140.800" y="108.305" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">9</text>
+<path d="M145.400 103.000 L140.800 103.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145.400 51.000 L140.800 51.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142.000 103.000 L142.000 51.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142.000 103.000 L141.571 101.700 L142.429 101.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M142.000 51.000 L142.429 52.300 L141.571 52.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="140.800" y="77.805" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">52</text>
+<text x="167.000" y="125.500" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#bf262e">Bohrungen gemessen: Ø 3 mm, Mitte zu Mitte 28 × 52</text>
+<text x="167.000" y="128.600" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#737a85">Löcher Ø 3 mm: Halter mit Öse oder auf den Ring löten,</text>
+<text x="167.000" y="131.400" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#737a85">Ring vorher auf Verbindung zu GND prüfen</text>
+<circle cx="136.200" cy="137.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
+<text x="136.200" y="138.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">5</text>
+<text x="140.200" y="138.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Akku-Band</text>
+<text x="140.200" y="142.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Draufsicht · 25 mm über dem Bodenrahmen</text>
+<path d="M140.000 150.000 L182.000 150.000 L182.000 163.000 L140.000 163.000 Z" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M140.000 150.000 L182.000 150.000 L182.000 163.000 L140.000 163.000 Z" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M144.000 151.500 L178.000 151.500 L178.000 161.500 L144.000 161.500 Z" fill="none" stroke="#737a85" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 0.7"/>
+<text x="161.000" y="157.400" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#737a85">Akku</text>
+<path d="M143.000 150.000 L179.000 150.000" fill="none" stroke="#30363d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M143.000 163.000 L179.000 163.000" fill="none" stroke="#30363d" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="140.000" cy="150.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<circle cx="182.000" cy="150.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
+<text x="161.000" y="148.400" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#737a85">hinten · an den hinteren Senkrechten löten</text>
+<text x="161.000" y="166.400" font-family="Helvetica, Arial, sans-serif" font-size="2.1" font-weight="400" text-anchor="middle" fill="#737a85">vorn · schwarz = Schrumpfschlauch</text>
+<path d="M182.600 163.000 L189.200 163.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M182.600 150.000 L189.200 150.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188.000 163.000 L188.000 150.000" fill="none" stroke="#1f2938" stroke-width="0.15" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188.000 163.000 L187.571 161.700 L188.429 161.700 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188.000 150.000 L188.429 151.300 L187.571 151.300 Z" fill="#1f2938" stroke="#1f2938" stroke-width="0.05" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="186.800" y="157.305" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="end" fill="#1f2938">13</text>
 <circle cx="16.200" cy="137.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
 <text x="16.200" y="138.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">4</text>
 <text x="20.200" y="138.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Längenlehren</text>
@@ -307,7 +342,7 @@
 <path d="M16.000 157.000 L58.000 157.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16.000 154.800 L16.000 159.200" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M58.000 154.800 L58.000 159.200" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="61.000" y="157.900" font-family="Helvetica, Arial, sans-serif" font-size="2.6" font-weight="400" text-anchor="start" fill="#1f2938">Querstab Deckrahmen · 2 × 42 mm</text>
+<text x="61.000" y="157.900" font-family="Helvetica, Arial, sans-serif" font-size="2.6" font-weight="400" text-anchor="start" fill="#1f2938">Querstäbe · 3 × 42 mm</text>
 <path d="M16.000 165.000 L42.000 165.000" fill="none" stroke="#dbb040" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16.000 165.000 L42.000 165.000" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16.000 162.800 L16.000 167.200" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -319,7 +354,7 @@
 <path d="M23.000 170.800 L23.000 175.200" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="26.000" y="173.900" font-family="Helvetica, Arial, sans-serif" font-size="2.6" font-weight="400" text-anchor="start" fill="#1f2938">Display-Halter · 4 × 7 mm</text>
 <circle cx="16.200" cy="189.000" r="2.400" fill="none" stroke="#1f2938" stroke-width="0.25"/>
-<text x="16.200" y="190.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">5</text>
+<text x="16.200" y="190.000" font-family="Helvetica, Arial, sans-serif" font-size="2.8" font-weight="700" text-anchor="middle" fill="#1f2938">6</text>
 <text x="20.200" y="190.000" font-family="Helvetica, Arial, sans-serif" font-size="3.4" font-weight="700" text-anchor="start" fill="#1f2938">Zuschnittliste</text>
 <text x="20.200" y="194.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Nettolängen ohne Zugabe; je Lötstelle 1–2 mm zugeben</text>
 <text x="16.000" y="200.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="700" text-anchor="start" fill="#1f2938">Abb.</text>
@@ -338,52 +373,57 @@
 <text x="74.000" y="208.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1</text>
 <text x="88.000" y="208.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">180</text>
 <text x="108.000" y="208.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">wie Bodenrahmen</text>
-<text x="16.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">2, 4</text>
-<text x="26.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstäbe Deckrahmen</text>
-<text x="74.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">2</text>
+<text x="16.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1, 2, 4</text>
+<text x="26.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstäbe</text>
+<text x="74.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3</text>
 <text x="88.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">42</text>
-<text x="108.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Taster vorn, Mast in der Mitte</text>
-<text x="16.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3, 4</text>
-<text x="26.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Senkrechte</text>
-<text x="74.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">70</text>
-<text x="108.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
+<text x="108.000" y="213.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Deckrahmen: Taster, Mast · Bodenrahmen: Akkuwanne</text>
+<text x="16.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">5</text>
+<text x="26.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Akku-Band</text>
+<text x="74.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1</text>
+<text x="88.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">110</text>
+<text x="108.000" y="217.500" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Schlaufe 42 × 13, Schrumpfschlauch vorn und hinten</text>
 <text x="16.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3, 4</text>
-<text x="26.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Display-Halter</text>
+<text x="26.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Senkrechte</text>
 <text x="74.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">7</text>
-<text x="108.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">vom TFT-Loch zur Senkrechten</text>
-<text x="16.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="26.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Mast</text>
-<text x="74.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1</text>
-<text x="88.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">26</text>
-<text x="108.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">BME280 oben</text>
-<text x="16.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">8</text>
-<text x="26.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Holme</text>
-<text x="74.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">8</text>
-<text x="88.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">59,6</text>
-<text x="108.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">am Knie um 54,8° gebogen</text>
-<text x="16.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">7, 10</text>
-<text x="26.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Streben</text>
-<text x="74.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">27,2</text>
-<text x="108.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">untere Käfigecke bis Mittel-Querstab</text>
-<text x="16.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">9, 10</text>
-<text x="26.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstab Knie</text>
+<text x="88.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">70</text>
+<text x="108.000" y="221.800" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
+<text x="16.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3, 4</text>
+<text x="26.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Display-Halter</text>
+<text x="74.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
+<text x="88.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">7</text>
+<text x="108.000" y="226.100" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">vom TFT-Loch zur Senkrechten, Öse am Ende</text>
+<text x="16.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
+<text x="26.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Mast</text>
+<text x="74.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">1</text>
+<text x="88.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">26</text>
+<text x="108.000" y="230.400" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">BME280 oben</text>
+<text x="16.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">9</text>
+<text x="26.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Holme</text>
+<text x="74.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">8</text>
+<text x="88.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">59,6</text>
+<text x="108.000" y="234.700" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">am Knie um 54,8° gebogen</text>
+<text x="16.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">8, 11</text>
+<text x="26.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Streben</text>
 <text x="74.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">5,2</text>
-<text x="108.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
-<text x="16.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">9, 10</text>
-<text x="26.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstab Mitte</text>
+<text x="88.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">27,2</text>
+<text x="108.000" y="239.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">untere Käfigecke bis Mittel-Querstab</text>
+<text x="16.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">10, 11</text>
+<text x="26.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstab Knie</text>
 <text x="74.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">2,6</text>
+<text x="88.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">5,2</text>
 <text x="108.000" y="243.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
-<text x="16.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">7, 10</text>
-<text x="26.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Stummel zum Teller</text>
+<text x="16.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">10, 11</text>
+<text x="26.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Querstab Mitte</text>
 <text x="74.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
-<text x="88.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3,5</text>
+<text x="88.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">2,6</text>
 <text x="108.000" y="247.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
-<path d="M14.000 249.600 L186.000 249.600" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="26.000" y="253.600" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="700" text-anchor="start" fill="#1f2938">Summe Messingdraht Ø 0,8 mm: ca. 140,9 cm netto – mit Zugabe und Verschnitt etwa 1,9 m bereitlegen</text>
-<text x="26.000" y="258.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Dazu: 4 Landeteller Ø 14 mm aus Messingblech (Vorlage auf Blatt 2)</text>
+<text x="16.000" y="251.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">8, 11</text>
+<text x="26.000" y="251.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Stummel zum Teller</text>
+<text x="74.000" y="251.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">4</text>
+<text x="88.000" y="251.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">3,5</text>
+<text x="108.000" y="251.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938"></text>
+<path d="M14.000 253.900 L186.000 253.900" fill="none" stroke="#1f2938" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="26.000" y="257.900" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="700" text-anchor="start" fill="#1f2938">Summe Messingdraht Ø 0,8 mm: ca. 156,1 cm netto – mit Zugabe und Verschnitt etwa 2,1 m bereitlegen</text>
+<text x="26.000" y="262.300" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#1f2938">Dazu: Lochraster 36 × 14 mm als Akkuwanne, Schrumpfschlauch, 4 Landeteller Ø 14 mm (Vorlage auf Blatt 2)</text>
 </svg>

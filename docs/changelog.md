@@ -1,12 +1,21 @@
 # Changelog
 
+## 2026-11-15 – Akkuhalterung
+
+- Der Akku hing im Modell frei im Käfig. Er steht jetzt in einer Akkuwanne aus Lochraster (36 × 14 mm) auf einem
+  zusätzlichen Querdraht im Bodenrahmen; ein Akku-Band (Drahtschlaufe 42 × 13 mm mit Schrumpfschlauch, 25 mm über dem
+  Bodenrahmen) hält ihn oben, ohne zu klemmen
+- Bauzeichnung: Querdraht und Wanne im Bodenrahmen, neue Abbildung ⑤ Akku-Band, Zuschnittliste und Nummern angepasst
+- 3D-Modell: Wanne und Band ergänzt; der künstliche Tiefenversatz des Akkus entfällt
+
 ## 2026-11-15 – Bauzeichnung 1:1
 
 - Bauzeichnung zum Ausdrucken (`assets/build-drawing.pdf`, Vorschau als SVG je Blatt), erzeugt mit
   `tools/build_drawing.py`: Käfig mit Längenlehren und Zuschnittliste, Landebeine mit Aufstellplan und
   Holm-Biegeschablone, Kontrollstrecken 100 mm und 50 mm
 - 3D-Modell: Beingeometrie in `leg_points` ausgelagert und mit der Bauzeichnung geteilt; die Strebe endet jetzt auf
-  dem mittleren Querstab statt frei zwischen den Holmen; TFT-Bohrungsabstand 28 × 51 mm nach Foto
+  dem mittleren Querstab statt frei zwischen den Holmen
+- TFT-Bohrungen gemessen: Ø 3 mm, Mittenabstand 28 × 52 mm; Hinweis zur Befestigung der Halter (Öse oder Ring)
 
 ## 2026-11-15 – Teile bestimmt, Breadboard, Ansichten, Teileliste
 

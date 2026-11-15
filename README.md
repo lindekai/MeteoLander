@@ -73,12 +73,12 @@ echten Stärke gezeichnet: ausdrucken, Draht auflegen, mit Malerkrepp fixieren, 
 | Blatt 1 – Käfig | Blatt 2 – Landebeine |
 |---|---|
 | [![Blatt 1](assets/build-drawing-1.svg)](assets/build-drawing-1.svg) | [![Blatt 2](assets/build-drawing-2.svg)](assets/build-drawing-2.svg) |
-| Boden- und Deckrahmen, Vorderansicht mit Display-Haltern, Längenlehren, Zuschnittliste | Aufstellplan mit Tellervorlagen, Bein von der Seite und von außen, Biegeschablone für die Holme, Bauablauf |
+| Boden- und Deckrahmen, Akkuwanne und Akku-Band, Vorderansicht mit Display-Haltern, Längenlehren, Zuschnittliste | Aufstellplan mit Tellervorlagen, Bein von der Seite und von außen, Biegeschablone für die Holme, Bauablauf |
 
 > [!IMPORTANT]
 > Im Druckdialog **„Tatsächliche Größe“ bzw. 100 %** wählen, nicht „An Seite anpassen“. Danach die Kontrollstrecken
 > (100 mm waagerecht, 50 mm senkrecht) nachmessen. TFT, D1 mini und Akku sind nach Fotos bemaßt; Käfig- und Beinmaße
-> sind Entwurf. Vor dem Bau den Bohrungsabstand am TFT mit dem Messschieber prüfen.
+> sind Entwurf.
 
 Erzeugt mit [tools/build_drawing.py](tools/build_drawing.py) aus denselben Maßen wie das 3D-Modell.
 

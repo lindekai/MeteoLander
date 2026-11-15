@@ -23,7 +23,7 @@ CAGE_W, CAGE_D = 42.0, 48.0          # Käfig: Breite (x), Tiefe (y)
 CAGE_Z0, CAGE_Z1 = 30.0, 100.0       # Käfig: Unter-/Oberkante
 TFT_W, TFT_H = 35.0, 58.0            # rotes TFT-Modul, Platine (Foto, ca.)
 TFT_Z0 = 36.0
-TFT_HOLE_DX, TFT_HOLE_DZ = 28.0, 51.0  # Bohrungsabstand TFT (Foto, ca.)
+TFT_HOLE_DX, TFT_HOLE_DZ = 28.0, 52.0  # Bohrungsabstand TFT, Mitte zu Mitte (gemessen)
 SCREEN_W, SCREEN_H = 28.0, 35.0      # aktive Fläche 1,8"
 ESP_W, ESP_H = 25.6, 34.2            # AZ-Delivery D1 mini
 BAT_W, BAT_T, BAT_H = 34.0, 10.0, 57.0  # LiPo LP103454 inkl. Schutzplatine
@@ -32,6 +32,9 @@ PAD_R = 7.0                          # Landeteller
 ROD = 0.8                            # Messingdraht 0,8 mm
 BTN_BAR_Y = 6.0                      # Querstab für den Taster, Abstand zur Vorderkante
 MAST_H = 26.0                        # Mast über dem Deckrahmen
+TRAY_W, TRAY_D, TRAY_T = 36.0, 14.0, 1.6  # Akkuwanne aus Lochraster
+TRAY_ROD_Y = CAGE_D - 13.0           # Querdraht im Bodenrahmen, trägt die Wanne vorn
+BAND_DZ = 25.0                       # Akku-Band über dem Bodenrahmen (zwischen Lademodul und Lochraster)
 
 # ---------------------------------------------------------------- Farben
 BRASS = (201, 160, 51)
@@ -328,6 +331,9 @@ def build(scene):
     for cx, cy in corners:
         S.rod((cx, cy, z0), (cx, cy, z1))
         S.joint((cx, cy, z0)); S.joint((cx, cy, z1))
+    # Querdraht im Bodenrahmen für die Akkuwanne
+    S.rod((x0, TRAY_ROD_Y, z0), (x1, TRAY_ROD_Y, z0))
+    S.joint((x0, TRAY_ROD_Y, z0)); S.joint((x1, TRAY_ROD_Y, z0))
     # Querstab oben für den Taster, Mittelring
     S.rod((x0, BTN_BAR_Y, z1), (x1, BTN_BAR_Y, z1))
     S.joint((x0, BTN_BAR_Y, z1)); S.joint((x1, BTN_BAR_Y, z1))
@@ -379,11 +385,21 @@ def build(scene):
             S.box((ex - 1.1, 11.0, z - 1.1), (ex + 1.1, 14.0, z + 1.1), "#1b1f24")
     S.anchor("esp", (ex1, 15.6, ez0 + 24))
 
-    # --- Akku hinter dem ESP
-    by0 = CAGE_D - BAT_T - 2.5                                              # an der Rückwand
-    S.box((-BAT_W / 2, by0, z0 + 2.5), (BAT_W / 2, by0 + BAT_T, z0 + 2.5 + BAT_H - 4), "#c7cdd4", bias=S.cam.ybias(25.0))
-    S.box((-BAT_W / 2, by0, z0 + 2.5 + BAT_H - 4), (BAT_W / 2, by0 + BAT_T, z0 + 2.5 + BAT_H), "#d9a62e", bias=S.cam.ybias(25.0))  # Schutzplatine
-    S.anchor("bat", (BAT_W / 2 - 6, by0, z0 + 2.5 + BAT_H - 10))
+    # --- Akku: steht auf der Lochraster-Wanne, ein Drahtband hält ihn
+    tz = z0 + ROD / 2
+    S.box((-TRAY_W / 2, CAGE_D - TRAY_D, tz), (TRAY_W / 2, CAGE_D, tz + TRAY_T), "#3f8f4f")
+    bz = tz + TRAY_T                                                        # Unterkante Akku
+    by0 = CAGE_D - TRAY_D / 2 - BAT_T / 2                                   # mittig auf der Wanne
+    S.box((-BAT_W / 2, by0, bz), (BAT_W / 2, by0 + BAT_T, bz + BAT_H - 4), "#c7cdd4")
+    S.box((-BAT_W / 2, by0, bz + BAT_H - 4), (BAT_W / 2, by0 + BAT_T, bz + BAT_H), "#d9a62e")  # Schutzplatine
+    S.anchor("bat", (BAT_W / 2 - 6, by0, bz + BAT_H - 10))
+    zb = z0 + BAND_DZ
+    band = [(x0, TRAY_ROD_Y, zb), (x1, TRAY_ROD_Y, zb), (x1, CAGE_D, zb), (x0, CAGE_D, zb)]
+    for a, b in zip(band, band[1:] + band[:1]):
+        S.rod(a, b)
+    for y in (TRAY_ROD_Y, CAGE_D):                                         # Schrumpfschlauch am Akku
+        S.rod((-BAT_W / 2 - 1, y, zb), (BAT_W / 2 + 1, y, zb), width=1.5, color="#30363d")
+    S.joint((x0, CAGE_D, zb)); S.joint((x1, CAGE_D, zb))
 
     # --- Lademodul an der rechten Seite unten, LEDs außen
     S.box((x1 - 2.2, 18.0, 35.0), (x1 - 0.6, 44.0, 52.0), "#1d4a92")
@@ -447,7 +463,7 @@ LEGEND = [
     ("leg", "Vier Landebeine", ["Oberarm, Knie, Unterschenkel und Strebe;", "Teller zuletzt anlöten, sonst wackelt es."]),
     ("pad", "Landeteller", ["Messingscheiben Ø 14 mm."]),
     ("esp", "D1 mini (ESP8266)", ["Senkrecht hinter dem Display;", "WLAN-Antenne oben frei lassen."]),
-    ("bat", "LiPo-Akku 2000 mAh", ["Hinten im Käfig, rundum isoliert;", "kein Draht drückt auf die Zelle."]),
+    ("bat", "LiPo-Akku 2000 mAh", ["Steht in einer Lochraster-Wanne;", "ein Drahtband mit Schrumpfschlauch hält ihn."]),
     ("chg", "Lademodul", ["Rechte Seite, Lade-LEDs nach außen,", "USB-Buchse nach hinten."]),
     ("perf", "Lochrasterplatine", ["Selbsthaltung, LDO und Spannungsteiler."]),
     ("btn", "Taster", ["Oben vorn – Druck von oben", "belastet die Beine, nichts kippt."]),
@@ -542,7 +558,7 @@ def hero():
 VIEWS = [
     ("Vorn", 0, 12, "Display mit vier Bohrungen am Käfig, Taster oben vorn"),
     ("Rechts", -90, 12, "Lademodul unten mit Lade-LEDs, Lochrasterplatine darüber"),
-    ("Hinten", 180, 12, "Akku an der Rückwand, USB-Buchse des Lademoduls"),
+    ("Hinten", 180, 12, "Akku in der Wanne, Drahtband, USB-Buchse des Lademoduls"),
     ("Links", 90, 12, "D1 mini hinter dem Display, Antenne oben frei"),
 ]
 
@@ -580,9 +596,9 @@ def views():
 {body}
 </g>''')
     notes = [
-        ("Reihenfolge", "Käfig → Display → D1 mini → Akku auf isolierendem Träger → Lademodul und Lochraster → Beine → Teller"),
+        ("Reihenfolge", "Käfig mit Wannen-Querdraht → Display → D1 mini → Wanne, Akku, Band → Lademodul und Lochraster → Beine → Teller"),
         ("Antenne", "Die WLAN-Antenne des D1 mini zeigt nach oben; kein Messing direkt davor oder darüber."),
-        ("Akku", "Die Pouchzelle liegt an der Rückwand, wird nur gehalten und nie durch Draht geklemmt."),
+        ("Akku", "Die Pouchzelle steht in einer Lochraster-Wanne; das Band hält sie mit Schrumpfschlauch, ohne zu klemmen."),
         ("Masse", "Das Messinggestell ist GND. Signale laufen als sichtbarer Kupferlackdraht."),
         ("Maße", "TFT, D1 mini und Akku nach Fotos mit Lineal; Käfig und Beine bleiben bis M4 Annahmen."),
     ]

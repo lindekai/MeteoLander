@@ -16,7 +16,12 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
 - **Display:** Das TFT-Modul bildet die Vorderseite und ist an seinen **vier Bohrungen** mit dem Käfig verlötet.
   Die Platine wird nicht verändert.
 - **ESP8266:** senkrecht direkt hinter dem Display. Die WLAN-Antenne bleibt frei – kein Messing darüber oder davor.
-- **Akku:** hinten im Käfig, rundum isoliert und mit Drahtbügeln fixiert; berührt das Messing nirgends blank.
+- **Akku:** steht hochkant hinten im Käfig in einer **Akkuwanne** aus Lochraster (36 × 14 mm). Sie liegt auf einem
+  zusätzlichen Querdraht im Bodenrahmen und auf dem hinteren Rahmendraht und ist über ihre Kupferpads angelötet.
+  Ein **Akku-Band** – eine Drahtschlaufe 42 × 13 mm, 25 mm über dem Bodenrahmen, an den hinteren Senkrechten
+  verlötet – hält die Zelle oben. Es trägt vorn und hinten Schrumpfschlauch und liegt nur an, ohne zu klemmen.
+  Die Höhe liegt genau zwischen Lademodul und Lochrasterplatine. Der Schwerpunkt der Fähre liegt damit etwa 31 mm
+  hinter der Vorderkante, sicher innerhalb der Landeteller (−23 bis +71 mm).
 - **Lademodul:** an der rechten Seite, Lade-LEDs nach außen sichtbar, USB-Buchse nach hinten.
 - **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, LDO und Spannungsteiler.
 - **Taster:** oben vorn auf einer Querstrebe. Gedrückt wird von oben, das belastet die Beine und nichts kippt.
@@ -45,8 +50,8 @@ echter Stärke (0,8 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
 
 | Blatt | Inhalt |
 |---|---|
-| 1 – Käfig | ① Bodenrahmen, ② Deckrahmen mit Querstäben für Taster und Mast, ③ Vorderansicht mit TFT-Umriss, Bohrungen und Display-Haltern, ④ Längenlehren, ⑤ Zuschnittliste mit Summe |
-| 2 – Landebeine | ⑥ Aufstellplan (Draufsicht mit Tellerkreisen als Schneidvorlage), ⑦ Bein von der Seite, ⑧ Holm-Biegeschablone in wahrer Größe mit Biegewinkel, ⑨ Bein von außen mit Querstäben, ⑩ Längenlehren und Ablauf |
+| 1 – Käfig | ① Bodenrahmen mit Querdraht und Akkuwanne, ② Deckrahmen mit Querstäben für Taster und Mast, ③ Vorderansicht mit TFT-Umriss, Bohrungen und Display-Haltern, ④ Längenlehren, ⑤ Akku-Band, ⑥ Zuschnittliste mit Summe |
+| 2 – Landebeine | ⑦ Aufstellplan (Draufsicht mit Tellerkreisen als Schneidvorlage), ⑧ Bein von der Seite, ⑨ Holm-Biegeschablone in wahrer Größe mit Biegewinkel, ⑩ Bein von außen mit Querstäben, ⑪ Längenlehren und Ablauf |
 
 ![Blatt 1](../assets/build-drawing-1.svg)
 

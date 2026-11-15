@@ -40,13 +40,14 @@ Bestand zu suchen · ❓ Typ noch offen
 
 ## Mechanik (Fähre)
 
-Mengen und Längen folgen mit der 1:1-Bauzeichnung in M4.
+Längen und Mengen stehen in der Zuschnittliste der [Bauzeichnung](../assets/build-drawing.pdf) (Blatt 1).
 
 | Teil | Abmessung | Verwendung | Status |
 |---|---|---|:---:|
-| Messingdraht | Ø 0,8 mm | Käfig, Beine, Mast; führt GND | ❓ |
+| Messingdraht | Ø 0,8 mm, ca. 2,1 m | Käfig, Beine, Mast, Akku-Band; führt GND | ❓ |
 | Messingblech oder -scheiben | Ø 14 mm | Landeteller | ❓ |
 | Kupferlackdraht | ca. Ø 0,3 mm | sichtbare Signalleitungen | ❓ |
-| Isolierender Träger für den Akku | z. B. Kapton-Band, Schrumpfschlauch, dünne Platte | Akku nie blank am Messing | ❓ |
+| Lochraster für die Akkuwanne | 36 × 14 mm | trägt den Akku, über Kupferpads an Querdraht und Rahmen gelötet | ❓ |
+| Schrumpfschlauch | für 0,8-mm-Draht, ca. 2 × 36 mm | Akku-Band vorn und hinten | ❓ |
+| Kapton-Band | – | Wannenoberseite und Akku zusätzlich isolieren | ❓ |
 | Lochrasterplatine | klein | Selbsthaltung, Regler, Spannungsteiler | ❓ |
-| Schrumpfschlauch, Kapton-Band | – | Isolierung | ❓ |
