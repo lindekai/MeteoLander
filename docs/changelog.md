@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-15 – Bauzeichnung 1:1
+
+- Bauzeichnung zum Ausdrucken (`assets/build-drawing.pdf`, Vorschau als SVG je Blatt), erzeugt mit
+  `tools/build_drawing.py`: Käfig mit Längenlehren und Zuschnittliste, Landebeine mit Aufstellplan und
+  Holm-Biegeschablone, Kontrollstrecken 100 mm und 50 mm
+- 3D-Modell: Beingeometrie in `leg_points` ausgelagert und mit der Bauzeichnung geteilt; die Strebe endet jetzt auf
+  dem mittleren Querstab statt frei zwischen den Holmen; TFT-Bohrungsabstand 28 × 51 mm nach Foto
+
 ## 2026-11-15 – Teile bestimmt, Breadboard, Ansichten, Teileliste
 
 - Teile anhand von Fotos mit Lineal bestimmt (`assets/photos/`): AZ-Delivery D1 mini (ESP-12F), TFT mit

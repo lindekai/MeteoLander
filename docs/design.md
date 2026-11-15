@@ -38,16 +38,29 @@ Sicherheitsregeln siehe [wiring.md](wiring.md).
 - Flussmittelstift für jede Lötstelle, danach mit feiner Stahlwolle reinigen.
 - Jedes Teilsystem vor dem Einbau auf dem Steckbrett testen.
 
-## 1:1-Bauzeichnung (geplant für M4)
+## 1:1-Bauzeichnung
 
-Die Bauzeichnung entsteht aus den gemessenen Maßen beider Platinen. Sie ist zugleich Biegeschablone: Drähte werden direkt
-auf den Ausdruck gelegt.
+[build-drawing.pdf](../assets/build-drawing.pdf) – zwei A4-Blätter, zugleich Biegeschablone: Die Drähte sind in
+echter Stärke (0,8 mm) gezeichnet und werden direkt auf den Ausdruck gelegt.
 
-- **Format:** SVG als Quelle, PDF auf A4 zum Drucken
-- **Inhalt:** Draufsicht als Biegeschablone, Seitenansicht mit Neigung, Bohrungspositionen, Lötpunkte, Drahtlängen
-- **Kontrollstrecke 100 mm:** nach dem Drucken nachmessen. Im Druckdialog „Tatsächliche Größe“ bzw. 100 % wählen,
-  nicht „An Seite anpassen“.
-- **Materialliste:** Drahtstärken, Längen, Isolierung, Befestigung
+| Blatt | Inhalt |
+|---|---|
+| 1 – Käfig | ① Bodenrahmen, ② Deckrahmen mit Querstäben für Taster und Mast, ③ Vorderansicht mit TFT-Umriss, Bohrungen und Display-Haltern, ④ Längenlehren, ⑤ Zuschnittliste mit Summe |
+| 2 – Landebeine | ⑥ Aufstellplan (Draufsicht mit Tellerkreisen als Schneidvorlage), ⑦ Bein von der Seite, ⑧ Holm-Biegeschablone in wahrer Größe mit Biegewinkel, ⑨ Bein von außen mit Querstäben, ⑩ Längenlehren und Ablauf |
+
+![Blatt 1](../assets/build-drawing-1.svg)
+
+![Blatt 2](../assets/build-drawing-2.svg)
+
+- **Drucken:** „Tatsächliche Größe“ bzw. 100 % wählen, nicht „An Seite anpassen“. Die Kontrollstrecken
+  (100 mm waagerecht, 50 mm senkrecht) nachmessen. Das PDF verlangt zusätzlich, dass der Viewer nicht skaliert.
+- **Quelle:** `tools/build_drawing.py` liest alle Maße aus `tools/lander_model.py` (Abschnitt `MASSE`, Beingeometrie in
+  `leg_points`). Nach dem Ausmessen dort korrigieren und beide Skripte neu laufen lassen – Modell, Ansichten und
+  Bauzeichnung bleiben so gleich.
+- **Holme:** Jedes Bein besteht aus zwei Holmen, die oben an der Käfigkante und unten am Fußpunkt zusammenlaufen.
+  Weil der Knick nach außen zeigt, ist jeder Holm für sich eben – deshalb gibt es eine Biegeschablone in wahrer Größe.
+- **Stand:** TFT, D1 mini und Akku nach Fotos bemaßt; Käfig, Beine und Mast sind Entwurf und werden in M4 nach einem
+  Probeaufbau festgelegt.
 
 ## Display
 

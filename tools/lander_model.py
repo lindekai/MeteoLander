@@ -23,12 +23,15 @@ CAGE_W, CAGE_D = 42.0, 48.0          # Käfig: Breite (x), Tiefe (y)
 CAGE_Z0, CAGE_Z1 = 30.0, 100.0       # Käfig: Unter-/Oberkante
 TFT_W, TFT_H = 35.0, 58.0            # rotes TFT-Modul, Platine (Foto, ca.)
 TFT_Z0 = 36.0
+TFT_HOLE_DX, TFT_HOLE_DZ = 28.0, 51.0  # Bohrungsabstand TFT (Foto, ca.)
 SCREEN_W, SCREEN_H = 28.0, 35.0      # aktive Fläche 1,8"
 ESP_W, ESP_H = 25.6, 34.2            # AZ-Delivery D1 mini
 BAT_W, BAT_T, BAT_H = 34.0, 10.0, 57.0  # LiPo LP103454 inkl. Schutzplatine
 LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
 ROD = 0.8                            # Messingdraht 0,8 mm
+BTN_BAR_Y = 6.0                      # Querstab für den Taster, Abstand zur Vorderkante
+MAST_H = 26.0                        # Mast über dem Deckrahmen
 
 # ---------------------------------------------------------------- Farben
 BRASS = (201, 160, 51)
@@ -287,6 +290,26 @@ DEFS = '''
 
 
 # ---------------------------------------------------------------- Modell
+LEG_HI = 18.0          # Bein setzt so weit über der Käfigunterkante an
+LEG_KNEE_R = 0.72      # Knie bei diesem Anteil der Spreizung …
+LEG_KNEE_Z = 9.0       # … und so hoch über der Käfigunterkante
+LEG_FOOT_Z = 4.0       # Fußpunkt über dem Boden (darunter der Stummel zum Teller)
+LEG_HALF_W = 2.6       # halber Abstand der beiden Holme am Knie
+
+
+def leg_points(cx, cy):
+    """Punkte eines Landebeins an der Käfigecke (cx, cy); gemeinsam für Modell und Bauzeichnung."""
+    z0 = CAGE_Z0
+    d = norm((cx, cy - CAGE_D / 2, 0))
+    perp = (-d[1], d[0], 0)
+    knee = add((cx, cy, z0 + LEG_KNEE_Z), mul(d, LEG_SPREAD * LEG_KNEE_R))
+    foot = add((cx, cy, LEG_FOOT_Z), mul(d, LEG_SPREAD))
+    k1, k2 = add(knee, mul(perp, LEG_HALF_W)), add(knee, mul(perp, -LEG_HALF_W))
+    m1, m2 = lerp(k1, foot, 0.5), lerp(k2, foot, 0.5)
+    return {"d": d, "perp": perp, "hi": (cx, cy, z0 + LEG_HI), "lo": (cx, cy, z0), "knee": knee,
+            "foot": foot, "k1": k1, "k2": k2, "m1": m1, "m2": m2, "strut": lerp(m1, m2, 0.5)}
+
+
 def build(scene):
     S = scene
     x0, x1 = -CAGE_W / 2, CAGE_W / 2
@@ -306,26 +329,19 @@ def build(scene):
         S.rod((cx, cy, z0), (cx, cy, z1))
         S.joint((cx, cy, z0)); S.joint((cx, cy, z1))
     # Querstab oben für den Taster, Mittelring
-    S.rod((x0, 6, z1), (x1, 6, z1))
-    S.joint((x0, 6, z1)); S.joint((x1, 6, z1))
+    S.rod((x0, BTN_BAR_Y, z1), (x1, BTN_BAR_Y, z1))
+    S.joint((x0, BTN_BAR_Y, z1)); S.joint((x1, BTN_BAR_Y, z1))
 
     # --- Beine (Fähre): Oberarm, Knie, Unterschenkel, Strebe, Teller
-    cx0, cy0 = 0.0, CAGE_D / 2
     for cx, cy in corners:
-        d = norm((cx - cx0, cy - cy0, 0))
-        perp = (-d[1], d[0], 0)
-        hi = (cx, cy, z0 + 18)
-        lo = (cx, cy, z0)
-        knee = add((cx, cy, z0 + 9), mul(d, LEG_SPREAD * 0.72))
-        foot = add((cx, cy, 4.0), mul(d, LEG_SPREAD))
-        k1, k2 = add(knee, mul(perp, 2.6)), add(knee, mul(perp, -2.6))
+        L = leg_points(cx, cy)
+        hi, lo, knee, foot, k1, k2, m1, m2 = (L[k] for k in ("hi", "lo", "knee", "foot", "k1", "k2", "m1", "m2"))
         S.disc((foot[0], foot[1], 0.0), PAD_R, "#c9a033")
         S.rod(hi, k1); S.rod(hi, k2)
         S.rod(k1, foot); S.rod(k2, foot)
         S.rod(k1, k2)
-        m1, m2 = lerp(k1, foot, 0.5), lerp(k2, foot, 0.5)
         S.rod(m1, m2)
-        S.rod(lo, lerp(knee, foot, 0.42))
+        S.rod(lo, L["strut"])
         S.rod(foot, (foot[0], foot[1], 0.5))
         for p in (hi, k1, k2, foot, (foot[0], foot[1], 0.5)):
             S.joint(p, 0.65)
@@ -345,8 +361,8 @@ def build(scene):
     S.overlay((sx0, -0.61, sz_top), (SCREEN_W / 128, 0, 0), (0, 0, -SCREEN_H / 160), screen_svg(), (0, -0.6, (gz0 + gz1) / 2), bias=-1.0)
     S.overlay((tx0, 1.19, tz1), (1, 0, 0), (0, 0, -1), tft_print_svg(), (0, 1.2, tz1 - 2), bias=-0.3)
     # Befestigung an den vier Bohrungen
-    for hx in (tx0 + 2.5, tx1 - 2.5):
-        for hz in (tz0 + 2.5, tz1 - 2.5):
+    for hx in (-TFT_HOLE_DX / 2, TFT_HOLE_DX / 2):
+        for hz in (tz0 + TFT_H / 2 - TFT_HOLE_DZ / 2, tz0 + TFT_H / 2 + TFT_HOLE_DZ / 2):
             S.joint((hx, 1.0, hz), 0.9)
             cxs = x0 if hx < 0 else x1
             S.rod((hx, 1.0, hz), (cxs, 0.0, hz), width=0.7)
@@ -399,7 +415,7 @@ def build(scene):
     S.anchor("btn", (0.0, 6.0, z1 + 5.4))
 
     # --- BME280 auf dem Mast
-    mast_top = z1 + 26
+    mast_top = z1 + MAST_H
     S.rod((0, CAGE_D / 2, z1), (0, CAGE_D / 2, mast_top))
     S.rod((x0, CAGE_D / 2, z1), (x1, CAGE_D / 2, z1))
     S.joint((0, CAGE_D / 2, z1)); S.joint((x0, CAGE_D / 2, z1)); S.joint((x1, CAGE_D / 2, z1))

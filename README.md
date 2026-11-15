@@ -55,9 +55,7 @@ Die Werte sind Beispiele. Ob das Layout am realen Display gut lesbar ist, wird i
 Ein Käfig aus 0,8-mm-Messingdraht trägt vorn das rote Display, dahinter senkrecht den ESP8266 und den Akku.
 Vier Landebeine mit Messingtellern halten die Fähre, der BME280 sitzt oben auf dem Mast.
 Die Form ist inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5) von Mohit Bhoite. Messing ist GND,
-Signale laufen als sichtbarer Kupferlackdraht. Zum Bauen gibt es eine **Zeichnung im Maßstab 1:1** mit einer
-100-mm-Kontrollstrecke, auf die die Drähte gelegt und gebogen werden. Sie entsteht, sobald beide Platinen
-ausgemessen sind (siehe [docs/design.md](docs/design.md)). Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
+Signale laufen als sichtbarer Kupferlackdraht. Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
 ([tools/lander_model.py](tools/lander_model.py)), damit sie nach dem Ausmessen mit echten Maßen neu entstehen.
 
 <p align="center">
@@ -66,6 +64,23 @@ ausgemessen sind (siehe [docs/design.md](docs/design.md)). Die Grafiken werden a
 
 Dieselbe Fähre von allen Seiten: Von hinten sieht man den Akku an der Rückwand, von rechts Lademodul und
 Lochrasterplatine, von links den D1 mini mit freier Antenne.
+
+## 📐 Bauzeichnung 1:1 zum Ausdrucken
+
+**[assets/build-drawing.pdf](assets/build-drawing.pdf)** – zwei A4-Blätter im Maßstab 1:1. Die Drähte sind in ihrer
+echten Stärke gezeichnet: ausdrucken, Draht auflegen, mit Malerkrepp fixieren, biegen und löten.
+
+| Blatt 1 – Käfig | Blatt 2 – Landebeine |
+|---|---|
+| [![Blatt 1](assets/build-drawing-1.svg)](assets/build-drawing-1.svg) | [![Blatt 2](assets/build-drawing-2.svg)](assets/build-drawing-2.svg) |
+| Boden- und Deckrahmen, Vorderansicht mit Display-Haltern, Längenlehren, Zuschnittliste | Aufstellplan mit Tellervorlagen, Bein von der Seite und von außen, Biegeschablone für die Holme, Bauablauf |
+
+> [!IMPORTANT]
+> Im Druckdialog **„Tatsächliche Größe“ bzw. 100 %** wählen, nicht „An Seite anpassen“. Danach die Kontrollstrecken
+> (100 mm waagerecht, 50 mm senkrecht) nachmessen. TFT, D1 mini und Akku sind nach Fotos bemaßt; Käfig- und Beinmaße
+> sind Entwurf. Vor dem Bau den Bohrungsabstand am TFT mit dem Messschieber prüfen.
+
+Erzeugt mit [tools/build_drawing.py](tools/build_drawing.py) aus denselben Maßen wie das 3D-Modell.
 
 ## 🔌 Schaltplan
 
@@ -110,7 +125,7 @@ vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CS
 | ⬜ | **M1 – TFT-Smoke-Test** | Schriftzug, Testmuster und Farben auf dem originalen Display |
 | ⬜ | **M2 – Daten & Strom** | WLAN, Zeitabgleich, Open-Meteo, BME280, Selbsthalteschaltung, Akkustand |
 | ⬜ | **M3 – Displaydesign** | Ansichten „Aktuell“ und „Prognose“, beurteilt am echten Display |
-| ⬜ | **M4 – Circuit Sculpture** | 1:1-Bauzeichnung, Materialliste, Prototyp, sichere Verdrahtung |
+| ⬜ | **M4 – Circuit Sculpture** | 1:1-Bauzeichnung mit gemessenen Maßen, Prototyp, sichere Verdrahtung |
 | ⬜ | **M5 – Endtest** | Einschaltzyklen, Akkulaufzeit, WLAN- und API-Ausfall, Abschlussdoku |
 
 ## 📚 Dokumentation
@@ -120,7 +135,7 @@ vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CS
 | [docs/hardware.md](docs/hardware.md) | Bauteile mit Fotos, bekannte Daten, offene Prüfungen |
 | [docs/parts-list.md](docs/parts-list.md) | Teileliste: Elektronik, Breadboard, Mechanik ([CSV](docs/parts-list.csv)) |
 | [docs/wiring.md](docs/wiring.md) | Anschlussplan, Schaltplan und Breadboard |
-| [docs/design.md](docs/design.md) | Gestaltung von Gestell und Display, Plan für die 1:1-Zeichnung |
+| [docs/design.md](docs/design.md) | Gestaltung von Gestell und Display, 1:1-Bauzeichnung |
 | [docs/software.md](docs/software.md) | Architektur, Datenquellen, Bibliotheken |
 | [docs/test-plan.md](docs/test-plan.md) | Testfälle je Meilenstein |
 | [docs/changelog.md](docs/changelog.md) | Änderungen und Entscheidungen |
