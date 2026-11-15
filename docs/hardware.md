@@ -16,7 +16,7 @@ vorhandene Hardware verwendet; nichts wird ersetzt oder umgebaut.
 |---|---|---|
 | Variante | AZ-Delivery D1 mini (Bauform Wemos/LOLIN D1 mini), Modul `ESP8266MOD 12-F` | Foto |
 | Pins | oben: `TX RX D1 D2 D3 D4 G 5V`, unten: `RST A0 D0 D5 D6 D7 D8 3V3` | Foto |
-| Abmessungen | ca. 34 × 26 mm (D1-mini-Bauform: 34,2 × 25,6 mm) | Messschieber **offen** |
+| Abmessungen | 34 × 26 mm | Messschieber |
 | Befestigungsbohrungen | keine – Befestigung über die Lötaugen der Stiftleisten | Foto |
 | USB | Micro-USB, USB-Seriell-Chip im SO-16-Gehäuse ohne Aufdruck; kein Quarz daneben, also vermutlich CH340C | [Detailfoto](../assets/photos/d1mini-detail.jpg) |
 | 3,3-V-Regler | SOT-23-5, Aufdruck `MK8H` (U3); der Code ist keinem Typ zuzuordnen | Typ **unbekannt** |
@@ -37,7 +37,7 @@ D4 = GPIO2, D5 = GPIO14, D6 = GPIO12, D7 = GPIO13, D8 = GPIO15). Damit gilt die 
 | Merkmal | Wert | Status |
 |---|---|---|
 | Platine | rot, Aufdruck `1.8 TFT SPI 128*160 V1.2` | Foto |
-| Abmessungen | ca. 35 × 58 mm | Messschieber **offen** |
+| Abmessungen | 34 × 58 mm | Messschieber |
 | Befestigung | vier Bohrungen Ø 3 mm in den Ecken, Mittenabstand 28 × 52 mm | gemessen |
 | Auflösung | 128 × 160 Pixel, Betrieb im Hochformat | Aufdruck |
 | Controller | vermutlich ST7735S; die grüne Lasche der Schutzfolie deutet auf die Variante `INITR_GREENTAB` hin | Smoke-Test (M1) |
@@ -63,7 +63,7 @@ Smoke-Test gemessen; ist er hoch, kommt ein zusätzlicher Vorwiderstand von 10�
 | Merkmal | Wert | Status |
 |---|---|---|
 | Modul | lila, Aufdruck `BME/BMP280`, Rückseite `GYBMEP` | Foto |
-| Abmessungen | ca. 10 × 13 mm, eine Bohrung | Messschieber **offen** |
+| Abmessungen | 11 × 14 mm, eine Bohrung | Messschieber |
 | Anschlüsse | `VIN GND SCL SDA` | Foto |
 | Versorgung | 3,3-V-Regler `662K` (XC6206) und Pegelwandler auf dem Modul; `VIN` 3,3–5 V | Foto |
 | Pull-ups | 10-kΩ-Widerstandsnetz `103` für SCL/SDA auf dem Modul | Foto |
@@ -166,7 +166,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] BME280-Modul: Versorgung 3,3–5 V (Regler und Pegelwandler auf dem Modul)
 - [x] Akku bestimmen: LP103454, 2000 mAh, mit Schutzplatine
 - [x] Bohrungen am TFT messen: Ø 3 mm, Mittenabstand 28 × 52 mm
-- [ ] Außenmaße mit dem Messschieber bestätigen (TFT, D1 mini, BME280)
+- [x] Außenmaße mit dem Messschieber: TFT 34 × 58, D1 mini 34 × 26, BME280 11 × 14 mm
 - [x] USB-Seriell-Chip: ohne Aufdruck, ohne Quarz, vermutlich CH340C
 - [x] Regler U3 (`MK8H`): Typ nicht bestimmbar → eigener Regler U2 (TPS62827)
 - [x] A0-Teiler auf dem D1 mini: 220 kΩ / 100 kΩ

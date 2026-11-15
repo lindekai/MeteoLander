@@ -1,7 +1,7 @@
 Bereich;Ref.;Anzahl;Bauteil;Typ / Wert;Gehäuse;Status;Bemerkung
 Elektronik;U3;1;ESP8266-Board;AZ-Delivery D1 mini (ESP-12F);Modul 34 x 26 mm;vorhanden;vermutlich CH340C, A0-Teiler 220 kOhm / 100 kOhm
-Elektronik;U4;1;TFT-Display 1,8 Zoll;1.8 TFT SPI 128*160 V1.2, vermutlich ST7735S;Modul ca. 35 x 58 mm;vorhanden, Prüfung offen;Controller im Smoke-Test (M1) bestimmen
-Elektronik;U5;1;Klimasensor;GYBMEP-Modul (BME280 oder BMP280);Modul ca. 10 x 13 mm;vorhanden, Prüfung offen;Chip-ID prüfen: 0x60 = BME280
+Elektronik;U4;1;TFT-Display 1,8 Zoll;1.8 TFT SPI 128*160 V1.2, vermutlich ST7735S;Modul 34 x 58 mm;vorhanden, Prüfung offen;Controller im Smoke-Test (M1) bestimmen
+Elektronik;U5;1;Klimasensor;GYBMEP-Modul (BME280 oder BMP280);Modul 11 x 14 mm;vorhanden, Prüfung offen;Chip-ID prüfen: 0x60 = BME280
 Elektronik;BT1;1;LiPo-Akku;EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine;10 x 34 x 57 mm;vorhanden;Steckerart noch prüfen
 Elektronik;U1;1;Lademodul;HW-168 (TP4056), Mini-USB, ohne Schutz und Lastausgang;Modul ca. 16 x 20 mm;vorhanden;Ladestrom 1 A (PROG 1,2 kOhm), laden bei ausgeschaltetem Gerät
 Elektronik;U2;1;Schaltregler 3,3 V;Adafruit TPS62827 Breakout (Produkt 4920), 2 A, ab 3,4 V Eingang;Modul;beschaffen;nötig, weil der Typ des Board-Reglers (MK8H) unbekannt ist, Kondensatoren auf dem Board

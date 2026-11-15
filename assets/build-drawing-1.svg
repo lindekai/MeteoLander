@@ -257,7 +257,7 @@
 <text x="150.200" y="38.200" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="start" fill="#737a85">Display an vier Haltern</text>
 <path d="M146.000 112.000 L188.000 112.000 L188.000 42.000 L146.000 42.000 Z" fill="none" stroke="#dbb040" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M146.000 112.000 L188.000 112.000 L188.000 42.000 L146.000 42.000 Z" fill="none" stroke="#7a5c1a" stroke-width="0.08" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M149.500 48.000 L184.500 48.000 L184.500 106.000 L149.500 106.000 Z" fill="none" stroke="#bf262e" stroke-width="0.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.2 0.8"/>
+<path d="M150.000 48.000 L184.000 48.000 L184.000 106.000 L150.000 106.000 Z" fill="none" stroke="#bf262e" stroke-width="0.3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1.2 0.8"/>
 <text x="167.000" y="76.000" font-family="Helvetica, Arial, sans-serif" font-size="3" font-weight="700" text-anchor="middle" fill="#bf262e">TFT</text>
 <text x="167.000" y="79.600" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#bf262e">Umriss</text>
 <path d="M153.000 103.000 L146.000 103.000" fill="none" stroke="#dbb040" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round"/>

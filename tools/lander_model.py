@@ -6,8 +6,8 @@ Erzeugt aus einem einfachen Modell (Maße in mm) die Grafiken in assets/:
   - views.svg            Ansichten von vorn, rechts, hinten, links und oben
   - hero.svg             Titelbild für das README
 
-Die Maße sind Annahmen, bis die Platinen ausgemessen sind (M0). Sie stehen
-gesammelt im Abschnitt MASSE und werden dann dort korrigiert.
+Die Platinenmaße sind mit dem Messschieber bestätigt (M0). Alle Maße stehen
+gesammelt im Abschnitt MASSE.
 
 Aufruf:  python3 tools/lander_model.py
 """
@@ -21,11 +21,11 @@ ASSETS = os.path.join(ROOT, "assets")
 # ---------------------------------------------------------------- MASSE (mm)
 CAGE_W, CAGE_D = 42.0, 48.0          # Käfig: Breite (x), Tiefe (y)
 CAGE_Z0, CAGE_Z1 = 30.0, 100.0       # Käfig: Unter-/Oberkante
-TFT_W, TFT_H = 35.0, 58.0            # rotes TFT-Modul, Platine (Foto, ca.)
+TFT_W, TFT_H = 34.0, 58.0            # rotes TFT-Modul, Platine (Messschieber)
 TFT_Z0 = 36.0
 TFT_HOLE_DX, TFT_HOLE_DZ = 28.0, 52.0  # Bohrungsabstand TFT, Mitte zu Mitte (gemessen)
 SCREEN_W, SCREEN_H = 28.0, 35.0      # aktive Fläche 1,8"
-ESP_W, ESP_H = 25.6, 34.2            # AZ-Delivery D1 mini
+ESP_W, ESP_H = 26.0, 34.0            # AZ-Delivery D1 mini (Messschieber)
 BAT_W, BAT_T, BAT_H = 34.0, 10.0, 57.0  # LiPo LP103454 inkl. Schutzplatine
 LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
@@ -437,10 +437,10 @@ def build(scene):
     S.rod((0, CAGE_D / 2, z1), (0, CAGE_D / 2, mast_top))
     S.rod((x0, CAGE_D / 2, z1), (x1, CAGE_D / 2, z1))
     S.joint((0, CAGE_D / 2, z1)); S.joint((x0, CAGE_D / 2, z1)); S.joint((x1, CAGE_D / 2, z1))
-    S.box((-6.5, CAGE_D / 2 - 0.8, mast_top - 2), (6.5, CAGE_D / 2 + 0.8, mast_top + 8.5), "#7b3fb5")
+    S.box((-5.5, CAGE_D / 2 - 0.8, mast_top - 2), (5.5, CAGE_D / 2 + 0.8, mast_top + 12), "#7b3fb5")   # 11 x 14 mm
     S.box((-1.4, CAGE_D / 2 - 1.6, mast_top + 2.6), (1.4, CAGE_D / 2 - 0.8, mast_top + 5.4), "#c7cdd4")
     S.polyline([(0.9, CAGE_D / 2 - 0.9, mast_top - 2), (0.9, CAGE_D / 2 - 0.9, z1 + 4), (6, 18, z1 - 4)], width=0.35, color=cu)
-    S.anchor("bme", (6.5, CAGE_D / 2, mast_top + 6))
+    S.anchor("bme", (5.5, CAGE_D / 2, mast_top + 7))
     S.anchor("cage", (x0, 0, z1 - 20))
 
     return S
@@ -509,7 +509,7 @@ def assembly():
 <rect width="{W}" height="{H}" rx="18" fill="#0b1530"/>
 <ellipse cx="400" cy="470" rx="380" ry="360" fill="url(#glow)"/>
 <text x="44" y="56" font-family="{SANS}" font-size="24" font-weight="700" fill="#ffffff">Aufbauskizze</text>
-<text x="44" y="82" font-family="{SANS}" font-size="14" fill="#8b949e">Landefähre aus 1-mm-Messingdraht · Maße sind Annahmen, bis die Platinen ausgemessen sind</text>
+<text x="44" y="82" font-family="{SANS}" font-size="14" fill="#8b949e">Landefähre aus 1-mm-Messingdraht · Platinenmaße gemessen</text>
 {floor_shadow(cam)}
 {body}
 {"".join(calls)}

@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 – Außenmaße gemessen
+
+- Messschieber: TFT 34 × 58 mm, D1 mini 34 × 26 mm, BME280 11 × 14 mm; 3D-Modell, Ansichten und Bauzeichnung
+  (TFT-Umriss in ③) angepasst. Käfigmaße bleiben unverändert
+
 ## 2026-11-15 – Schaltregler TPS62827
 
 - U2 ist jetzt das Adafruit-Board TPS62827 (Schaltregler 3,3 V, 2 A) statt des HT7833; C1 und C2 entfallen, weil
