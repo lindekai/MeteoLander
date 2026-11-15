@@ -24,7 +24,8 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
   hinter der Vorderkante, sicher innerhalb der Landeteller (−23 bis +71 mm).
 - **Lademodul:** HW-168 an der rechten Seite, Lade-LEDs nach außen sichtbar, Mini-USB-Buchse nach hinten.
 - **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, LDO und Spannungsteiler.
-- **Taster:** oben vorn auf einer Querstrebe. Gedrückt wird von oben, das belastet die Beine und nichts kippt.
+- **Taster:** 6 × 6 mm oben vorn; das GND-Beinpaar ist auf die Querstrebe gelötet. Gedrückt wird von oben, das
+  belastet die Beine und nichts kippt.
 - **BME280:** auf einem Mast über dem Käfig. Er misst direkt nach dem Einschalten, solange die Elektronik kalt ist.
 - **Landebeine:** je Ecke Oberarm, Knie, Unterschenkel und Strebe; unten ein Messingteller Ø 14 mm.
   Die Teller werden zuletzt angelötet, sonst wackelt die Fähre.

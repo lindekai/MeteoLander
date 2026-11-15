@@ -226,8 +226,14 @@
 <circle cx="120.000" cy="66.000" r="0.750" fill="#ffffff" stroke="#737a85" stroke-width="0.12"/>
 <circle cx="99.000" cy="66.000" r="1.400" fill="none" stroke="#c7733b" stroke-width="0.25"/>
 <text x="99.000" y="63.400" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#c7733b">Mast</text>
-<path d="M96.000 81.000 L102.000 81.000 L102.000 87.000 L96.000 87.000 Z" fill="none" stroke="#737a85" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.8 0.6"/>
-<text x="99.000" y="80.000" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#737a85">Taster</text>
+<path d="M96.000 78.750 L102.000 78.750 L102.000 84.750 L96.000 84.750 Z" fill="none" stroke="#737a85" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.8 0.6"/>
+<circle cx="95.750" cy="84.000" r="0.500" fill="#737a85" stroke="#737a85" stroke-width="0.2"/>
+<circle cx="95.750" cy="79.500" r="0.500" fill="none" stroke="#737a85" stroke-width="0.2"/>
+<circle cx="102.250" cy="84.000" r="0.500" fill="#737a85" stroke="#737a85" stroke-width="0.2"/>
+<circle cx="102.250" cy="79.500" r="0.500" fill="none" stroke="#737a85" stroke-width="0.2"/>
+<text x="99.000" y="77.550" font-family="Helvetica, Arial, sans-serif" font-size="2.3" font-weight="400" text-anchor="middle" fill="#737a85">Taster</text>
+<text x="99.000" y="107.000" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">Taster 6 × 6: Beine • auf den Querstab löten (GND),</text>
+<text x="99.000" y="110.000" font-family="Helvetica, Arial, sans-serif" font-size="2.2" font-weight="400" text-anchor="middle" fill="#737a85">Beine o führen zu BTN – vorher durchpiepsen</text>
 <text x="99.000" y="94.000" font-family="Helvetica, Arial, sans-serif" font-size="2.4" font-weight="400" text-anchor="middle" fill="#737a85">vorn</text>
 <path d="M120.600 90.000 L126.200 90.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M120.600 84.000 L126.200 84.000" fill="none" stroke="#737a85" stroke-width="0.12" stroke-linecap="round" stroke-linejoin="round"/>

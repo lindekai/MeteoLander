@@ -113,13 +113,29 @@ die Fähre aus ist. Kurzes Einschalten beim Laden schadet nicht.
 `IN−` und `BAT−` sind auf dem Modul verbunden und liegen auf GND. Damit kann das Modul über das `BAT−`-Lötauge
 direkt am Messinggestell (GND) angelötet werden.
 
+### Taster
+
+| Oben | Seite |
+|---|---|
+| ![Taster oben](../assets/photos/taster-oben.jpg) | ![Taster von der Seite](../assets/photos/taster-seite.jpg) |
+
+| Merkmal | Wert | Status |
+|---|---|---|
+| Typ | Kurzhubtaster 6 × 6 mm, Metalldeckel, schwarzer Stößel, schließend | Foto |
+| Höhe | ca. 5 mm mit Stößel | Foto |
+| Beinchen | 4 Stück, gerade, ca. 7 mm lang; Raster 6,5 × 4,5 mm (Standard) | Foto |
+
+Bei diesen Tastern sind je zwei gegenüberliegende Beinchen (6,5 mm auseinander) fest verbunden; geschaltet wird
+zwischen den beiden Paaren (4,5 mm). Das Paar auf der GND-Seite wird direkt auf den Querstab im Deckrahmen gelötet;
+damit sitzt der Taster fest und hat seine GND-Verbindung. Das andere Paar führt zu `BTN`. Welches Paar fest verbunden
+ist, wird vorher mit dem Durchgangsprüfer bestätigt.
+
 ### Noch nicht gesichtet
 
 | Teil | Anforderung | Status |
 |---|---|---|
 | Spannungsregler | 3,3 V aus 3,0–4,2 V, mind. 500 mA für WLAN-Spitzen – oder der Regler des D1 mini (siehe unten) | **offen** |
 | Selbsthalteschaltung | Logikpegel-P-MOSFET, NPN-Transistor, Widerstände, Diode | Typen **offen** |
-| Taster | Drucktaster, schließend | **offen** |
 
 **Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
@@ -145,5 +161,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang
 - [x] Lademodul: Ladestrom 1 A (PROG-Widerstand 1,2 kΩ)
 - [ ] Lademodul: LED-Farben beim Laden prüfen
-- [ ] Taster, MOSFET und Transistoren in der Werkstatt sichten
+- [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch
+- [ ] Taster: fest verbundene Beinpaare durchpiepsen
+- [ ] MOSFET und Transistoren in der Werkstatt sichten
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

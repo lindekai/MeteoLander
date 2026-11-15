@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-15 – Taster bestimmt
+
+- Taster: Kurzhubtaster 6 × 6 mm, ca. 5 mm hoch (`assets/photos/taster-*.jpg`)
+- Befestigung: Das GND-Beinpaar liegt auf dem Querstab im Deckrahmen und wird dort angelötet; die Tastermitte
+  rückt dafür 2,25 mm nach hinten. Bauzeichnung ② und 3D-Modell angepasst
+
 ## 2026-11-15 – Lademodul bestimmt
 
 - Lademodul HW-168 (TP4056, Mini-USB, ca. 16 × 20 mm) anhand von Fotos bestimmt (`assets/photos/lademodul-*.jpg`).

@@ -347,8 +347,14 @@ def sheet1():
         pg.joint(x, y)
     pg.circle(ox + CW / 2, ym, 1.4, w=0.25, color=CU)
     pg.text(ox + CW / 2, ym - 2.6, "Mast", 2.3, anchor="middle", color=CU)
-    pg.rect(ox + CW / 2 - 3, yb - 3, 6, 6, w=0.2, color=GREY, dash=(0.8, 0.6))
-    pg.text(ox + CW / 2, yb - 4, "Taster", 2.3, anchor="middle", color=GREY)
+    bc = yb - M.BTN_PITCH / 2                                   # Tastermitte, GND-Beinpaar auf dem Querstab
+    pg.rect(ox + CW / 2 - M.BTN / 2, bc - M.BTN / 2, M.BTN, M.BTN, w=0.2, color=GREY, dash=(0.8, 0.6))
+    for dx in (-3.25, 3.25):
+        pg.circle(ox + CW / 2 + dx, yb, 0.5, w=0.2, color=GREY, fill=GREY)
+        pg.circle(ox + CW / 2 + dx, yb - M.BTN_PITCH, 0.5, w=0.2, color=GREY)
+    pg.text(ox + CW / 2, bc - M.BTN / 2 - 1.2, "Taster", 2.3, anchor="middle", color=GREY)
+    pg.text(ox + CW / 2, oy + CD + 17, "Taster 6 × 6: Beine • auf den Querstab löten (GND),", 2.2, anchor="middle", color=GREY)
+    pg.text(ox + CW / 2, oy + CD + 20, "Beine o führen zu BTN – vorher durchpiepsen", 2.2, anchor="middle", color=GREY)
     pg.text(ox + CW / 2, oy + CD + 4, "vorn", 2.4, anchor="middle", color=GREY)
     pg.dim((ox + CW, oy + CD), (ox + CW, yb), -5)
     pg.dim((ox + CW, oy + CD), (ox + CW, ym), -12)

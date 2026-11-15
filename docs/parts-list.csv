@@ -14,7 +14,7 @@ Elektronik;R3;1;Widerstand;100 kOhm;THT 1/4 W;offen;Basis nach GND
 Elektronik;R4;1;Widerstand;100 kOhm;THT 1/4 W;offen;Akkuspannung an A0
 Elektronik;R5;1;Widerstand;10 kOhm;THT 1/4 W;offen;TFT-RESET nach +3V3
 Elektronik;C1, C2;2;Keramikkondensator;1 µF, >= 10 V;THT oder 0805;offen;am Ein- und Ausgang von U2
-Elektronik;S1;1;Taster;Kurzhubtaster 6 x 6 mm, schließend;THT;offen;für die Fähre evtl. ein größerer Taster
+Elektronik;S1;1;Taster;Kurzhubtaster 6 x 6 mm, ca. 5 mm hoch, schließend;THT;vorhanden;GND-Beinpaar auf den Querstab im Deckrahmen gelötet
 Breadboard;;1;Steckbrett;830 Kontakte (63 Spalten);;offen;Schienen oben und unten
 Breadboard;;1 Satz;Steckbrücken, starr;;;offen;kurze Verbindungen auf dem Brett
 Breadboard;;ca. 12;Dupont-Kabel, Buchse-Stecker;;;offen;TFT und BME280 neben dem Brett

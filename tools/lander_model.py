@@ -31,6 +31,8 @@ LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
 ROD = 1.0                            # Messingdraht 1,0 mm
 BTN_BAR_Y = 6.0                      # Querstab für den Taster, Abstand zur Vorderkante
+BTN = 6.0; BTN_PITCH = 4.5           # Taster 6 x 6 mm; Beinchen 4,5 mm auseinander (schaltende Seite)
+BTN_Y = BTN_BAR_Y + BTN_PITCH / 2    # Tastermitte: das GND-Beinpaar liegt genau auf dem Querstab
 MAST_H = 26.0                        # Mast über dem Deckrahmen
 TRAY_W, TRAY_D, TRAY_T = 36.0, 14.0, 1.6  # Akkuwanne aus Lochraster
 TRAY_ROD_Y = CAGE_D - 13.0           # Querdraht im Bodenrahmen, trägt die Wanne vorn
@@ -426,9 +428,9 @@ def build(scene):
     S.polyline([(x1 - 0.6, 40, 90), (x1 - 3, 40, 96), (ex1 - 1.3, 16, 96), (ex1 - 1.3, 12.5, ez1 - 2)], width=0.35, color=cu)
 
     # --- Taster oben vorn
-    S.box((-3.0, 3.0, z1 + 0.4), (3.0, 9.0, z1 + 3.8), "#2d333b")
-    S.cylinder((0.0, 6.0, z1 + 3.8), 1.8, 1.6, "#e6c25a", "#f3d67a", seg=20)
-    S.anchor("btn", (0.0, 6.0, z1 + 5.4))
+    S.box((-BTN / 2, BTN_Y - BTN / 2, z1 + ROD / 2), (BTN / 2, BTN_Y + BTN / 2, z1 + ROD / 2 + 3.5), "#8c959f")
+    S.cylinder((0.0, BTN_Y, z1 + ROD / 2 + 3.5), 1.75, 1.5, "#1b1f24", "#3a4048", seg=20)
+    S.anchor("btn", (0.0, BTN_Y, z1 + ROD / 2 + 5.0))
 
     # --- BME280 auf dem Mast
     mast_top = z1 + MAST_H
