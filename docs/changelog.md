@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 – D1 mini im Detail
+
+- A0-Teiler abgelesen: 220 kΩ / 100 kΩ; USB-Seriell-Chip ohne Quarz, vermutlich CH340C (`assets/photos/d1mini-detail.jpg`)
+- Board-Regler `MK8H` ist keinem Typ zuzuordnen; die Fähre bekommt deshalb den eigenen LDO U2
+
 ## 2026-11-15 – Bestand gesichtet
 
 - LM2596-Modul (HW-411) geprüft: als 3,3-V-Regler am LiPo ungeeignet (zu großer Spannungsabfall, zu groß)

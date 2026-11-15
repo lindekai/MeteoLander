@@ -11,12 +11,12 @@ Bestand zu suchen · ❓ Typ noch offen
 
 | Ref. | Anz. | Bauteil | Typ / Wert | Gehäuse | Status | Bemerkung |
 |---|---:|---|---|---|:---:|---|
-| U3 | 1 | ESP8266-Board | AZ-Delivery D1 mini (ESP-12F) | Modul 34 × 26 mm | ✅ | USB-Seriell-Chip und Regler noch ablesen |
+| U3 | 1 | ESP8266-Board | AZ-Delivery D1 mini (ESP-12F) | Modul 34 × 26 mm | ✅ | vermutlich CH340C; A0-Teiler 220 kΩ / 100 kΩ |
 | U4 | 1 | TFT-Display 1,8″ | `1.8 TFT SPI 128*160 V1.2`, vermutlich ST7735S | Modul ca. 35 × 58 mm | 🔍 | Controller im Smoke-Test (M1) bestimmen |
 | U5 | 1 | Klimasensor | GYBMEP-Modul (BME280 oder BMP280) | Modul ca. 10 × 13 mm | 🔍 | Chip-ID prüfen: 0x60 = BME280 |
 | BT1 | 1 | LiPo-Akku | EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine | 10 × 34 × 57 mm | ✅ | Steckerart noch prüfen |
 | U1 | 1 | Lademodul | HW-168 (TP4056), Mini-USB, ohne Schutz und Lastausgang | Modul ca. 16 × 20 mm | ✅ | Ladestrom 1 A (PROG 1,2 kΩ); laden bei ausgeschaltetem Gerät |
-| U2 | 1 | LDO 3,3 V | AP2112K-3.3, ME6211C33 oder HT7833 (≥ 500 mA) | SOT-23-5 | 🛒 | entfällt evtl., wenn der Regler des D1 mini reicht |
+| U2 | 1 | LDO 3,3 V | AP2112K-3.3, ME6211C33 oder HT7833 (≥ 500 mA) | SOT-23-5 | 🛒 | nötig: Typ des Board-Reglers (`MK8H`) ist unbekannt |
 | Q1 | 1 | P-MOSFET, Logikpegel | AO3401 oder gleichwertig | SOT-23 | 🛒 | Schalter der Selbsthaltung |
 | Q2 | 1 | NPN-Transistor | BC547 oder gleichwertig | TO-92 | 🛒 | hält das Gate unten |
 | D1, D2 | 2 | Schottky-Diode | BAT85 | DO-35 | 🛒 | |

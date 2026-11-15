@@ -18,11 +18,11 @@ vorhandene Hardware verwendet; nichts wird ersetzt oder umgebaut.
 | Pins | oben: `TX RX D1 D2 D3 D4 G 5V`, unten: `RST A0 D0 D5 D6 D7 D8 3V3` | Foto |
 | Abmessungen | ca. 34 × 26 mm (D1-mini-Bauform: 34,2 × 25,6 mm) | Messschieber **offen** |
 | Befestigungsbohrungen | keine – Befestigung über die Lötaugen der Stiftleisten | Foto |
-| USB | Micro-USB, USB-Seriell-Chip im SO-16-Gehäuse (vermutlich CH340) | Aufdruck **offen** |
-| 3,3-V-Regler | SOT-23-5, Aufdruck `MK8H` (U3) | Typ **offen** |
+| USB | Micro-USB, USB-Seriell-Chip im SO-16-Gehäuse ohne Aufdruck; kein Quarz daneben, also vermutlich CH340C | [Detailfoto](../assets/photos/d1mini-detail.jpg) |
+| 3,3-V-Regler | SOT-23-5, Aufdruck `MK8H` (U3); der Code ist keinem Typ zuzuordnen | Typ **unbekannt** |
 | Reset-Taster | seitlich neben der USB-Buchse | Foto |
 | Auto-Reset | zwei Transistoren `J3Y` (S8050) | Foto |
-| Teiler an `A0` | auf dem Board, bei der D1-mini-Bauform 220 kΩ / 100 kΩ (Messbereich 0–3,2 V) | Widerstandswerte **offen** |
+| Teiler an `A0` | 220 kΩ (`224`) / 100 kΩ (`104`) auf dem Board, Messbereich 0–3,2 V | Aufdruck |
 
 Die D-Bezeichnungen entsprechen dem NodeMCU-Schema (D0 = GPIO16, D1 = GPIO5, D2 = GPIO4, D3 = GPIO0,
 D4 = GPIO2, D5 = GPIO14, D6 = GPIO12, D7 = GPIO13, D8 = GPIO15). Damit gilt die Pinbelegung aus
@@ -147,7 +147,9 @@ zum Querstab bleiben gut 2 mm Luft.
 
 **Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
-WLAN-Spitzen auch mit fast leerem Akku noch 3,3 V hält. Entschieden wird das, wenn der Typ von U3 feststeht.
+WLAN-Spitzen auch mit fast leerem Akku noch 3,3 V hält. Der Typ von U3 lässt sich am Aufdruck `MK8H` nicht bestimmen. Deshalb bekommt die Fähre ihren eigenen LDO U2; Leistung
+und Spannungsabfall sind dann bekannt. Wer U2 sparen möchte, kann U3 im Aufbau testen: Akku über die Selbsthaltung an
+`5V`, WLAN senden lassen und `3V3` bei einer Akkuspannung um 3,4 V messen.
 
 Warum Selbsthalteschaltung statt Deep Sleep: Ein Entwicklungsboard zieht auch im Deep Sleep über USB-Seriell-Chip,
 Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; im Ruhezustand fließt praktisch kein Strom.
@@ -161,8 +163,9 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] Akku bestimmen: LP103454, 2000 mAh, mit Schutzplatine
 - [x] Bohrungen am TFT messen: Ø 3 mm, Mittenabstand 28 × 52 mm
 - [ ] Außenmaße mit dem Messschieber bestätigen (TFT, D1 mini, BME280)
-- [ ] Aufdruck des USB-Seriell-Chips und Typ des Reglers U3 (`MK8H`) auf dem D1 mini bestimmen
-- [ ] Widerstände des A0-Teilers auf dem D1 mini ablesen oder messen
+- [x] USB-Seriell-Chip: ohne Aufdruck, ohne Quarz, vermutlich CH340C
+- [x] Regler U3 (`MK8H`): Typ nicht bestimmbar → eigener LDO U2
+- [x] A0-Teiler auf dem D1 mini: 220 kΩ / 100 kΩ
 - [ ] TFT: Funktion von J1 und U1 durchmessen, Wert von R4 ablesen
 - [ ] BME280: I²C-Adresse und Chip-ID per Sketch auslesen (BME280 oder BMP280?)
 - [ ] Displaycontroller und Tab-Variante im Smoke-Test bestimmen (M1)
