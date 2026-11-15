@@ -1,16 +1,24 @@
 # Verdrahtung
 
 > [!IMPORTANT]
-> **Entwurf, nicht aufgebaut und nicht geprüft.** Die GPIO-Zuordnung ist ein begründeter Vorschlag auf Ebene des
-> ESP8266-Chips. Sie wird erst gültig, wenn Boardvariante, Pinreihenfolge am TFT und Versorgung der Module geprüft
-> sind (Meilenstein M0).
+> **Entwurf, nicht aufgebaut und nicht geprüft.** Board (AZ-Delivery D1 mini) und Pinreihenfolge am TFT sind
+> anhand von Fotos bestimmt. Gültig wird die Belegung erst nach dem Smoke-Test (M1) und dem Aufbau auf dem
+> Breadboard.
 
 ![Schaltplan](../assets/schematic.svg)
 
+## Breadboard
+
+![Breadboard-Zeichnung](../assets/breadboard.svg)
+
+Testaufbau auf einem Steckbrett mit 830 Kontakten, erzeugt mit `tools/breadboard.py`. Bereich A (Spalten 4–24)
+enthält Selbsthaltung und Regler, der D1 mini steckt um 180° gedreht in den Spalten 34–41 (USB links, Antenne
+rechts frei). Für M1 reicht der D1 mini an USB mit TFT und BME280; Bereich A folgt in M2. Sobald Bereich A steckt,
+wird der D1 mini nicht mehr über seine eigene USB-Buchse versorgt.
+
 ## Pinbelegung (Vorschlag)
 
-GPIO-Nummern gelten für jede ESP8266-Boardvariante. Die D-Bezeichnungen gelten für NodeMCU-/LoLin-artige Boards
-und werden am vorhandenen Board geprüft.
+Board: AZ-Delivery D1 mini. Seine D-Bezeichnungen folgen dem NodeMCU-Schema, die Tabelle gilt deshalb unverändert.
 
 | ESP8266 | Board | Signal | Ziel | Begründung |
 |---|---|---|---|---|
@@ -27,8 +35,11 @@ und werden am vorhandenen Board geprüft.
 | GPIO2 | D4 | – | frei | Bootpin, muss beim Start HIGH sein |
 | GPIO1 | TX | – | seriell | Diagnoseausgabe |
 
-TFT `RESET` liegt über R5 (10 kΩ) an +3V3, der Reset erfolgt per Software. TFT `LED` liegt an +3V3, sofern das
-Modul einen Vorwiderstand hat. Die microSD-Anschlüsse bleiben unbeschaltet.
+TFT `RESET` liegt über R5 (10 kΩ) an +3V3, der Reset erfolgt per Software. TFT `LED` liegt an +3V3; das Modul hat
+dafür einen eigenen Vorwiderstand (R4 auf dem Modul). Die microSD-Anschlüsse bleiben unbeschaltet.
+
+Stiftleiste am TFT (Pin 1 = eckiges Lötauge): `VCC GND CS RESET A0 SDA SCK LED`.
+Anschlüsse am BME280-Modul: `VIN GND SCL SDA`; das Modul hat eigenen Regler, Pegelwandler und Pull-ups.
 
 ## Ladeanzeige
 
@@ -59,8 +70,9 @@ beim Einschalten gedrückt bleiben muss.
 
 ## Akkuspannung
 
-Über einen Spannungsteiler an `A0`. Der Teiler sitzt hinter dem MOSFET und verbraucht deshalb im ausgeschalteten
-Zustand nichts. Das Teilerverhältnis hängt davon ab, ob das Board an `A0` bereits einen eigenen Teiler hat.
+Über R4 (100 kΩ) an `A0`. Der D1 mini hat an `A0` bereits einen Teiler (220 kΩ / 100 kΩ, Messbereich 0–3,2 V);
+mit R4 davor ergeben 4,2 V am Akku etwa 1,0 V am ADC des Chips. Die Widerstände auf dem Board werden noch
+nachgemessen. R4 sitzt hinter dem MOSFET und verbraucht im ausgeschalteten Zustand nichts.
 
 ## Regeln für die Pinwahl
 

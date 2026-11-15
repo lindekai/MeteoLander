@@ -25,7 +25,9 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
   Die Teller werden zuletzt angelötet, sonst wackelt die Fähre.
 - **Verbindungen:** sichtbarer Kupferlackdraht; das Messing führt GND.
 
-Die Grafik wird aus `tools/lander_model.py` erzeugt. Alle Maße stehen dort im Abschnitt `MASSE` und sind bis zum
+![Ansichten von allen Seiten](../assets/views.svg)
+
+Die Grafiken werden aus `tools/lander_model.py` erzeugt. Alle Maße stehen dort im Abschnitt `MASSE` und sind bis zum
 Ausmessen der Platinen Annahmen. Drahtstärken, Beinwinkel und Gesamthöhe werden in M4 festgelegt.
 Sicherheitsregeln siehe [wiring.md](wiring.md).
 

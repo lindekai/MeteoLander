@@ -1,0 +1,52 @@
+# Teileliste
+
+Stand: 2026-11-15 · Bauteilnamen wie in [Schaltplan](../assets/schematic.svg) und
+[Breadboard-Zeichnung](../assets/breadboard.svg). Dieselbe Liste als Tabelle für Tabellenkalkulationen:
+[parts-list.csv](parts-list.csv).
+
+**Status:** ✅ vorhanden und bestimmt · 🔍 vorhanden, Prüfung offen · 🛒 Typ steht, noch zu beschaffen bzw. im
+Bestand zu suchen · ❓ Typ noch offen
+
+## Elektronik
+
+| Ref. | Anz. | Bauteil | Typ / Wert | Gehäuse | Status | Bemerkung |
+|---|---:|---|---|---|:---:|---|
+| U3 | 1 | ESP8266-Board | AZ-Delivery D1 mini (ESP-12F) | Modul 34 × 26 mm | ✅ | USB-Seriell-Chip und Regler noch ablesen |
+| U4 | 1 | TFT-Display 1,8″ | `1.8 TFT SPI 128*160 V1.2`, vermutlich ST7735S | Modul ca. 35 × 58 mm | 🔍 | Controller im Smoke-Test (M1) bestimmen |
+| U5 | 1 | Klimasensor | GYBMEP-Modul (BME280 oder BMP280) | Modul ca. 10 × 13 mm | 🔍 | Chip-ID prüfen: 0x60 = BME280 |
+| BT1 | 1 | LiPo-Akku | EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine | 10 × 34 × 57 mm | ✅ | Steckerart noch prüfen |
+| U1 | 1 | Lademodul | z. B. TP4056 mit Schutz (DW01), besser mit Load-Sharing | Modul | ❓ | Ladestrom ≤ 1 A passt zu 2000 mAh |
+| U2 | 1 | LDO 3,3 V | AP2112K-3.3 (≥ 500 mA) oder gleichwertig | SOT-23-5 | ❓ | entfällt evtl., wenn der Regler des D1 mini reicht |
+| Q1 | 1 | P-MOSFET, Logikpegel | AO3401 oder gleichwertig | SOT-23 | ❓ | Schalter der Selbsthaltung |
+| Q2 | 1 | NPN-Transistor | BC547 oder gleichwertig | TO-92 | ❓ | hält das Gate unten |
+| D1, D2 | 2 | Schottky-Diode | BAT85 | DO-35 | ❓ | |
+| R1 | 1 | Widerstand | 100 kΩ | THT 1/4 W | ❓ | Gate-Pull-up |
+| R2 | 1 | Widerstand | 10 kΩ | THT 1/4 W | ❓ | Basiswiderstand Q2 |
+| R3 | 1 | Widerstand | 100 kΩ | THT 1/4 W | ❓ | Basis nach GND |
+| R4 | 1 | Widerstand | 100 kΩ | THT 1/4 W | ❓ | Akkuspannung an A0 |
+| R5 | 1 | Widerstand | 10 kΩ | THT 1/4 W | ❓ | TFT-RESET nach +3V3 |
+| C1, C2 | 2 | Keramikkondensator | 1 µF, ≥ 10 V | THT oder 0805 | ❓ | am Ein- und Ausgang von U2 |
+| S1 | 1 | Taster | Kurzhubtaster 6 × 6 mm, schließend | THT | ❓ | für die Fähre evtl. ein größerer Taster |
+
+## Testaufbau auf dem Breadboard
+
+| Anz. | Teil | Bemerkung | Status |
+|---:|---|---|:---:|
+| 1 | Steckbrett, 830 Kontakte (63 Spalten) | Schienen oben und unten | ❓ |
+| 1 Satz | Steckbrücken, starr | für kurze Verbindungen auf dem Brett | ❓ |
+| ca. 12 | Dupont-Kabel, Buchse–Stecker | TFT und BME280 neben dem Brett | ❓ |
+| 2 | Adapterplatine SOT-23 bzw. SOT-23-5 auf 2,54 mm | für Q1 und U2 | ❓ |
+| 1 | Stiftleisten 2,54 mm | für D1 mini, BME280 und Adapter | ❓ |
+
+## Mechanik (Fähre)
+
+Mengen und Längen folgen mit der 1:1-Bauzeichnung in M4.
+
+| Teil | Abmessung | Verwendung | Status |
+|---|---|---|:---:|
+| Messingdraht | Ø 0,8 mm | Käfig, Beine, Mast; führt GND | ❓ |
+| Messingblech oder -scheiben | Ø 14 mm | Landeteller | ❓ |
+| Kupferlackdraht | ca. Ø 0,3 mm | sichtbare Signalleitungen | ❓ |
+| Isolierender Träger für den Akku | z. B. Kapton-Band, Schrumpfschlauch, dünne Platte | Akku nie blank am Messing | ❓ |
+| Lochrasterplatine | klein | Selbsthaltung, Regler, Spannungsteiler | ❓ |
+| Schrumpfschlauch, Kapton-Band | – | Isolierung | ❓ |

@@ -20,8 +20,8 @@
 ---
 
 > [!NOTE]
-> **Konzeptphase.** Dieses Repository enthält bisher Planung, Gestaltung und Dokumentation. Die Hardware ist noch nicht
-> ausgemessen, es gibt noch keine Firmware. Alle Bilder sind Entwürfe und werden durch Fotos und Screenshots des echten
+> **Konzeptphase.** Dieses Repository enthält bisher Planung, Gestaltung und Dokumentation. Die Teile sind anhand von
+> Fotos bestimmt, aber noch nicht mit dem Messschieber ausgemessen; es gibt noch keine Firmware. Alle Bilder sind Entwürfe und werden durch Fotos und Screenshots des echten
 > Geräts ersetzt, sobald es sie gibt.
 
 ## ✨ Idee
@@ -60,6 +60,13 @@ Signale laufen als sichtbarer Kupferlackdraht. Zum Bauen gibt es eine **Zeichnun
 ausgemessen sind (siehe [docs/design.md](docs/design.md)). Die Grafiken werden aus einem kleinen 3D-Modell erzeugt
 ([tools/lander_model.py](tools/lander_model.py)), damit sie nach dem Ausmessen mit echten Maßen neu entstehen.
 
+<p align="center">
+  <a href="assets/views.svg"><img src="assets/views.svg" alt="Ansichten der Landefähre von vorn, rechts, hinten, links und oben" width="100%"></a>
+</p>
+
+Dieselbe Fähre von allen Seiten: Von hinten sieht man den Akku an der Rückwand, von rechts Lademodul und
+Lochrasterplatine, von links den D1 mini mit freier Antenne.
+
 ## 🔌 Schaltplan
 
 <p align="center">
@@ -70,18 +77,30 @@ Ein Tastendruck schaltet über einen P-MOSFET ein, der ESP8266 hält sich selbst
 wieder vollständig vom Akku. Die Lade-LEDs des Lademoduls sitzen sichtbar an der Seite der Fähre. Der Plan ist ein **Entwurf**:
 Pinbelegung und Begründung stehen in [docs/wiring.md](docs/wiring.md).
 
+## 🧪 Testaufbau auf dem Breadboard
+
+<p align="center">
+  <a href="assets/breadboard.svg"><img src="assets/breadboard.svg" alt="Breadboard-Zeichnung: D1 mini, TFT, BME280, Selbsthalteschaltung, Lademodul und Akku auf einem Steckbrett" width="100%"></a>
+</p>
+
+Bevor gelötet wird, entsteht die Schaltung auf einem Steckbrett mit 830 Kontakten. Bauteilnamen und Drahtfarben passen
+zum Schaltplan. Für den ersten Displaytest (M1) reicht der rechte Teil: D1 mini über USB, dazu TFT und BME280.
+Die Selbsthalteschaltung links kommt in M2 dazu. Erzeugt wird die Zeichnung von [tools/breadboard.py](tools/breadboard.py).
+
 ## 🧰 Hardware
 
 | Teil | Beschreibung | Status |
 |---|---|---|
-| Controller | ESP8266-Entwicklungsboard (blau) | Variante noch zu bestimmen |
-| Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735, noch zu prüfen |
+| Controller | AZ-Delivery D1 mini mit ESP-12F | ✅ bestimmt |
+| Display | Rotes 1,8″-SPI-TFT, Aufdruck `1.8 TFT SPI 128*160 V1.2`, mit microSD-Slot | Controller vermutlich ST7735S, Test in M1 |
 | Gestell | Käfig und vier Landebeine aus 0,8-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
-| Sensor | BME280 (Temperatur, Feuchte, Luftdruck) | vorhanden, Modul noch zu prüfen |
-| Akku & Laden | Li-Ion/LiPo-Zelle mit Schutz, USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |
+| Sensor | GYBMEP-Modul mit BME280 (Temperatur, Feuchte, Luftdruck) | Chip-ID noch prüfen (BME- oder BMP280) |
+| Akku | EEMB LP103454, LiPo 3,7 V, 2000 mAh, mit Schutzplatine | ✅ bestimmt |
+| Laden & Regler | USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |
 | Einschalten | Taster mit Selbsthalteschaltung (P-MOSFET) | Bauteile noch festzulegen |
 
-Details und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdrahtung: [docs/wiring.md](docs/wiring.md)
+Details, Fotos und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdrahtung: [docs/wiring.md](docs/wiring.md) ·
+vollständige Teileliste: [docs/parts-list.md](docs/parts-list.md) (auch als [CSV](docs/parts-list.csv))
 
 ## 🗺️ Fahrplan
 
@@ -98,8 +117,9 @@ Details und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdraht
 
 | Datei | Inhalt |
 |---|---|
-| [docs/hardware.md](docs/hardware.md) | Bauteile, bekannte Daten, offene Prüfungen |
-| [docs/wiring.md](docs/wiring.md) | Anschlussplan (wird erst nach Verifikation festgelegt) |
+| [docs/hardware.md](docs/hardware.md) | Bauteile mit Fotos, bekannte Daten, offene Prüfungen |
+| [docs/parts-list.md](docs/parts-list.md) | Teileliste: Elektronik, Breadboard, Mechanik ([CSV](docs/parts-list.csv)) |
+| [docs/wiring.md](docs/wiring.md) | Anschlussplan, Schaltplan und Breadboard |
 | [docs/design.md](docs/design.md) | Gestaltung von Gestell und Display, Plan für die 1:1-Zeichnung |
 | [docs/software.md](docs/software.md) | Architektur, Datenquellen, Bibliotheken |
 | [docs/test-plan.md](docs/test-plan.md) | Testfälle je Meilenstein |

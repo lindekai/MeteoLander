@@ -1,0 +1,28 @@
+Bereich;Ref.;Anzahl;Bauteil;Typ / Wert;Gehäuse;Status;Bemerkung
+Elektronik;U3;1;ESP8266-Board;AZ-Delivery D1 mini (ESP-12F);Modul 34 x 26 mm;vorhanden;USB-Seriell-Chip und Regler noch ablesen
+Elektronik;U4;1;TFT-Display 1,8 Zoll;1.8 TFT SPI 128*160 V1.2, vermutlich ST7735S;Modul ca. 35 x 58 mm;vorhanden, Prüfung offen;Controller im Smoke-Test (M1) bestimmen
+Elektronik;U5;1;Klimasensor;GYBMEP-Modul (BME280 oder BMP280);Modul ca. 10 x 13 mm;vorhanden, Prüfung offen;Chip-ID prüfen: 0x60 = BME280
+Elektronik;BT1;1;LiPo-Akku;EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine;10 x 34 x 57 mm;vorhanden;Steckerart noch prüfen
+Elektronik;U1;1;Lademodul;z. B. TP4056 mit Schutz (DW01), besser mit Load-Sharing;Modul;offen;Ladestrom <= 1 A passt zu 2000 mAh
+Elektronik;U2;1;LDO 3,3 V;AP2112K-3.3 (>= 500 mA) oder gleichwertig;SOT-23-5;offen;entfällt evtl., wenn der Regler des D1 mini reicht
+Elektronik;Q1;1;P-MOSFET, Logikpegel;AO3401 oder gleichwertig;SOT-23;offen;Schalter der Selbsthaltung
+Elektronik;Q2;1;NPN-Transistor;BC547 oder gleichwertig;TO-92;offen;hält das Gate unten
+Elektronik;D1, D2;2;Schottky-Diode;BAT85;DO-35;offen;
+Elektronik;R1;1;Widerstand;100 kOhm;THT 1/4 W;offen;Gate-Pull-up
+Elektronik;R2;1;Widerstand;10 kOhm;THT 1/4 W;offen;Basiswiderstand Q2
+Elektronik;R3;1;Widerstand;100 kOhm;THT 1/4 W;offen;Basis nach GND
+Elektronik;R4;1;Widerstand;100 kOhm;THT 1/4 W;offen;Akkuspannung an A0
+Elektronik;R5;1;Widerstand;10 kOhm;THT 1/4 W;offen;TFT-RESET nach +3V3
+Elektronik;C1, C2;2;Keramikkondensator;1 µF, >= 10 V;THT oder 0805;offen;am Ein- und Ausgang von U2
+Elektronik;S1;1;Taster;Kurzhubtaster 6 x 6 mm, schließend;THT;offen;für die Fähre evtl. ein größerer Taster
+Breadboard;;1;Steckbrett;830 Kontakte (63 Spalten);;offen;Schienen oben und unten
+Breadboard;;1 Satz;Steckbrücken, starr;;;offen;kurze Verbindungen auf dem Brett
+Breadboard;;ca. 12;Dupont-Kabel, Buchse-Stecker;;;offen;TFT und BME280 neben dem Brett
+Breadboard;;2;Adapterplatine;SOT-23 bzw. SOT-23-5 auf 2,54 mm;;offen;für Q1 und U2
+Breadboard;;1;Stiftleisten;2,54 mm;;offen;für D1 mini, BME280 und Adapter
+Mechanik;;;Messingdraht;Ø 0,8 mm;;offen;Käfig, Beine, Mast; führt GND
+Mechanik;;4;Landeteller;Messing, Ø 14 mm;;offen;Füße der Landebeine
+Mechanik;;;Kupferlackdraht;ca. Ø 0,3 mm;;offen;sichtbare Signalleitungen
+Mechanik;;1;Isolierender Träger für den Akku;z. B. Kapton-Band, Schrumpfschlauch, dünne Platte;;offen;Akku nie blank am Messing
+Mechanik;;1;Lochrasterplatine;klein;;offen;Selbsthaltung, Regler, Spannungsteiler
+Mechanik;;;Schrumpfschlauch, Kapton-Band;;;offen;Isolierung

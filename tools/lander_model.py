@@ -3,6 +3,7 @@
 
 Erzeugt aus einem einfachen Modell (Maße in mm) die Grafiken in assets/:
   - assembly-sketch.svg  Aufbauskizze mit nummerierten Bauteilen
+  - views.svg            Ansichten von vorn, rechts, hinten, links und oben
   - hero.svg             Titelbild für das README
 
 Die Maße sind Annahmen, bis die Platinen ausgemessen sind (M0). Sie stehen
@@ -20,11 +21,11 @@ ASSETS = os.path.join(ROOT, "assets")
 # ---------------------------------------------------------------- MASSE (mm)
 CAGE_W, CAGE_D = 42.0, 48.0          # Käfig: Breite (x), Tiefe (y)
 CAGE_Z0, CAGE_Z1 = 30.0, 100.0       # Käfig: Unter-/Oberkante
-TFT_W, TFT_H = 35.0, 57.0            # rotes TFT-Modul, Platine (Annahme)
+TFT_W, TFT_H = 35.0, 58.0            # rotes TFT-Modul, Platine (Foto, ca.)
 TFT_Z0 = 36.0
 SCREEN_W, SCREEN_H = 28.0, 35.0      # aktive Fläche 1,8"
-ESP_W, ESP_H = 26.0, 49.0            # ESP8266-Board (Annahme, Variante offen)
-BAT_R, BAT_H = 9.25, 65.0            # Akku 18650 (Annahme)
+ESP_W, ESP_H = 25.6, 34.2            # AZ-Delivery D1 mini
+BAT_W, BAT_T, BAT_H = 34.0, 10.0, 57.0  # LiPo LP103454 inkl. Schutzplatine
 LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
 ROD = 0.8                            # Messingdraht 0,8 mm
@@ -91,6 +92,10 @@ class Camera:
         sy = self.oy - (y1 * se + z1 * ce) * self.s
         depth = y1 * ce - z1 * se
         return sx, sy, depth
+
+    def ybias(self, mm):
+        """Tiefenversatz, als läge ein Teil mm weiter hinten (+y) – passt für jede Blickrichtung."""
+        return mm * self.rot((0.0, 1.0, 0.0))[1] * math.cos(self.el)
 
     def facing(self, n):
         return dot(self.rot(n), self.view) < 0
@@ -185,7 +190,9 @@ class Scene:
             '<path d="%s" fill="url(#padGrad)" stroke="%s" stroke-width="1"/>' % (path, rgb(BRASS_DARK)))))
 
     def overlay(self, origin, ux, uy, svg, depth_of, bias=-0.05):
-        """Flacher Inhalt (Bildschirm, Aufdruck) auf einer Fläche."""
+        """Flacher Inhalt (Bildschirm, Aufdruck) auf einer Fläche; von hinten unsichtbar."""
+        if not self.cam.facing(mul(cross(ux, uy), -1.0)):
+            return
         d = self.cam.proj(depth_of)[2] + bias
         self.items.append((d, ("svg", '<g transform="%s">%s</g>' % (self.cam.affine(origin, ux, uy), svg))))
 
@@ -347,18 +354,20 @@ def build(scene):
 
     # --- ESP8266 hinter dem Display (Platine senkrecht)
     ex0, ex1 = -ESP_W / 2, ESP_W / 2
-    ez0, ez1 = 38.0, 38.0 + ESP_H
+    ez0, ez1 = 48.0, 48.0 + ESP_H                                           # USB unten, Antenne oben
     S.box((ex0, 14.0, ez0), (ex1, 15.6, ez1), "#1d4a92")
-    S.box((-8.0, 15.6, ez1 - 17), (8.0, 18.6, ez1 - 2), "#b7bec8")           # ESP-12-Abschirmung
-    for i in range(15):
-        z = ez0 + 3 + i * 2.54 * 1.15
+    S.box((-7.5, 15.6, ez1 - 22), (7.5, 18.0, ez1 - 7), "#b7bec8")           # ESP-12F-Abschirmung
+    for i in range(8):
+        z = ez0 + 9.1 + i * 2.54
         for ex in (ex0 + 1.3, ex1 - 1.3):
             S.box((ex - 1.1, 11.0, z - 1.1), (ex + 1.1, 14.0, z + 1.1), "#1b1f24")
-    S.anchor("esp", (ex1, 15.6, ez0 + 30))
+    S.anchor("esp", (ex1, 15.6, ez0 + 24))
 
     # --- Akku hinter dem ESP
-    S.cylinder((-5.0, 33.5, z0 + 2.5), BAT_R, BAT_H, "#2f6fae", "#c7cdd4")
-    S.anchor("bat", (-5.0 + BAT_R * 0.5, 33.5 - BAT_R * 0.5, z0 + 2.5 + BAT_H))
+    by0 = CAGE_D - BAT_T - 2.5                                              # an der Rückwand
+    S.box((-BAT_W / 2, by0, z0 + 2.5), (BAT_W / 2, by0 + BAT_T, z0 + 2.5 + BAT_H - 4), "#c7cdd4", bias=S.cam.ybias(25.0))
+    S.box((-BAT_W / 2, by0, z0 + 2.5 + BAT_H - 4), (BAT_W / 2, by0 + BAT_T, z0 + 2.5 + BAT_H), "#d9a62e", bias=S.cam.ybias(25.0))  # Schutzplatine
+    S.anchor("bat", (BAT_W / 2 - 6, by0, z0 + 2.5 + BAT_H - 10))
 
     # --- Lademodul an der rechten Seite unten, LEDs außen
     S.box((x1 - 2.2, 18.0, 35.0), (x1 - 0.6, 44.0, 52.0), "#1d4a92")
@@ -421,8 +430,8 @@ LEGEND = [
     ("cage", "Käfig aus Messingdraht", ["Tragende Struktur und zugleich GND."]),
     ("leg", "Vier Landebeine", ["Oberarm, Knie, Unterschenkel und Strebe;", "Teller zuletzt anlöten, sonst wackelt es."]),
     ("pad", "Landeteller", ["Messingscheiben Ø 14 mm."]),
-    ("esp", "ESP8266-Board", ["Senkrecht hinter dem Display;", "WLAN-Antenne oben frei lassen."]),
-    ("bat", "Akku", ["Hinten im Käfig, rundum isoliert."]),
+    ("esp", "D1 mini (ESP8266)", ["Senkrecht hinter dem Display;", "WLAN-Antenne oben frei lassen."]),
+    ("bat", "LiPo-Akku 2000 mAh", ["Hinten im Käfig, rundum isoliert;", "kein Draht drückt auf die Zelle."]),
     ("chg", "Lademodul", ["Rechte Seite, Lade-LEDs nach außen,", "USB-Buchse nach hinten."]),
     ("perf", "Lochrasterplatine", ["Selbsthaltung, LDO und Spannungsteiler."]),
     ("btn", "Taster", ["Oben vorn – Druck von oben", "belastet die Beine, nichts kippt."]),
@@ -514,7 +523,75 @@ def hero():
         f.write(svg)
 
 
+VIEWS = [
+    ("Vorn", 0, 12, "Display mit vier Bohrungen am Käfig, Taster oben vorn"),
+    ("Rechts", -90, 12, "Lademodul unten mit Lade-LEDs, Lochrasterplatine darüber"),
+    ("Hinten", 180, 12, "Akku an der Rückwand, USB-Buchse des Lademoduls"),
+    ("Links", 90, 12, "D1 mini hinter dem Display, Antenne oben frei"),
+]
+
+
+def centered(cam, p, at):
+    """Verschiebt die Kamera so, dass der Modellpunkt p auf der Bildposition at landet."""
+    sx, sy, _ = cam.proj(p)
+    cam.ox, cam.oy = at[0] - sx, at[1] - sy
+    return cam
+
+
+def views():
+    """Ansichtsblatt: vier Seitenansichten und Draufsicht aus demselben Modell."""
+    W, H = 1640, 1060
+    s = 2.6
+    pw = W / 4
+    panels = []
+    for i, (title, az, el, note) in enumerate(VIEWS):
+        cam = centered(Camera(az, el, s, 0, 0), (0, CAGE_D / 2, 0), (pw * i + pw / 2, 580))
+        body = build(Scene(cam)).render()
+        panels.append(f'''<g>
+<rect x="{pw * i + 12}" y="104" width="{pw - 24}" height="520" rx="12" fill="#0f1b3a" stroke="#1f2b4a"/>
+<text x="{pw * i + 32}" y="138" font-family="{SANS}" font-size="18" font-weight="700" fill="#ffffff">{title}</text>
+<text x="{pw * i + 32}" y="160" font-family="{SANS}" font-size="12" fill="#8b949e">{note}</text>
+{floor_shadow(cam)}
+{body}
+</g>''')
+    # Draufsicht
+    cam = centered(Camera(0, 90, 2.3, 0, 0), (0, CAGE_D / 2, 0), (pw, 835))
+    body = build(Scene(cam)).render()
+    panels.append(f'''<g>
+<rect x="12" y="640" width="{pw * 2 - 24}" height="{H - 640 - 50}" rx="12" fill="#0f1b3a" stroke="#1f2b4a"/>
+<text x="32" y="674" font-family="{SANS}" font-size="18" font-weight="700" fill="#ffffff">Oben</text>
+<text x="32" y="696" font-family="{SANS}" font-size="12" fill="#8b949e">Vorn ist unten</text>
+{body}
+</g>''')
+    notes = [
+        ("Reihenfolge", "Käfig → Display → D1 mini → Akku auf isolierendem Träger → Lademodul und Lochraster → Beine → Teller"),
+        ("Antenne", "Die WLAN-Antenne des D1 mini zeigt nach oben; kein Messing direkt davor oder darüber."),
+        ("Akku", "Die Pouchzelle liegt an der Rückwand, wird nur gehalten und nie durch Draht geklemmt."),
+        ("Masse", "Das Messinggestell ist GND. Signale laufen als sichtbarer Kupferlackdraht."),
+        ("Maße", "TFT, D1 mini und Akku nach Fotos mit Lineal; Käfig und Beine bleiben bis M4 Annahmen."),
+    ]
+    nt = [f'<text x="{pw * 2 + 32}" y="674" font-family="{SANS}" font-size="18" font-weight="700" fill="#ffffff">Worauf es beim Aufbau ankommt</text>']
+    for j, (k, v) in enumerate(notes):
+        y = 712 + j * 52
+        nt.append(f'<text x="{pw * 2 + 32}" y="{y}" font-family="{SANS}" font-size="13.5" font-weight="700" fill="#e6c25a">{k}</text>')
+        nt.append(f'<text x="{pw * 2 + 32}" y="{y + 20}" font-family="{SANS}" font-size="13" fill="#c9d1d9">{v}</text>')
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Ansichten MeteoLander: Landefähre von vorn, rechts, hinten, links und oben">
+{DEFS}
+<rect width="{W}" height="{H}" rx="18" fill="#0b1530"/>
+<text x="32" y="56" font-family="{SANS}" font-size="24" font-weight="700" fill="#ffffff">Ansichten von allen Seiten</text>
+<text x="32" y="82" font-family="{SANS}" font-size="14" fill="#8b949e">Orthografische Ansichten aus demselben Modell wie die Aufbauskizze · Maßstab in allen Ansichten gleich</text>
+{"".join(panels)}
+<rect x="{pw * 2 + 12}" y="640" width="{pw * 2 - 24}" height="{H - 640 - 50}" rx="12" fill="#0f1b3a" stroke="#1f2b4a"/>
+{"".join(nt)}
+<text x="32" y="{H - 18}" font-family="{SANS}" font-size="12" fill="#59636e">Gerendert aus tools/lander_model.py · Kupferlackdraht = Signalleitungen · Messing = GND</text>
+</svg>
+'''
+    with open(os.path.join(ASSETS, "views.svg"), "w") as f:
+        f.write(svg)
+
+
 if __name__ == "__main__":
     assembly()
     hero()
-    print("assets/assembly-sketch.svg und assets/hero.svg geschrieben")
+    views()
+    print("assets/assembly-sketch.svg, assets/hero.svg und assets/views.svg geschrieben")

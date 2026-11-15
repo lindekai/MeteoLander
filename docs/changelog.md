@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-11-15 – Teile bestimmt, Breadboard, Ansichten, Teileliste
+
+- Teile anhand von Fotos mit Lineal bestimmt (`assets/photos/`): AZ-Delivery D1 mini (ESP-12F), TFT mit
+  Pinreihenfolge `VCC GND CS RESET A0 SDA SCK LED`, GYBMEP-Modul (BME/BMP280, mit Regler und Pegelwandler),
+  LiPo EEMB LP103454 mit 2000 mAh und Schutzplatine
+- Breadboard-Zeichnung (`assets/breadboard.svg`, erzeugt mit `tools/breadboard.py`)
+- Ansichten von vorn, rechts, hinten, links und oben (`assets/views.svg`)
+- Teileliste als Markdown-Tabelle und CSV (`docs/parts-list.md`, `docs/parts-list.csv`)
+- Schaltplan Rev. 0.2: Board und Akku eingetragen, Kondensatoren C1/C2 am LDO ergänzt, Hinweise zu A0-Teiler und
+  Modulversorgung aktualisiert
+- 3D-Modell: Maße von D1 mini und flachem Akku statt Annahmen für ein langes Board und eine 18650-Zelle
+
 ## 2026-11-12 – Bauform Landefähre
 
 - Neue Bauform: Drahtkäfig als Landefähre mit vier Landebeinen und Messingtellern, BME280 auf einem Mast,
