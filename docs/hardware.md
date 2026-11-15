@@ -131,12 +131,19 @@ Tastendruck den Körper auf den Draht, nicht auf die Lötstelle. Das vordere Bei
 angelötet (GND, zugleich die Befestigung). Das hintere Beinchen bleibt frei und bekommt den Kupferlackdraht zu `BTN`;
 zum Querstab bleiben gut 2 mm Luft.
 
+### Geprüft und nicht verwendet
+
+| Teil | Grund |
+|---|---|
+| Step-down-Modul LM2596 (HW-411), ca. 43 × 21 mm | braucht 1,5–2 V mehr am Eingang, als es abgibt; aus dem LiPo (3,0–4,2 V) kommen keine stabilen 3,3 V. Außerdem zu groß für den Käfig und hoher Eigenverbrauch |
+| zweites Lademodul TP4056 mit Schutz (`OUT+ B+ B− OUT−`) | Reserve; das kleinere HW-168 genügt, weil der Akku eine eigene Schutzplatine hat |
+
 ### Noch nicht gesichtet
 
 | Teil | Anforderung | Status |
 |---|---|---|
-| Spannungsregler | 3,3 V aus 3,0–4,2 V, mind. 500 mA für WLAN-Spitzen – oder der Regler des D1 mini (siehe unten) | **offen** |
-| Selbsthalteschaltung | Logikpegel-P-MOSFET, NPN-Transistor, Widerstände, Diode | Typen **offen** |
+| Spannungsregler | 3,3 V aus 3,0–4,2 V, mind. 500 mA für WLAN-Spitzen (AP2112K-3.3, ME6211C33, HT7833) – oder der Regler des D1 mini (siehe unten). Nicht vorhanden. Typen mit 200–250 mA (HT7333, MCP1700, XC6206) reichen nicht | **beschaffen** |
+| Selbsthalteschaltung | P-MOSFET AO3401, NPN BC547, 2 × BAT85, 3 × 100 kΩ, 2 × 10 kΩ – nicht vorhanden | **beschaffen** |
 
 **Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
@@ -164,5 +171,5 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [ ] Lademodul: LED-Farben beim Laden prüfen
 - [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen
 - [ ] Taster: Abstand der zwei Beinchen messen
-- [ ] MOSFET und Transistoren in der Werkstatt sichten
+- [x] Bestand gesichtet: MOSFET, Transistor, Dioden, Widerstände und LDO nicht vorhanden → Einkaufsliste in [parts-list.md](parts-list.md)
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

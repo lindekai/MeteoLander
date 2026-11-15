@@ -4,16 +4,16 @@ Elektronik;U4;1;TFT-Display 1,8 Zoll;1.8 TFT SPI 128*160 V1.2, vermutlich ST7735
 Elektronik;U5;1;Klimasensor;GYBMEP-Modul (BME280 oder BMP280);Modul ca. 10 x 13 mm;vorhanden, Prüfung offen;Chip-ID prüfen: 0x60 = BME280
 Elektronik;BT1;1;LiPo-Akku;EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine;10 x 34 x 57 mm;vorhanden;Steckerart noch prüfen
 Elektronik;U1;1;Lademodul;HW-168 (TP4056), Mini-USB, ohne Schutz und Lastausgang;Modul ca. 16 x 20 mm;vorhanden;Ladestrom 1 A (PROG 1,2 kOhm), laden bei ausgeschaltetem Gerät
-Elektronik;U2;1;LDO 3,3 V;AP2112K-3.3 (>= 500 mA) oder gleichwertig;SOT-23-5;offen;entfällt evtl., wenn der Regler des D1 mini reicht
-Elektronik;Q1;1;P-MOSFET, Logikpegel;AO3401 oder gleichwertig;SOT-23;offen;Schalter der Selbsthaltung
-Elektronik;Q2;1;NPN-Transistor;BC547 oder gleichwertig;TO-92;offen;hält das Gate unten
-Elektronik;D1, D2;2;Schottky-Diode;BAT85;DO-35;offen;
-Elektronik;R1;1;Widerstand;100 kOhm;THT 1/4 W;offen;Gate-Pull-up
-Elektronik;R2;1;Widerstand;10 kOhm;THT 1/4 W;offen;Basiswiderstand Q2
-Elektronik;R3;1;Widerstand;100 kOhm;THT 1/4 W;offen;Basis nach GND
-Elektronik;R4;1;Widerstand;100 kOhm;THT 1/4 W;offen;Akkuspannung an A0
-Elektronik;R5;1;Widerstand;10 kOhm;THT 1/4 W;offen;TFT-RESET nach +3V3
-Elektronik;C1, C2;2;Keramikkondensator;1 µF, >= 10 V;THT oder 0805;offen;am Ein- und Ausgang von U2
+Elektronik;U2;1;LDO 3,3 V;AP2112K-3.3, ME6211C33 oder HT7833 (>= 500 mA);SOT-23-5;beschaffen;entfällt evtl., wenn der Regler des D1 mini reicht
+Elektronik;Q1;1;P-MOSFET, Logikpegel;AO3401 oder gleichwertig;SOT-23;beschaffen;Schalter der Selbsthaltung
+Elektronik;Q2;1;NPN-Transistor;BC547 oder gleichwertig;TO-92;beschaffen;hält das Gate unten
+Elektronik;D1, D2;2;Schottky-Diode;BAT85;DO-35;beschaffen;
+Elektronik;R1;1;Widerstand;100 kOhm;THT 1/4 W;beschaffen;Gate-Pull-up
+Elektronik;R2;1;Widerstand;10 kOhm;THT 1/4 W;beschaffen;Basiswiderstand Q2
+Elektronik;R3;1;Widerstand;100 kOhm;THT 1/4 W;beschaffen;Basis nach GND
+Elektronik;R4;1;Widerstand;100 kOhm;THT 1/4 W;beschaffen;Akkuspannung an A0
+Elektronik;R5;1;Widerstand;10 kOhm;THT 1/4 W;beschaffen;TFT-RESET nach +3V3
+Elektronik;C1, C2;2;Keramikkondensator;1 µF, >= 10 V;THT oder 0805;beschaffen;am Ein- und Ausgang von U2
 Elektronik;S1;1;Taster;Kurzhubtaster 6 x 6 mm, ca. 5 mm hoch, zwei Beinchen, schließend;THT;vorhanden;liegt auf dem Querstab im Deckrahmen, vorderes Beinchen dort angelötet (GND)
 Breadboard;;1;Steckbrett;830 Kontakte (63 Spalten);;offen;Schienen oben und unten
 Breadboard;;1 Satz;Steckbrücken, starr;;;offen;kurze Verbindungen auf dem Brett

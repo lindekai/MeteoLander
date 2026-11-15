@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-15 – Bestand gesichtet
+
+- LM2596-Modul (HW-411) geprüft: als 3,3-V-Regler am LiPo ungeeignet (zu großer Spannungsabfall, zu groß)
+- Für die Selbsthaltung und den LDO ist nichts im Bestand; diese Teile stehen in der Teileliste jetzt als
+  „zu beschaffen“. LDO-Auswahl auf Typen mit mindestens 500 mA eingegrenzt
+
 ## 2026-11-15 – Taster bestimmt
 
 - Taster: Kurzhubtaster 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen (`assets/photos/taster-*.jpg`)
