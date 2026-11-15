@@ -31,8 +31,8 @@ LEG_SPREAD = 30.0                    # Abstand Fuß zu Käfigecke (horizontal)
 PAD_R = 7.0                          # Landeteller
 ROD = 1.0                            # Messingdraht 1,0 mm
 BTN_BAR_Y = 6.0                      # Querstab für den Taster, Abstand zur Vorderkante
-BTN = 6.0; BTN_PITCH = 4.5           # Taster 6 x 6 mm; Beinchen 4,5 mm auseinander (schaltende Seite)
-BTN_Y = BTN_BAR_Y + BTN_PITCH / 2    # Tastermitte: das GND-Beinpaar liegt genau auf dem Querstab
+BTN = 6.0; BTN_LEG = 6.5             # Taster 6 x 6 mm mit zwei Beinchen, vorn und hinten (Abstand angenommen)
+BTN_Y = BTN_BAR_Y                    # Tastermitte auf dem Querstab, der Stab trägt den Druck
 MAST_H = 26.0                        # Mast über dem Deckrahmen
 TRAY_W, TRAY_D, TRAY_T = 36.0, 14.0, 1.6  # Akkuwanne aus Lochraster
 TRAY_ROD_Y = CAGE_D - 13.0           # Querdraht im Bodenrahmen, trägt die Wanne vorn

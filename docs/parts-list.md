@@ -26,7 +26,7 @@ Bestand zu suchen · ❓ Typ noch offen
 | R4 | 1 | Widerstand | 100 kΩ | THT 1/4 W | ❓ | Akkuspannung an A0 |
 | R5 | 1 | Widerstand | 10 kΩ | THT 1/4 W | ❓ | TFT-RESET nach +3V3 |
 | C1, C2 | 2 | Keramikkondensator | 1 µF, ≥ 10 V | THT oder 0805 | ❓ | am Ein- und Ausgang von U2 |
-| S1 | 1 | Taster | Kurzhubtaster 6 × 6 mm, ca. 5 mm hoch, schließend | THT | ✅ | GND-Beinpaar auf den Querstab im Deckrahmen gelötet |
+| S1 | 1 | Taster | Kurzhubtaster 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen, schließend | THT | ✅ | liegt auf dem Querstab im Deckrahmen, vorderes Beinchen dort angelötet (GND) |
 
 ## Testaufbau auf dem Breadboard
 

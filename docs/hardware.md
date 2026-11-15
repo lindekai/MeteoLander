@@ -123,12 +123,13 @@ direkt am Messinggestell (GND) angelötet werden.
 |---|---|---|
 | Typ | Kurzhubtaster 6 × 6 mm, Metalldeckel, schwarzer Stößel, schließend | Foto |
 | Höhe | ca. 5 mm mit Stößel | Foto |
-| Beinchen | 4 Stück, gerade, ca. 7 mm lang; Raster 6,5 × 4,5 mm (Standard) | Foto |
+| Beinchen | **2 Stück**, gerade nach unten, ca. 7 mm lang | Foto |
+| Beinabstand | vermutlich 6,5 mm, gegenüberliegend | Messen **offen** |
 
-Bei diesen Tastern sind je zwei gegenüberliegende Beinchen (6,5 mm auseinander) fest verbunden; geschaltet wird
-zwischen den beiden Paaren (4,5 mm). Das Paar auf der GND-Seite wird direkt auf den Querstab im Deckrahmen gelötet;
-damit sitzt der Taster fest und hat seine GND-Verbindung. Das andere Paar führt zu `BTN`. Welches Paar fest verbunden
-ist, wird vorher mit dem Durchgangsprüfer bestätigt.
+Der Taster liegt mittig auf dem Querstab im Deckrahmen, die Beinchen zeigen nach vorn und hinten. So drückt jeder
+Tastendruck den Körper auf den Draht, nicht auf die Lötstelle. Das vordere Beinchen wird zum Querstab gebogen und
+angelötet (GND, zugleich die Befestigung). Das hintere Beinchen bleibt frei und bekommt den Kupferlackdraht zu `BTN`;
+zum Querstab bleiben gut 2 mm Luft.
 
 ### Noch nicht gesichtet
 
@@ -161,7 +162,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang
 - [x] Lademodul: Ladestrom 1 A (PROG-Widerstand 1,2 kΩ)
 - [ ] Lademodul: LED-Farben beim Laden prüfen
-- [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch
-- [ ] Taster: fest verbundene Beinpaare durchpiepsen
+- [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen
+- [ ] Taster: Abstand der zwei Beinchen messen
 - [ ] MOSFET und Transistoren in der Werkstatt sichten
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen
