@@ -279,8 +279,8 @@
     <text x="40" y="822">• Lademodul HW-168 ohne Lastausgang: Die Last hängt direkt am Akku. Geladen wird bei ausgeschaltetem Gerät, sonst endet die Ladung nicht sauber. Die Lade-LEDs bleiben sichtbar.</text>
     <text x="40" y="852">¹ Der D1 mini hat an A0 einen eigenen Teiler 220 kΩ / 100 kΩ. Mit R4 davor ergeben 4,2 V Akkuspannung etwa 1,0 V am ADC des Chips (Werte am Board abgelesen: 224 / 104).</text>
     <text x="40" y="876">² U2 speist 3,3 V direkt in den 3V3-Pin des Boards. Beim Flashen über die USB-Buchse des Boards Rückspeisung in U2 und Board-Regler prüfen; ggf. Schottky-Diode oder Steckbrücke vorsehen.</text>
-    <text x="40" y="900">³ TFT und BME280 haben eigene Regler (TFT: U1 mit Brücke J1, BME280: XC6206) und laufen an 3,3 V. Brücke J1 am TFT erst nach Durchmessen schließen.</text>
-    <text x="40" y="924">⁴ LED-Pin: Das TFT-Modul hat einen Vorwiderstand (R4 auf dem Modul); Strom noch messen. Ein eigener Schalter ist nicht nötig, weil die Selbsthaltung alles abschaltet.</text>
+    <text x="40" y="900">³ TFT und BME280 haben je einen eigenen Regler XC6206 und laufen an 3,3 V. Brücke J1 am TFT bleibt offen; hinter dem Regler bleiben etwa 3,2 V.</text>
+    <text x="40" y="924">⁴ LED-Pin: Vorwiderstand auf dem Modul nur 3,3 Ω; Strom messen, ggf. 10–22 Ω in Reihe. Ein eigener Schalter ist nicht nötig, weil die Selbsthaltung alles abschaltet.</text>
     <text x="40" y="954">Sicherheit: Messinggestell nur auf GND oder isoliert, Akku rundum isoliert und fest gehalten, keine unterschiedlichen Potenziale unisoliert nebeneinander, USB-Kabel zugentlastet.</text>
   </g>
 </svg>

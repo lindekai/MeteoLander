@@ -43,12 +43,16 @@ D4 = GPIO2, D5 = GPIO14, D6 = GPIO12, D7 = GPIO13, D8 = GPIO15). Damit gilt die 
 | Controller | vermutlich ST7735S; die grüne Lasche der Schutzfolie deutet auf die Variante `INITR_GREENTAB` hin | Smoke-Test (M1) |
 | Displayanschlüsse | 8-polige Stiftleiste, Reihenfolge `VCC GND CS RESET A0 SDA SCK LED` | Foto |
 | microSD-Anschlüsse | `SD_CS SD_MOSI SD_MISO SD_SCK`, eigene Lötaugen auf der Gegenseite | wird nicht genutzt |
-| Versorgung | Regler U1 (SOT-23) an `VCC`, daneben Lötbrücke J1 | Funktion **prüfen** |
-| Hintergrundbeleuchtung | `LED` über Vorwiderstand R4 | Wert **offen** |
+| Versorgung | Regler U1 `662K` = XC6206P332 (3,3 V, 200 mA) an `VCC`, daneben Lötbrücke J1 – **offen** | [Detailfoto](../assets/photos/tft-detail.jpg) |
+| Hintergrundbeleuchtung | `LED` über Vorwiderstand R4 = 3,3 Ω (`3R3`) | Strom **messen** |
 
-**Versorgung:** Bei diesen Modulen ist U1 üblicherweise ein 3,3-V-Regler für 5-V-Betrieb; eine geschlossene J1
-überbrückt ihn für 3,3-V-Betrieb. An 3,3 V läuft das Modul auch mit offener J1, allerdings mit etwas weniger als
-3,3 V hinter dem Regler. Vor dem Brücken von J1 wird mit dem Multimeter geprüft, dass J1 tatsächlich U1 überbrückt.
+**Versorgung:** U1 ist ein XC6206 für den Betrieb an 5 V; eine geschlossene J1 würde ihn überbrücken. Die Fähre
+versorgt das TFT mit 3,3 V und lässt J1 **offen**: Hinter U1 bleiben bei dem kleinen Strom des Controllers etwa
+3,2 V, das reicht dem ST7735. Es muss also nichts gelötet werden.
+
+**Hintergrundbeleuchtung:** R4 hat nur 3,3 Ω. Die LEDs der Beleuchtung brauchen etwa 3,0–3,2 V; an 3,3 V fließen
+damit grob 30–60 mA, je nach Exemplar. Das ist der größte Dauerverbraucher neben dem ESP8266. Der Strom wird im
+Smoke-Test gemessen; ist er hoch, kommt ein zusätzlicher Vorwiderstand von 10–22 Ω in die `LED`-Leitung.
 
 ### BME280-Modul (Innenklima)
 
@@ -166,7 +170,8 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] USB-Seriell-Chip: ohne Aufdruck, ohne Quarz, vermutlich CH340C
 - [x] Regler U3 (`MK8H`): Typ nicht bestimmbar → eigener LDO U2
 - [x] A0-Teiler auf dem D1 mini: 220 kΩ / 100 kΩ
-- [ ] TFT: Funktion von J1 und U1 durchmessen, Wert von R4 ablesen
+- [x] TFT: U1 = XC6206 (`662K`), J1 offen und bleibt offen, R4 = 3,3 Ω
+- [ ] TFT: Strom der Hintergrundbeleuchtung an 3,3 V messen
 - [ ] BME280: I²C-Adresse und Chip-ID per Sketch auslesen (BME280 oder BMP280?)
 - [ ] Displaycontroller und Tab-Variante im Smoke-Test bestimmen (M1)
 - [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang

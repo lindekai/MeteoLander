@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-11-15 – TFT im Detail
+
+- TFT-Regler U1 = XC6206 (`662K`), Lötbrücke J1 offen und bleibt offen, Vorwiderstand der Beleuchtung R4 = 3,3 Ω
+  (`assets/photos/tft-detail.jpg`); Strom der Beleuchtung wird im Smoke-Test gemessen
+
 ## 2026-11-15 – D1 mini im Detail
 
 - A0-Teiler abgelesen: 220 kΩ / 100 kΩ; USB-Seriell-Chip ohne Quarz, vermutlich CH340C (`assets/photos/d1mini-detail.jpg`)
