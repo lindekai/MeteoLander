@@ -323,8 +323,7 @@ def build():
     # --- Bereich A: Bauteile (Drähte liegen obenauf)
     out += sot_adapter([4, 5, 6], "g", ["G", "S", "D"], "Q1", "", lab=(cx(4) - 9, ROW_Y["g"] + 3, "end"))
     out += to92([13, 14, 15], "g", ["C", "B", "E"], "Q2", "BC547", lab=(cx(15) + 9, ROW_Y["g"] + 3, "start"))
-    out += sot_adapter([20, 21, 22, 23, 24], "g", ["IN", "GND", "EN", "NC", "OUT"], "U2", "LDO 3,3 V",
-                       lab=(cx(21.5), ROW_Y["e"] + 3, "middle"))
+    out += to92([22, 23, 24], "g", ["GND", "IN", "OUT"], "U2", "HT7833", lab=(cx(23), ROW_Y["e"] + 3, "middle"))
     out += resistor(h(4, "j"), h(4, "B+"), K100, "R1", "100k", lab_dx=-62)
     out += resistor(h(14, "e"), h(14, "f"), K10, "R2", "10k")
     out += resistor(h(14, "i"), h(18, "i"), K100, "R3", "100k", lab=(cx(14) - 8, ROW_Y["i"] + 3.5, "end"))
@@ -340,8 +339,8 @@ def build():
     out += jumper(h(5, "j"), h(5, "B+"), C["VBAT"])
     out += jumper(h(13, "h"), h(4, "h"), C["G"], lift=8)
     out += jumper(h(6, "h"), h(20, "h"), C["VSW"], lift=14)
-    out += jumper(h(20, "i"), h(22, "i"), C["VSW"], lift=6)
-    for col in (10, 15, 18, 21):
+    out += jumper(h(20, "i"), h(23, "i"), C["VSW"], lift=6)
+    for col in (10, 15, 18, 22):
         out += wire([h(col, "j"), (cx(col), RAIL_Y["B-"])], C["GND"])
     out += wire([h(24, "h"), (cx(24) + 8, ROW_Y["h"] - 6), (cx(24) + 8, RAIL_Y["T+"] + 5), (cx(25), RAIL_Y["T+"])], C["3V3"])
 
@@ -404,7 +403,7 @@ def legend():
         "<tspan font-weight=\"700\">Entwurf.</tspan> Nicht aufgebaut. Bauteilnamen wie im Schaltplan (assets/schematic.svg).",
         "M1 (TFT-Smoke-Test): nur Bereich B, TFT und BME280 stecken; der D1 mini läuft über USB und speist mit 3V3 die +3V3-Schiene.",
         "Bereich A erst in M2 stecken. Dann den D1 mini nicht mehr über seine USB-Buchse versorgen (Rückspeisung in U2).",
-        "Q1 (SOT-23) und U2 (SOT-23-5) sitzen auf Adapterplatinen. C1/C2 nach Datenblatt des LDO; Typen noch offen.",
+        "Q1 (SOT-23) sitzt auf einer Adapterplatine. U2 HT7833 (TO-92): Pinfolge GND–IN–OUT vor dem Stecken am Datenblatt prüfen.",
         "Der D1 mini belegt die Reihen b und i: frei bleibt je Pin nur ein Loch (Reihe a bzw. j).",
         "S1 steckt über der Mittelrinne; die Kontakte oben und unten in derselben Spalte sind im Taster verbunden.",
     ]

@@ -146,8 +146,8 @@ zum Querstab bleiben gut 2 mm Luft.
 
 | Teil | Anforderung | Status |
 |---|---|---|
-| Spannungsregler | 3,3 V aus 3,0–4,2 V, mind. 500 mA für WLAN-Spitzen (AP2112K-3.3, ME6211C33, HT7833) – oder der Regler des D1 mini (siehe unten). Nicht vorhanden. Typen mit 200–250 mA (HT7333, MCP1700, XC6206) reichen nicht | **beschaffen** |
-| Selbsthalteschaltung | P-MOSFET AO3401, NPN BC547, 2 × BAT85, 3 × 100 kΩ, 2 × 10 kΩ – nicht vorhanden | **beschaffen** |
+| Spannungsregler | HT7833 im TO-92-Gehäuse: 3,3 V, 500 mA, bedrahtet. Typen mit 200–250 mA (HT7333, MCP1700, XC6206) reichen für die WLAN-Spitzen nicht | **beschaffen** |
+| Selbsthalteschaltung | P-MOSFET AO3401 und NPN BC547 fehlen; Dioden, Widerstände und Kondensatoren sind im Bestand | Transistoren **beschaffen** |
 
 **Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
@@ -179,5 +179,6 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [ ] Lademodul: LED-Farben beim Laden prüfen
 - [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen
 - [ ] Taster: Abstand der zwei Beinchen messen
-- [x] Bestand gesichtet: MOSFET, Transistor, Dioden, Widerstände und LDO nicht vorhanden → Einkaufsliste in [parts-list.md](parts-list.md)
+- [x] Bestand gesichtet: Testaufbau, Dioden, Widerstände und Kondensatoren vorhanden; AO3401, BC547, HT7833 und eine
+  SOT-23-Adapterplatine werden beschafft (siehe [parts-list.md](parts-list.md))
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

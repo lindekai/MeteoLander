@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-15 – Regler HT7833, Einkaufsliste
+
+- U2 ist jetzt ein HT7833 im TO-92-Gehäuse (500 mA, bedrahtet) statt AP2112K im SOT-23-5; Schaltplan, Breadboard
+  (Spalten 22–24, Pinfolge GND–IN–OUT laut Datenblatt prüfen) und Teileliste angepasst
+- Teileliste: Testaufbau, Dioden, Widerstände und Kondensatoren vorhanden; zu beschaffen sind AO3401, BC547,
+  HT7833 und eine SOT-23-Adapterplatine
+
 ## 2026-11-15 – TFT im Detail
 
 - TFT-Regler U1 = XC6206 (`662K`), Lötbrücke J1 offen und bleibt offen, Vorwiderstand der Beleuchtung R4 = 3,3 Ω

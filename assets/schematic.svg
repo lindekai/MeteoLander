@@ -98,7 +98,7 @@
   <rect x="640" y="205" width="90" height="50" class="part"/>
   <text x="685" y="198" text-anchor="middle" class="ref">U2 LDO 3,3 V</text>
   <text x="685" y="221" text-anchor="middle" class="sub">≥ 500 mA</text>
-  <text x="685" y="248" text-anchor="middle" class="sub">AP2112K-3.3</text>
+  <text x="685" y="248" text-anchor="middle" class="sub">HT7833 (TO-92)</text>
   <text x="644" y="236" class="pin">IN</text>
   <text x="726" y="236" text-anchor="end" class="pin">OUT</text>
   <path d="M730 230H745" class="w"/>
