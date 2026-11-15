@@ -111,7 +111,7 @@ Die Selbsthalteschaltung links kommt in M2 dazu. Erzeugt wird die Zeichnung von 
 | Gestell | Käfig und vier Landebeine aus 1-mm-Messingdraht, Landeteller Ø 14 mm | Maße folgen in M4 |
 | Sensor | GYBMEP-Modul mit BME280 (Temperatur, Feuchte, Luftdruck) | Chip-ID noch prüfen (BME- oder BMP280) |
 | Akku | EEMB LP103454, LiPo 3,7 V, 2000 mAh, mit Schutzplatine | ✅ bestimmt |
-| Laden & Regler | USB-Lademodul, 3,3-V-Regler | Auswahl nach Werkstattbestand |
+| Laden & Regler | Lademodul HW-168 (TP4056, Mini-USB), 3,3-V-Regler | Lademodul vorhanden, Regler offen |
 | Einschalten | Taster mit Selbsthalteschaltung (P-MOSFET) | Bauteile noch festzulegen |
 
 Details, Fotos und offene Prüfpunkte: [docs/hardware.md](docs/hardware.md) · Verdrahtung: [docs/wiring.md](docs/wiring.md) ·

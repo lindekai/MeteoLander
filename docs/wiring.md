@@ -49,8 +49,11 @@ bootsicheren GPIO; den gibt es in dieser Belegung nicht. Das Display zeigt statt
 
 ## Stromversorgung mit Selbsthalteschaltung
 
+Das Lademodul HW-168 hat keinen Lastausgang. Die Selbsthaltung hängt deshalb direkt an `BAT+`, also am Akku.
+Geladen wird bei ausgeschaltetem Gerät (siehe [hardware.md](hardware.md)).
+
 ```text
-USB ──▶ Lademodul ──▶ Akku (mit Schutz)
+USB ──▶ Lademodul HW-168 ──▶ Akku (mit Schutz)
                          │
                          ▼
                     P-MOSFET (Schalter) ──▶ 3,3-V-Regler ──▶ ESP8266, TFT, BME280

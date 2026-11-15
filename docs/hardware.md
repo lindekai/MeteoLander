@@ -89,11 +89,34 @@ Die Zelle ist flach und weich. Sie steht im Käfig in einer Akkuwanne aus Lochra
 Drahtband mit Schrumpfschlauch gehalten, nirgends geklemmt, damit kein Messing auf die Pouchfolie drückt
 (siehe [design.md](design.md)).
 
+### Lademodul: HW-168 (TP4056)
+
+| Oberseite | Unterseite |
+|---|---|
+| ![Lademodul oben](../assets/photos/lademodul-oben.jpg) | ![Lademodul unten](../assets/photos/lademodul-unten.jpg) |
+
+| Merkmal | Wert | Status |
+|---|---|---|
+| Modul | blau, Aufdruck `HW-168`, Ladechip TP4056 (SOP-8) | Foto |
+| Abmessungen | ca. 16 × 20 mm, Mini-USB-Buchse steht ca. 3 mm über | Messschieber **offen** |
+| Anschlüsse | `IN+ IN−` neben der USB-Buchse, `BAT+ BAT−` am anderen Ende; vier Lötaugen mit Bohrung | Foto |
+| Schutzschaltung | keine (kein DW01, kein MOSFET) – der Akku hat eine eigene Schutzplatine | Foto |
+| Lastausgang | keiner (`OUT+`/`OUT−` fehlen), die Last hängt direkt an `BAT+`/`BAT−` | Foto |
+| Ladestrom | bestimmt der PROG-Widerstand, üblich 1,2 kΩ = 1 A (0,5 C bei 2000 mAh, passt) | Aufdruck **offen** |
+| Ladeanzeige | zwei LEDs auf dem Modul | Farben **prüfen** |
+
+**Laden nur bei ausgeschaltetem Gerät:** Ohne Lastausgang zieht ein laufender ESP8266 seinen Strom mitten aus dem
+Ladekreis. Der TP4056 sieht dann nie den kleinen Endstrom und schaltet nicht sauber ab. Weil die
+Selbsthalteschaltung die Fähre im Ruhezustand ganz vom Akku trennt, ist das im Alltag kein Problem: einstecken, wenn
+die Fähre aus ist. Kurzes Einschalten beim Laden schadet nicht.
+
+`IN−` und `BAT−` sind auf dem Modul verbunden und liegen auf GND. Damit kann das Modul über das `BAT−`-Lötauge
+direkt am Messinggestell (GND) angelötet werden.
+
 ### Noch nicht gesichtet
 
 | Teil | Anforderung | Status |
 |---|---|---|
-| Lademodul | USB-Laden für eine LiPo-Zelle, möglichst mit Lastweiche (Load-Sharing) und Schutz | **offen** |
 | Spannungsregler | 3,3 V aus 3,0–4,2 V, mind. 500 mA für WLAN-Spitzen – oder der Regler des D1 mini (siehe unten) | **offen** |
 | Selbsthalteschaltung | Logikpegel-P-MOSFET, NPN-Transistor, Widerstände, Diode | Typen **offen** |
 | Taster | Drucktaster, schließend | **offen** |
@@ -119,5 +142,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [ ] TFT: Funktion von J1 und U1 durchmessen, Wert von R4 ablesen
 - [ ] BME280: I²C-Adresse und Chip-ID per Sketch auslesen (BME280 oder BMP280?)
 - [ ] Displaycontroller und Tab-Variante im Smoke-Test bestimmen (M1)
-- [ ] Lademodul, Taster, MOSFET und Transistoren in der Werkstatt sichten
+- [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang
+- [ ] Lademodul: PROG-Widerstand (Ladestrom) und LED-Farben ablesen
+- [ ] Taster, MOSFET und Transistoren in der Werkstatt sichten
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

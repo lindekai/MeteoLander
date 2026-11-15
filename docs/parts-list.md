@@ -15,7 +15,7 @@ Bestand zu suchen · ❓ Typ noch offen
 | U4 | 1 | TFT-Display 1,8″ | `1.8 TFT SPI 128*160 V1.2`, vermutlich ST7735S | Modul ca. 35 × 58 mm | 🔍 | Controller im Smoke-Test (M1) bestimmen |
 | U5 | 1 | Klimasensor | GYBMEP-Modul (BME280 oder BMP280) | Modul ca. 10 × 13 mm | 🔍 | Chip-ID prüfen: 0x60 = BME280 |
 | BT1 | 1 | LiPo-Akku | EEMB LP103454, 3,7 V, 2000 mAh, mit Schutzplatine | 10 × 34 × 57 mm | ✅ | Steckerart noch prüfen |
-| U1 | 1 | Lademodul | z. B. TP4056 mit Schutz (DW01), besser mit Load-Sharing | Modul | ❓ | Ladestrom ≤ 1 A passt zu 2000 mAh |
+| U1 | 1 | Lademodul | HW-168 (TP4056), Mini-USB, ohne Schutz und Lastausgang | Modul ca. 16 × 20 mm | ✅ | Ladestrom über PROG-Widerstand noch ablesen; laden bei ausgeschaltetem Gerät |
 | U2 | 1 | LDO 3,3 V | AP2112K-3.3 (≥ 500 mA) oder gleichwertig | SOT-23-5 | ❓ | entfällt evtl., wenn der Regler des D1 mini reicht |
 | Q1 | 1 | P-MOSFET, Logikpegel | AO3401 oder gleichwertig | SOT-23 | ❓ | Schalter der Selbsthaltung |
 | Q2 | 1 | NPN-Transistor | BC547 oder gleichwertig | TO-92 | ❓ | hält das Gate unten |

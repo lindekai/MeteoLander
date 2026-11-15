@@ -402,12 +402,12 @@ def build(scene):
     S.joint((x0, CAGE_D, zb)); S.joint((x1, CAGE_D, zb))
 
     # --- Lademodul an der rechten Seite unten, LEDs außen
-    S.box((x1 - 2.2, 18.0, 35.0), (x1 - 0.6, 44.0, 52.0), "#1d4a92")
-    S.box((x1 - 4.4, 41.0, 39.5), (x1 - 2.2, 48.6, 47.5), "#b7bec8")           # USB-Buchse nach hinten
-    S.box((x1 - 0.6, 22.0, 46.0), (x1 + 0.6, 24.0, 47.6), "#ff4d4f")
-    S.box((x1 - 0.6, 26.0, 46.0), (x1 + 0.6, 28.0, 47.6), "#3fb950")
-    S.box((x1 - 0.6, 30.0, 38.0), (x1 + 1.0, 35.0, 43.0), "#1b1f24")
-    S.anchor("chg", (x1 + 0.6, 25.0, 47.6))
+    S.box((x1 - 2.2, 25.0, 36.0), (x1 - 0.6, 45.0, 52.0), "#1d4a92")           # HW-168, 20 x 16 mm
+    S.box((x1 - 4.4, 42.0, 40.0), (x1 - 2.2, 48.2, 48.0), "#b7bec8")           # Mini-USB nach hinten
+    S.box((x1 - 0.6, 27.0, 46.0), (x1 + 0.6, 29.0, 47.6), "#ff4d4f")
+    S.box((x1 - 0.6, 31.0, 46.0), (x1 + 0.6, 33.0, 47.6), "#3fb950")
+    S.box((x1 - 0.6, 33.0, 38.0), (x1 + 1.0, 38.0, 43.0), "#1b1f24")
+    S.anchor("chg", (x1 + 0.6, 30.0, 47.6))
 
     # --- Lochrasterplatine rechts oben: Selbsthaltung, LDO, Teiler
     S.box((x1 - 2.2, 16.0, 58.0), (x1 - 0.6, 44.0, 90.0), "#1a7f37")
@@ -464,7 +464,7 @@ LEGEND = [
     ("pad", "Landeteller", ["Messingscheiben Ø 14 mm."]),
     ("esp", "D1 mini (ESP8266)", ["Senkrecht hinter dem Display;", "WLAN-Antenne oben frei lassen."]),
     ("bat", "LiPo-Akku 2000 mAh", ["Steht in einer Lochraster-Wanne;", "ein Drahtband mit Schrumpfschlauch hält ihn."]),
-    ("chg", "Lademodul", ["Rechte Seite, Lade-LEDs nach außen,", "USB-Buchse nach hinten."]),
+    ("chg", "Lademodul", ["HW-168, rechte Seite, LEDs nach außen,", "Mini-USB-Buchse nach hinten."]),
     ("perf", "Lochrasterplatine", ["Selbsthaltung, LDO und Spannungsteiler."]),
     ("btn", "Taster", ["Oben vorn – Druck von oben", "belastet die Beine, nichts kippt."]),
     ("bme", "BME280 auf dem Mast", ["Misst direkt nach dem Einschalten,", "bevor sich die Elektronik erwärmt."]),

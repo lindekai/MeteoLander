@@ -254,21 +254,24 @@ def bme(x0, y0):
 
 
 def charger_and_cell():
-    """Lademodul und Akku links neben dem Steckbrett. Gibt (svg, OUT+, OUT−) zurück."""
+    """Lademodul HW-168 und Akku links neben dem Steckbrett. Gibt (svg, BAT+, BAT−) zurück.
+
+    Das Modul hat keinen Lastausgang; Akku und Steckbrett hängen beide an BAT+/BAT−.
+    """
     x0, y0, w, h = 30, BY + 6, 220, 100
     s = [f'<rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="3" fill="#1f5fae" stroke="#123a6b"/>',
          f'<rect x="{x0 - 6}" y="{y0 + h / 2 - 14}" width="24" height="28" rx="2" fill="#b7bec8" stroke="#6e7781"/>',
          t(x0 + 30, y0 + 22, "U1 Lademodul", 10.5, fill="#ffffff", weight="700"),
-         t(x0 + 30, y0 + 37, "z. B. TP4056 + Schutz", 9, fill="#c9d7ea"),
-         t(x0 + 30, y0 + 50, "Typ noch offen", 9, fill="#c9d7ea"),
+         t(x0 + 30, y0 + 37, "HW-168 (TP4056)", 9, fill="#c9d7ea"),
+         t(x0 + 30, y0 + 50, "Last an BAT+/BAT−", 9, fill="#c9d7ea"),
          f'<circle cx="{x0 + 40}" cy="{y0 + 68}" r="3.5" fill="#ff4d4f"/>',
          f'<circle cx="{x0 + 54}" cy="{y0 + 68}" r="3.5" fill="#3fb950"/>',
          t(x0 + 64, y0 + 71, "Lade-LEDs", 8, fill="#c9d7ea")]
     pads = {}
-    for i, (n, yy) in enumerate((("OUT+", y0 + 14), ("OUT−", y0 + 30), ("B+", y0 + 66), ("B−", y0 + 82))):
+    for n, yy in (("BAT+", y0 + 30), ("BAT−", y0 + 82)):
         px = x0 + w - 8
         s.append(f'<rect x="{px - 4}" y="{yy - 4}" width="8" height="8" fill="#e6c25a"/>')
-        s.append(t(px - 7, yy + 3, n, 7.5, "end", "#ffffff", "700", MONO))
+        s.append(t(px + 4, yy - 7, n, 7.5, "end", "#ffffff", "700", MONO))
         pads[n] = (px, yy)
     # Akku
     ax, ay, aw, ah = 30, BY + 150, 170, 84
@@ -277,10 +280,9 @@ def charger_and_cell():
     s.append(t(ax + 8, ay + 22, "BT1 LiPo LP103454", 10, fill="#1f2937", weight="700"))
     s.append(t(ax + 8, ay + 37, "3,7 V · 2000 mAh · geschützt", 9, fill="#57606a"))
     s.append(t(ax + 8, ay + 51, "nicht maßstäblich", 8, fill="#8c959f"))
-    tip = (ax + aw + 6, ay + 14), (ax + aw + 6, ay + 26)
-    s += wire([tip[0], (tip[0][0] + 14, tip[0][1]), (tip[0][0] + 14, pads["B+"][1]), pads["B+"]], "#d73a49")
-    s += wire([tip[1], (tip[1][0] + 22, tip[1][1]), (tip[1][0] + 22, pads["B−"][1]), pads["B−"]], "#24292f")
-    return s, pads["OUT+"], pads["OUT−"]
+    for n, x, color in (("BAT+", ax + aw - 30, "#d73a49"), ("BAT−", ax + aw - 16, "#24292f")):
+        s += wire([(x, ay), (x, pads[n][1]), pads[n]], color)
+    return s, pads["BAT+"], pads["BAT−"]
 
 
 # ------------------------------------------------------------------ Drähte

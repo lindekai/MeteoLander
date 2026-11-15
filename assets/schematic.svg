@@ -49,10 +49,8 @@
   <text x="236" y="209" class="pin">IN−</text>
   <text x="394" y="164" text-anchor="end" class="pin">BAT+</text>
   <text x="394" y="194" text-anchor="end" class="pin">BAT−</text>
-  <text x="394" y="234" text-anchor="end" class="pin">OUT+</text>
-  <text x="394" y="264" text-anchor="end" class="pin">OUT−</text>
-  <text x="270" y="232" class="sub">z. B. TP4056</text>
-  <text x="270" y="245" class="sub">+ Schutz, Load-Sharing</text>
+  <text x="240" y="232" class="sub">HW-168 (TP4056)</text>
+  <text x="240" y="245" class="sub">Mini-USB, kein Lastausgang</text>
   <circle cx="276" cy="259" r="4.5" fill="#d1242f"/>
   <circle cx="292" cy="259" r="4.5" fill="#1a7f37"/>
   <text x="302" y="263" class="sub">Ladeanzeige</text>
@@ -65,12 +63,14 @@
   <text x="420" y="118" class="ref">BT1</text>
   <text x="450" y="118" class="sub">LiPo LP103454 · 2000 mAh · geschützt</text>
 
-  <!-- OUT− nach GND -->
-  <path d="M400 260H420V275" class="w"/>
-  <use href="#gnd" x="420" y="275"/>
+  <!-- BAT− nach GND -->
+  <circle cx="410" cy="190" r="3" class="dot"/>
+  <path d="M410 190V285" class="w"/>
+  <use href="#gnd" x="410" y="285"/>
 
   <!-- VBAT zu Q1 -->
-  <path d="M400 230H545" class="w"/>
+  <circle cx="430" cy="160" r="3" class="dot"/>
+  <path d="M430 160V184a6 6 0 0 1 0 12V230H545" class="w"/>
   <text x="440" y="224" class="net">VBAT</text>
   <circle cx="510" cy="230" r="3" class="dot"/>
 
@@ -276,7 +276,7 @@
     <text x="40" y="750">• Bootpins: GPIO0 und GPIO2 müssen beim Start HIGH, GPIO15 LOW sein. Der Taster wird deshalb an GPIO3 (RX) gelesen, nicht an einem Bootpin; GPIO1 (TX) bleibt für die serielle Diagnose frei.</text>
     <text x="40" y="774">• SPI: Hardware-SPI (GPIO14 SCK, GPIO13 MOSI); GPIO12 ist als MISO durch die SPI-Bibliothek belegt, obwohl das TFT nichts zurücksendet. TFT-Reset über R5 und Software-Reset.</text>
     <text x="40" y="798">• HOLD an GPIO16: Ein HIGH-Pegel beim Booten ist unkritisch. Der Taster muss gedrückt bleiben, bis die Firmware HOLD gesetzt hat (Bruchteil einer Sekunde).</text>
-    <text x="40" y="822">• Ladeanzeige: Die LEDs des Lademoduls werden sichtbar im Gestell montiert und zeigen den Ladezustand auch bei ausgeschaltetem Gerät. Auf dem Display erscheint der Akkustand.</text>
+    <text x="40" y="822">• Lademodul HW-168 ohne Lastausgang: Die Last hängt direkt am Akku. Geladen wird bei ausgeschaltetem Gerät, sonst endet die Ladung nicht sauber. Die Lade-LEDs bleiben sichtbar.</text>
     <text x="40" y="852">¹ Der D1 mini hat an A0 einen eigenen Teiler 220 kΩ / 100 kΩ. Mit R4 davor ergeben 4,2 V Akkuspannung etwa 1,0 V am ADC des Chips (Werte auf dem Board noch nachmessen).</text>
     <text x="40" y="876">² U2 speist 3,3 V direkt in den 3V3-Pin des Boards. Beim Flashen über die USB-Buchse des Boards Rückspeisung in U2 und Board-Regler prüfen; ggf. Schottky-Diode oder Steckbrücke vorsehen.</text>
     <text x="40" y="900">³ TFT und BME280 haben eigene Regler (TFT: U1 mit Brücke J1, BME280: XC6206) und laufen an 3,3 V. Brücke J1 am TFT erst nach Durchmessen schließen.</text>

@@ -22,7 +22,7 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
   verlötet – hält die Zelle oben. Es trägt vorn und hinten Schrumpfschlauch und liegt nur an, ohne zu klemmen.
   Die Höhe liegt genau zwischen Lademodul und Lochrasterplatine. Der Schwerpunkt der Fähre liegt damit etwa 31 mm
   hinter der Vorderkante, sicher innerhalb der Landeteller (−23 bis +71 mm).
-- **Lademodul:** an der rechten Seite, Lade-LEDs nach außen sichtbar, USB-Buchse nach hinten.
+- **Lademodul:** HW-168 an der rechten Seite, Lade-LEDs nach außen sichtbar, Mini-USB-Buchse nach hinten.
 - **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, LDO und Spannungsteiler.
 - **Taster:** oben vorn auf einer Querstrebe. Gedrückt wird von oben, das belastet die Beine und nichts kippt.
 - **BME280:** auf einem Mast über dem Käfig. Er misst direkt nach dem Einschalten, solange die Elektronik kalt ist.

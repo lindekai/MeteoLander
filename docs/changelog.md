@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-15 – Lademodul bestimmt
+
+- Lademodul HW-168 (TP4056, Mini-USB, ca. 16 × 20 mm) anhand von Fotos bestimmt (`assets/photos/lademodul-*.jpg`).
+  Es hat weder Schutzschaltung noch Lastausgang; der Akku bringt seine eigene Schutzplatine mit
+- Schaltplan und Breadboard: Die Selbsthaltung hängt jetzt direkt an `BAT+`, `OUT+`/`OUT−` entfallen. Hinweis:
+  laden bei ausgeschaltetem Gerät
+- 3D-Modell: Lademodul in echter Größe
+
 ## 2026-11-15 – Drahtstärke 1 mm
 
 - Messingdraht Ø 1,0 mm statt 0,8 mm: 3D-Modell, Ansichten, Bauzeichnung (Drähte in echter Stärke), Teileliste,
