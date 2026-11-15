@@ -97,13 +97,13 @@ Drahtband mit Schrumpfschlauch gehalten, nirgends geklemmt, damit kein Messing a
 
 | Merkmal | Wert | Status |
 |---|---|---|
-| Modul | blau, Aufdruck `HW-168`, Ladechip TP4056 (SOP-8) | Foto |
+| Modul | blau, Aufdruck `HW-168`, Ladechip `4056E` (TP4056, SOP-8), am Eingang 0,4 Ω (`R400`) | Foto |
 | Abmessungen | ca. 16 × 20 mm, Mini-USB-Buchse steht ca. 3 mm über | Messschieber **offen** |
 | Anschlüsse | `IN+ IN−` neben der USB-Buchse, `BAT+ BAT−` am anderen Ende; vier Lötaugen mit Bohrung | Foto |
 | Schutzschaltung | keine (kein DW01, kein MOSFET) – der Akku hat eine eigene Schutzplatine | Foto |
 | Lastausgang | keiner (`OUT+`/`OUT−` fehlen), die Last hängt direkt an `BAT+`/`BAT−` | Foto |
-| Ladestrom | bestimmt der PROG-Widerstand, üblich 1,2 kΩ = 1 A (0,5 C bei 2000 mAh, passt) | Aufdruck **offen** |
-| Ladeanzeige | zwei LEDs auf dem Modul | Farben **prüfen** |
+| Ladestrom | PROG-Widerstand `122` = 1,2 kΩ → 1 A, also 0,5 C bei 2000 mAh; volle Ladung in gut 2 Stunden | [Detailfoto](../assets/photos/lademodul-detail.jpg) |
+| Ladeanzeige | zwei LEDs mit je 1 kΩ (`102`) | Farben **prüfen** |
 
 **Laden nur bei ausgeschaltetem Gerät:** Ohne Lastausgang zieht ein laufender ESP8266 seinen Strom mitten aus dem
 Ladekreis. Der TP4056 sieht dann nie den kleinen Endstrom und schaltet nicht sauber ab. Weil die
@@ -143,6 +143,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [ ] BME280: I²C-Adresse und Chip-ID per Sketch auslesen (BME280 oder BMP280?)
 - [ ] Displaycontroller und Tab-Variante im Smoke-Test bestimmen (M1)
 - [x] Lademodul bestimmen: HW-168 mit TP4056, ohne Schutz und ohne Lastausgang
-- [ ] Lademodul: PROG-Widerstand (Ladestrom) und LED-Farben ablesen
+- [x] Lademodul: Ladestrom 1 A (PROG-Widerstand 1,2 kΩ)
+- [ ] Lademodul: LED-Farben beim Laden prüfen
 - [ ] Taster, MOSFET und Transistoren in der Werkstatt sichten
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

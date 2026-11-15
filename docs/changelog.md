@@ -3,7 +3,8 @@
 ## 2026-11-15 – Lademodul bestimmt
 
 - Lademodul HW-168 (TP4056, Mini-USB, ca. 16 × 20 mm) anhand von Fotos bestimmt (`assets/photos/lademodul-*.jpg`).
-  Es hat weder Schutzschaltung noch Lastausgang; der Akku bringt seine eigene Schutzplatine mit
+  Es hat weder Schutzschaltung noch Lastausgang; der Akku bringt seine eigene Schutzplatine mit. Ladestrom 1 A
+  (PROG-Widerstand 1,2 kΩ)
 - Schaltplan und Breadboard: Die Selbsthaltung hängt jetzt direkt an `BAT+`, `OUT+`/`OUT−` entfallen. Hinweis:
   laden bei ausgeschaltetem Gerät
 - 3D-Modell: Lademodul in echter Größe
