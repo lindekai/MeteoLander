@@ -146,12 +146,12 @@ zum Querstab bleiben gut 2 mm Luft.
 
 | Teil | Anforderung | Status |
 |---|---|---|
-| Spannungsregler | HT7833 im TO-92-Gehäuse: 3,3 V, 500 mA, bedrahtet. Typen mit 200–250 mA (HT7333, MCP1700, XC6206) reichen für die WLAN-Spitzen nicht | **beschaffen** |
+| Spannungsregler | Adafruit TPS62827 Breakout: Schaltregler 3,3 V, 2 A, regelt ab 3,4 V und reicht darunter die Akkuspannung durch; Abschaltpin `EN`. Besser als ein LDO, weil er bei vollem Akku kaum Wärme erzeugt. LDOs mit 200–250 mA (HT7333, MCP1700, XC6206) reichen für die WLAN-Spitzen nicht | **beschaffen** |
 | Selbsthalteschaltung | P-MOSFET AO3401 und NPN BC547 fehlen; Dioden, Widerstände und Kondensatoren sind im Bestand | Transistoren **beschaffen** |
 
 **Regler des D1 mini:** Statt eines eigenen LDO könnte der geschaltete Akku an `5V` des D1 mini gehen; dann
 versorgt dessen Regler U3 alles. Das klappt nur, wenn U3 ein Regler mit kleinem Spannungsabfall ist und bei
-WLAN-Spitzen auch mit fast leerem Akku noch 3,3 V hält. Der Typ von U3 lässt sich am Aufdruck `MK8H` nicht bestimmen. Deshalb bekommt die Fähre ihren eigenen LDO U2; Leistung
+WLAN-Spitzen auch mit fast leerem Akku noch 3,3 V hält. Der Typ von U3 lässt sich am Aufdruck `MK8H` nicht bestimmen. Deshalb bekommt die Fähre ihren eigenen Regler U2; Leistung
 und Spannungsabfall sind dann bekannt. Wer U2 sparen möchte, kann U3 im Aufbau testen: Akku über die Selbsthaltung an
 `5V`, WLAN senden lassen und `3V3` bei einer Akkuspannung um 3,4 V messen.
 
@@ -168,7 +168,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [x] Bohrungen am TFT messen: Ø 3 mm, Mittenabstand 28 × 52 mm
 - [ ] Außenmaße mit dem Messschieber bestätigen (TFT, D1 mini, BME280)
 - [x] USB-Seriell-Chip: ohne Aufdruck, ohne Quarz, vermutlich CH340C
-- [x] Regler U3 (`MK8H`): Typ nicht bestimmbar → eigener LDO U2
+- [x] Regler U3 (`MK8H`): Typ nicht bestimmbar → eigener Regler U2 (TPS62827)
 - [x] A0-Teiler auf dem D1 mini: 220 kΩ / 100 kΩ
 - [x] TFT: U1 = XC6206 (`662K`), J1 offen und bleibt offen, R4 = 3,3 Ω
 - [ ] TFT: Strom der Hintergrundbeleuchtung an 3,3 V messen
@@ -179,6 +179,7 @@ Regler und LED oft 10–20 mA. Die Selbsthalteschaltung trennt alles vom Akku; i
 - [ ] Lademodul: LED-Farben beim Laden prüfen
 - [x] Taster bestimmen: 6 × 6 mm, ca. 5 mm hoch, zwei Beinchen
 - [ ] Taster: Abstand der zwei Beinchen messen
-- [x] Bestand gesichtet: Testaufbau, Dioden, Widerstände und Kondensatoren vorhanden; AO3401, BC547, HT7833 und eine
+- [ ] TPS62827: Verhalten von `EN` prüfen (Pull-up auf dem Board?) – damit ließe sich später Q1 einsparen
+- [x] Bestand gesichtet: Testaufbau, Dioden, Widerstände und Kondensatoren vorhanden; AO3401, BC547, TPS62827 und eine
   SOT-23-Adapterplatine werden beschafft (siehe [parts-list.md](parts-list.md))
 - [ ] Strombedarf von ESP8266 + TFT im Betrieb messen

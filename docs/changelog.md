@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-11-15 – Schaltregler TPS62827
+
+- U2 ist jetzt das Adafruit-Board TPS62827 (Schaltregler 3,3 V, 2 A) statt des HT7833; C1 und C2 entfallen, weil
+  die Kondensatoren auf dem Board sitzen. `EN` liegt vorerst fest an `IN`; ob es später Q1 ersetzen kann, wird am
+  Board geprüft
+- Zu beschaffen: AO3401 mit SOT-23-Adapter, BC547, TPS62827
+
 ## 2026-11-15 – Regler HT7833, Einkaufsliste
 
 - U2 ist jetzt ein HT7833 im TO-92-Gehäuse (500 mA, bedrahtet) statt AP2112K im SOT-23-5; Schaltplan, Breadboard

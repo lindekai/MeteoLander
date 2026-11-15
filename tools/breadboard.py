@@ -131,14 +131,6 @@ def diode(a, b, ref, val, lab_dy=-8, lab=None):
     return s
 
 
-def ceramic(a, b, ref, val):
-    (x0, y0), (x1, y1) = a, b
-    my = (y0 + y1) / 2
-    return [f'<line x1="{x0}" y1="{y0}" x2="{x1}" y2="{y1}" stroke="#9aa0a6" stroke-width="1.6"/>',
-            f'<ellipse cx="{x0}" cy="{my}" rx="5.5" ry="4.5" fill="#d9a53f" stroke="#9a6a14" stroke-width="0.8"/>',
-            t(x0, RAIL_Y["B-"] + 15, f'{ref} <tspan fill="#57606a" font-weight="400">{val}</tspan>', 9, "middle", weight="700", extra=HALO)]
-
-
 def sot_adapter(cols, row, pins, ref, val, lab=None):
     """SOT-23 auf Adapterplatine, Stifte in einer Reihe; lab = (x, y, anchor) der Beschriftung."""
     x0, x1 = cx(cols[0]) - 6, cx(cols[-1]) + 6
@@ -323,7 +315,8 @@ def build():
     # --- Bereich A: Bauteile (Drähte liegen obenauf)
     out += sot_adapter([4, 5, 6], "g", ["G", "S", "D"], "Q1", "", lab=(cx(4) - 9, ROW_Y["g"] + 3, "end"))
     out += to92([13, 14, 15], "g", ["C", "B", "E"], "Q2", "BC547", lab=(cx(15) + 9, ROW_Y["g"] + 3, "start"))
-    out += to92([22, 23, 24], "g", ["GND", "IN", "OUT"], "U2", "HT7833", lab=(cx(23), ROW_Y["e"] + 3, "middle"))
+    out += sot_adapter([21, 22, 23, 24], "g", ["EN", "GND", "IN", "OUT"], "U2", "TPS62827",
+                       lab=(cx(22.5), ROW_Y["e"] + 3, "middle"))
     out += resistor(h(4, "j"), h(4, "B+"), K100, "R1", "100k", lab_dx=-62)
     out += resistor(h(14, "e"), h(14, "f"), K10, "R2", "10k")
     out += resistor(h(14, "i"), h(18, "i"), K100, "R3", "100k", lab=(cx(14) - 8, ROW_Y["i"] + 3.5, "end"))
@@ -332,14 +325,13 @@ def build():
     out += diode(h(4, "i"), h(8, "i"), "D1", "BAT85", lab=(cx(4) - 9, ROW_Y["i"] + 3.5, "end"))
     out += diode(h(12, "c"), h(8, "c"), "D2", "BAT85")
     out += button(8, 10)
-    out += ceramic(h(20, "j"), h(20, "B-"), "C1", "1µ")
-    out += ceramic(h(24, "j"), h(24, "B-"), "C2", "1µ")
 
     # --- Drähte Bereich A
     out += jumper(h(5, "j"), h(5, "B+"), C["VBAT"])
     out += jumper(h(13, "h"), h(4, "h"), C["G"], lift=8)
     out += jumper(h(6, "h"), h(20, "h"), C["VSW"], lift=14)
     out += jumper(h(20, "i"), h(23, "i"), C["VSW"], lift=6)
+    out += jumper(h(21, "h"), h(23, "h"), C["VSW"], lift=5)          # EN fest an IN
     for col in (10, 15, 18, 22):
         out += wire([h(col, "j"), (cx(col), RAIL_Y["B-"])], C["GND"])
     out += wire([h(24, "h"), (cx(24) + 8, ROW_Y["h"] - 6), (cx(24) + 8, RAIL_Y["T+"] + 5), (cx(25), RAIL_Y["T+"])], C["3V3"])
@@ -403,7 +395,7 @@ def legend():
         "<tspan font-weight=\"700\">Entwurf.</tspan> Nicht aufgebaut. Bauteilnamen wie im Schaltplan (assets/schematic.svg).",
         "M1 (TFT-Smoke-Test): nur Bereich B, TFT und BME280 stecken; der D1 mini läuft über USB und speist mit 3V3 die +3V3-Schiene.",
         "Bereich A erst in M2 stecken. Dann den D1 mini nicht mehr über seine USB-Buchse versorgen (Rückspeisung in U2).",
-        "Q1 (SOT-23) sitzt auf einer Adapterplatine. U2 HT7833 (TO-92): Pinfolge GND–IN–OUT vor dem Stecken am Datenblatt prüfen.",
+        "Q1 (SOT-23) sitzt auf einer Adapterplatine. U2 ist das Adafruit-Board TPS62827: nach dessen Aufdruck stecken, hier nur die Funktionen.",
         "Der D1 mini belegt die Reihen b und i: frei bleibt je Pin nur ein Loch (Reihe a bzw. j).",
         "S1 steckt über der Mittelrinne; die Kontakte oben und unten in derselben Spalte sind im Taster verbunden.",
     ]

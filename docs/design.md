@@ -23,7 +23,7 @@ Inspiriert vom [Boron Lander](https://www.hackster.io/mohit/boron-lander-7f08b5)
   Die Höhe liegt genau zwischen Lademodul und Lochrasterplatine. Der Schwerpunkt der Fähre liegt damit etwa 31 mm
   hinter der Vorderkante, sicher innerhalb der Landeteller (−23 bis +71 mm).
 - **Lademodul:** HW-168 an der rechten Seite, Lade-LEDs nach außen sichtbar, Mini-USB-Buchse nach hinten.
-- **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, LDO und Spannungsteiler.
+- **Lochrasterplatine:** rechte Seite oben; Selbsthaltung, Schaltregler und Spannungsteiler.
 - **Taster:** 6 × 6 mm oben vorn, liegt auf der Querstrebe; das vordere Beinchen ist dort angelötet. Gedrückt wird von oben, das
   belastet die Beine und nichts kippt.
 - **BME280:** auf einem Mast über dem Käfig. Er misst direkt nach dem Einschalten, solange die Elektronik kalt ist.

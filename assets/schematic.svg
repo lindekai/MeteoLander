@@ -96,16 +96,16 @@
   <circle cx="610" cy="230" r="3" class="dot"/>
   <text x="614" y="224" class="net">VSW</text>
   <rect x="640" y="205" width="90" height="50" class="part"/>
-  <text x="685" y="198" text-anchor="middle" class="ref">U2 LDO 3,3 V</text>
-  <text x="685" y="221" text-anchor="middle" class="sub">≥ 500 mA</text>
-  <text x="685" y="248" text-anchor="middle" class="sub">HT7833 (TO-92)</text>
+  <text x="685" y="198" text-anchor="middle" class="ref">U2 Buck 3,3 V</text>
+  <text x="685" y="221" text-anchor="middle" class="sub">Adafruit, 2 A</text>
+  <text x="685" y="248" text-anchor="middle" class="sub">TPS62827</text>
   <text x="644" y="236" class="pin">IN</text>
   <text x="726" y="236" text-anchor="end" class="pin">OUT</text>
   <path d="M730 230H745" class="w"/>
   <text x="748" y="234" class="net">+3V3</text>
     <path d="M700 255V262" class="w"/>
   <use href="#gnd" x="700" y="262"/>
-  <text x="688" y="182" text-anchor="middle" class="sub">mit C1, C2 1 µF an IN/OUT</text>
+  <text x="688" y="182" text-anchor="middle" class="sub">EN an IN, Kondensatoren auf dem Board</text>
 
   <!-- R4 Akkuspannung -->
   <path d="M610 230V200M610 168V150H620" class="w"/>

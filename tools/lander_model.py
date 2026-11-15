@@ -411,10 +411,10 @@ def build(scene):
     S.box((x1 - 0.6, 33.0, 38.0), (x1 + 1.0, 38.0, 43.0), "#1b1f24")
     S.anchor("chg", (x1 + 0.6, 30.0, 47.6))
 
-    # --- Lochrasterplatine rechts oben: Selbsthaltung, LDO, Teiler
+    # --- Lochrasterplatine rechts oben: Selbsthaltung, Regler, Teiler
     S.box((x1 - 2.2, 16.0, 58.0), (x1 - 0.6, 44.0, 90.0), "#1a7f37")
     S.box((x1 - 0.6, 20.0, 80.0), (x1 + 3.0, 24.6, 84.0), "#1b1f24")          # Q2 TO-92
-    S.box((x1 - 0.6, 30.0, 80.0), (x1 + 2.0, 36.0, 86.0), "#1b1f24")          # LDO
+    S.box((x1 - 0.6, 30.0, 80.0), (x1 + 2.0, 36.0, 86.0), "#1b1f24")          # Schaltregler U2
     S.box((x1 - 0.6, 37.0, 70.0), (x1 + 1.2, 40.0, 73.0), "#1b1f24")          # Q1
     for i, z in enumerate((64.0, 68.0, 72.0)):
         S.box((x1 - 0.6, 20.0, z), (x1 + 1.6, 28.0, z + 1.8), "#d9c39a")      # Widerstände
@@ -467,7 +467,7 @@ LEGEND = [
     ("esp", "D1 mini (ESP8266)", ["Senkrecht hinter dem Display;", "WLAN-Antenne oben frei lassen."]),
     ("bat", "LiPo-Akku 2000 mAh", ["Steht in einer Lochraster-Wanne;", "ein Drahtband mit Schrumpfschlauch hält ihn."]),
     ("chg", "Lademodul", ["HW-168, rechte Seite, LEDs nach außen,", "Mini-USB-Buchse nach hinten."]),
-    ("perf", "Lochrasterplatine", ["Selbsthaltung, LDO und Spannungsteiler."]),
+    ("perf", "Lochrasterplatine", ["Selbsthaltung, Regler und Spannungsteiler."]),
     ("btn", "Taster", ["Oben vorn – Druck von oben", "belastet die Beine, nichts kippt."]),
     ("bme", "BME280 auf dem Mast", ["Misst direkt nach dem Einschalten,", "bevor sich die Elektronik erwärmt."]),
 ]
